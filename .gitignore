@@ -1,0 +1,7 @@
+.idea/
+build/
+vendor/
+.php_cs.cache
+composer.phar
+phpstan.neon
+phpunit.xml
