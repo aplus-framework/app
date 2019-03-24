@@ -31,7 +31,10 @@
 	"autoload": {
 		"psr-4": {
 			"App\\": "app/"
-		}
+		},
+		"classmap": [
+			"App.php"
+		]
 	},
 	"autoload-dev": {
 		"psr-4": {
@@ -51,7 +54,7 @@
 			".hooks/init"
 		],
 		"post-update-cmd": [
-			"composer dump-autoload"
+			"composer dump-autoload --optimize"
 		]
 	},
 	"support": {
