@@ -57,7 +57,7 @@ test:php7.3:
     # Run PHPUnit
     - vendor/bin/phpunit --colors=never
     # ApiGen
-    - vendor/bin/apigen generate src --destination build/api/
+    - vendor/bin/apigen generate App.php app --destination build/api/
   artifacts:
     paths:
       - build/coverage/
