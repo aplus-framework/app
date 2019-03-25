@@ -15,7 +15,18 @@ test:php7.3:
   before_script:
     - apt-get update -yqq
     - apt-get install -yqq curl git libcurl4-gnutls-dev libxml2-dev libbz2-dev libgeoip-dev
-      libzip-dev wget zlib1g-dev zip automake autoconf libtool g++
+      libicu-dev libzip-dev wget zlib1g-dev zip automake autoconf libtool g++
+    # Install latest ICU version
+    - curl -sS -o /tmp/icu.tar.gz -L http://download.icu-project.org/files/icu4c/63.1/icu4c-63_1-src.tgz
+    - tar -zxf /tmp/icu.tar.gz -C /tmp
+    - cd /tmp/icu/source
+    - ./configure --prefix=/usr/local
+    - make
+    - make install
+    - cd -
+    # Install Intl extension
+    - docker-php-ext-configure intl --with-icu-dir=/usr/local
+    - docker-php-ext-install intl
     # Download package containing legacy GeoIP databases and move to PHP default local
     - wget http://debian.backend.mirrors.debian.org/debian/pool/main/g/geoip-database/geoip-database-extra_20181108-1_all.deb
     - dpkg-deb -xv geoip-database-extra_20181108-1_all.deb geoip-database-extra
