@@ -1,6 +1,10 @@
 .idea/
 build/
 vendor/
+storage/*
+!storage/cache/
+storage/cache/*
+!storage/cache/.gitkeep
 .php_cs.cache
 composer.phar
 phpstan.neon

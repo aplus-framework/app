@@ -39,13 +39,17 @@ $config['database']['default'] = [
 ];
 /**
  * Cache.
+ *
+ * @see App::getCache
  */
 $config['cache']['files'] = [
-	'prefix' => '',
+	'driver' => 'Files',
+	'configs' => [
+		'directory' => __DIR__ . '/storage/cache',
+		'length' => 4096,
+	],
+	'prefix' => null,
 	'serializer' => 'php',
-	'directory' => __DIR__ . '/storage/cache',
-	'hash_keys' => true,
-	'files_permission' => 0644,
 ];
 $config['cache']['default'] = $config['cache']['files'];
 /**

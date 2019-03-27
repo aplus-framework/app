@@ -17,9 +17,10 @@
 	<filter>
 		<whitelist addUncoveredFilesFromWhitelist="true">
 			<file>App.php</file>
+			<file>helpers.php</file>
 			<directory suffix=".php">app</directory>
 			<exclude>
-				<directory>app/View</directory>
+				<directory>app/Views</directory>
 			</exclude>
 		</whitelist>
 	</filter>

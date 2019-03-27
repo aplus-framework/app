@@ -101,3 +101,9 @@ function lang(string $line, $args = [], string $locale = null) : ?string
 	global $app;
 	return $app->getLanguage()->lang($line, $args, $locale);
 }
+
+function cache(string $instance = 'default') : Framework\Cache\Cache
+{
+	global $app;
+	return $app->getCache($instance);
+}
