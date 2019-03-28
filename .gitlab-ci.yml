@@ -1,8 +1,7 @@
 ---
-image: php:7.3
+image: natanfelles/php-base
 
 test:php7.3:
-  image: php:7.3
   stage: test
   cache:
     paths:
@@ -15,49 +14,6 @@ test:php7.3:
     MYSQL_DATABASE: framework-tests
     MYSQL_ROOT_PASSWORD: password
   before_script:
-    - apt-get update -yqq
-    - apt-get install -yqq curl git libcurl4-gnutls-dev libmemcached11 libmemcached-dev libxml2-dev libbz2-dev libgeoip-dev
-      libicu-dev libzip-dev wget zlib1g-dev zip automake autoconf libtool g++
-    # Install latest ICU version
-    - curl -sS -o /tmp/icu.tar.gz -L http://download.icu-project.org/files/icu4c/63.1/icu4c-63_1-src.tgz
-    - tar -zxf /tmp/icu.tar.gz -C /tmp
-    - cd /tmp/icu/source
-    - ./configure --prefix=/usr/local
-    - make
-    - make install
-    - cd -
-    # Install Intl extension
-    - docker-php-ext-configure intl --with-icu-dir=/usr/local
-    - docker-php-ext-install intl
-    # Download package containing legacy GeoIP databases and move to PHP default local
-    - wget http://debian.backend.mirrors.debian.org/debian/pool/main/g/geoip-database/geoip-database-extra_20181108-1_all.deb
-    - dpkg-deb -xv geoip-database-extra_20181108-1_all.deb geoip-database-extra
-    - mkdir -p /usr/share/GeoIP/
-    - mv geoip-database-extra/usr/share/GeoIP/* /usr/share/GeoIP/
-    # Install & enable PHP GeoIP
-    - pecl install geoip-beta
-    - docker-php-ext-enable geoip
-    # Install PHP extensions
-    - docker-php-ext-install curl json mbstring mysqli xml zip
-    # Install PECL Cache package extensions
-    - pecl install igbinary msgpack redis
-    - docker-php-ext-enable igbinary msgpack redis
-    - pecl download memcached-3.1.3
-    - tar xzvf memcached-3.1.3.tgz
-    - cd memcached-3.1.3
-    - phpize
-    - ./configure --enable-memcached-igbinary --enable-memcached-json --enable-memcached-msgpack
-    - make
-    - make install
-    - cd ..
-    - rm -rf memcached-3.1.3*
-    - docker-php-ext-enable memcached
-    # Install & enable Xdebug for code coverage reports
-    - pecl install xdebug-beta
-    - docker-php-ext-enable xdebug
-    # Install and run Composer
-    - curl -sS https://getcomposer.org/installer | php
-    - mv composer.phar /usr/bin/composer
     - composer install
   script:
     # composer.json normalization
