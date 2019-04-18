@@ -61,10 +61,19 @@ $config['language']['default'] = [
 	'default' => 'en',
 	'supported' => [
 		'en',
+		'es',
 		'pt-br',
 	],
 	'fallback_level' => 2,
 	'directories' => null,
+];
+/**
+ * Validation.
+ *
+ * @see App::getValidation
+ */
+$config['validation']['default'] = [
+	'validators' => null,
 ];
 /**
  * View.

@@ -9,4 +9,8 @@ class Users extends Model
 		'email',
 		'name',
 	];
+	protected $validationRules = [
+		'email' => 'email',
+		'name' => 'latin:true|minLength:5|maxLength:32',
+	];
 }

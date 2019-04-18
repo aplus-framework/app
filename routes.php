@@ -5,7 +5,7 @@ use Framework\Routing\Collection;
 /**
  * @var \Framework\Routing\Router $router
  */
-$router->serve('http://localhost:{port}', function (Collection $routes) {
+$router->serve('http://localhost:{port}', static function (Collection $routes) {
 	$routes->get('/', 'App\Controllers\Home::index', 'home');
 	$routes->group('contact', [
 		$routes->get('/', 'App\Controllers\Contact::index', 'contact'),

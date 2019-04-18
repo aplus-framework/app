@@ -15,8 +15,7 @@ function helpers($helper) : array
 		}
 		return array_merge(...$files);
 	}
-	global $app;
-	$files = $app->getLocator()->findFiles("Helpers/{$helper}");
+	$files = App::getLocator()->findFiles("Helpers/{$helper}");
 	foreach ($files as $file) {
 		require_once $file;
 	}
@@ -65,45 +64,39 @@ function is_cli() : bool
  */
 function view(string $path, array $data = [], string $instance = 'default') : string
 {
-	global $app;
-	return $app->getView($instance)->render($path, $data);
+	return App::getView($instance)->render($path, $data);
 }
 
 function current_url() : string
 {
-	global $app;
-	return $app->getRequest()->getURL();
+	return App::getRequest()->getURL();
 }
 
 function current_route() : Framework\Routing\Route
 {
-	global $app;
-	return $app->getRouter()->getMatchedRoute();
+	return App::getRouter()->getMatchedRoute();
 }
 
 function route_url(string $name, array $path_params = [], array $origin_params = []) : string
 {
-	global $app;
-	$route = $app->getRouter()->getNamedRoute($name);
+	$route = App::getRouter()->getNamedRoute($name);
 	if ($route === null) {
 		throw new OutOfBoundsException("Named route not found: {$name}");
 	}
 	if (empty($origin_params)
-		&& $route->getOrigin() === $app->getRouter()->getMatchedRoute()->getOrigin()
+		&& $route->getOrigin() === App::getRouter()->getMatchedRoute()->getOrigin()
 	) {
-		$origin_params = $app->getRouter()->getMatchedOriginParams();
+		$origin_params = App::getRouter()->getMatchedOriginParams();
 	}
 	return $route->getURL($origin_params, $path_params);
 }
 
 function lang(string $line, $args = [], string $locale = null) : ?string
 {
-	global $app;
-	return $app->getLanguage()->lang($line, $args, $locale);
+	return App::getLanguage()->lang($line, $args, $locale);
 }
 
 function cache(string $instance = 'default') : Framework\Cache\Cache
 {
-	global $app;
-	return $app->getCache($instance);
+	return App::getCache($instance);
 }

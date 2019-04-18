@@ -18,9 +18,8 @@ class Users extends ResourceController
 
 	public function index()
 	{
-		$this->respondOK([
-			'method' => __METHOD__,
-		]);
+		$page = $this->request->getGET('page', \FILTER_SANITIZE_NUMBER_INT) ?: 1;
+		$this->respondOK($this->users->paginate($page));
 	}
 
 	public function create()
@@ -30,10 +29,7 @@ class Users extends ResourceController
 			$this->response->setHeader('Location', $user->id);
 			return $this->respondCreated($user);
 		}
-		//$errors = $this->users->getErrors();
-		$errors = [
-			'foo' => 'Field foo is not allowed',
-		];
+		$errors = $this->users->getErrors();
 		return $this->respondBadRequest($errors);
 	}
 
@@ -55,16 +51,12 @@ class Users extends ResourceController
 				'message' => '404 User Not Found',
 			]);
 		}
-		$updated = $this->users->update($id, $this->request->getBody(true));
+		$updated = $this->users->update($id, $this->request->getParsedBody());
 		return $updated
 			? $this->respondOK($updated)
-			: $this->respondBadRequest([
-				'error' => 'Bad Request',
-				'messages' => [// $this->users->getErrors();
-					'Field foo is required',
-					'Field bar is required',
-				],
-			]);
+			: $this->respondBadRequest(
+				$this->users->getErrors()
+			);
 	}
 
 	public function replace(int $id)
