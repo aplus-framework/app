@@ -68,6 +68,15 @@ $config['language']['default'] = [
 	'directories' => null,
 ];
 /**
+ * Session.
+ *
+ * @see App::getSession
+ */
+$config['session']['default'] = [
+	'options' => [],
+	'handler' => null,
+];
+/**
  * Validation.
  *
  * @see App::getValidation

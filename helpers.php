@@ -100,3 +100,8 @@ function cache(string $instance = 'default') : Framework\Cache\Cache
 {
 	return App::getCache($instance);
 }
+
+function session() : Framework\Session\Session
+{
+	return App::getSession();
+}
