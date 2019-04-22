@@ -1,4 +1,5 @@
 .idea/
+.sass-cache/
 build/
 vendor/
 storage/*

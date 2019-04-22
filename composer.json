@@ -16,13 +16,13 @@
 	],
 	"require": {
 		"php": ">=7.3",
-		"framework/language": "dev-master",
+		"framework/front": "dev-master",
 		"framework/mvc": "dev-master"
 	},
 	"require-dev": {
 		"ext-xdebug": "*",
 		"apigen/apigen": "dev-master#85290e8",
-		"friendsofphp/php-cs-fixer": "^2.14",
+		"framework/coding-standard": "dev-master",
 		"localheinz/composer-normalize": "^1.1",
 		"phpmd/phpmd": "^2.6",
 		"phpstan/phpstan": "^0.11",
