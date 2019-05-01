@@ -5,7 +5,7 @@
  * @var string $home_url
  */
 ?>
-<h1>Route Not Found</h1>
+<h1><?= lang('errors.404-notFound'); ?></h1>
 <p>
-	<a href="<?= esc($home_url); ?>">Go to Home</a>
+	<a href="<?= esc($home_url); ?>"><?= lang('errors.goHome'); ?></a>
 </p>

@@ -6,7 +6,7 @@ class Errors extends BaseController
 	{
 		$this->response->setStatusCode(404);
 		return $this->renderPage('errors/not-found', [
-			'title' => 'Error 404 - Route Not Found',
+			'title' => lang('errors.404-notFound'),
 			'home_url' => route_url('home', [], [8080]), // TODO: origin
 		]);
 	}
