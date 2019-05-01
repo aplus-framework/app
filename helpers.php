@@ -105,3 +105,11 @@ function session() : Framework\Session\Session
 {
 	return App::getSession();
 }
+
+function old(string $key = null, bool $escape = true)
+{
+	session();
+	return $escape
+		? esc(App::getRequest()->getRedirectData($key))
+		: App::getRequest()->getRedirectData($key);
+}

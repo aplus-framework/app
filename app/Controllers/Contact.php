@@ -11,15 +11,15 @@ class Contact extends BaseController
 
 	public function create()
 	{
-		$data = $this->request->getPOST();
-		\var_dump($data);
+		$data = [
+			'name' => $this->request->getPOST('name', \FILTER_SANITIZE_STRING),
+			'email' => $this->request->getPOST('email', \FILTER_SANITIZE_EMAIL),
+			'message' => $this->request->getPOST('message', \FILTER_SANITIZE_STRING),
+		];
 		$contacts = new Contacts();
-		$contact = $contacts->create($data);
-		if ($contact === false) {
-			$errors = $contacts->getErrors();
-			\var_dump($errors);
-		}
-		\var_dump($contact);
-		//$this->response->redirect(\route_url('contact'));
+		$data['success'] = (bool) $contacts->create($data);
+		$data['errors'] = $contacts->getErrors();
+		session();
+		$this->response->redirect(route_url('contact'), $data);
 	}
 }

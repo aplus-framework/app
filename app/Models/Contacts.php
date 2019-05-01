@@ -16,8 +16,15 @@ class Contacts extends Model
 		'message' => 'Message',
 	];
 	protected $validationRules = [
-		'email' => 'email',
-		'name' => 'latin:true|minLength:5|maxLength:32',
+		'email' => 'required|email',
+		'name' => 'required|latin:true|minLength:5|maxLength:32',
 		'message' => 'required|minLength:10|maxLength:1024',
 	];
+
+	public function __construct()
+	{
+		$this->validationLabels['email'] = lang('contact.email');
+		$this->validationLabels['name'] = lang('contact.name');
+		$this->validationLabels['message'] = lang('contact.message');
+	}
 }

@@ -66,6 +66,7 @@ $config['language']['default'] = [
 	],
 	'fallback_level' => 2,
 	'directories' => null,
+	'negotiate' => true,
 ];
 /**
  * Session.
