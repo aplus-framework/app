@@ -51,7 +51,13 @@ class Users extends ResourceController
 				'message' => '404 User Not Found',
 			]);
 		}
-		$updated = $this->users->update($id, $this->request->getParsedBody());
+		$data = $this->request->getParsedBody();
+		if (empty($data)) {
+			return $this->respondBadRequest([
+				'message' => '400 Input Data Is Empty',
+			]);
+		}
+		$updated = $this->users->update($id, $data);
 		return $updated
 			? $this->respondOK($updated)
 			: $this->respondBadRequest(
@@ -61,11 +67,22 @@ class Users extends ResourceController
 
 	public function replace(int $id)
 	{
-		return $this->respondOK();
+		return $this->update($id);
 	}
 
 	public function delete(int $id)
 	{
-		return $this->respondNoContent();
+		$user = $this->users->find($id);
+		if ( ! $user) {
+			return $this->respondNotFound([
+				'message' => '404 User Not Found',
+			]);
+		}
+		$deleted = $this->users->delete($id);
+		return $deleted
+			? $this->respondNoContent()
+			: $this->respondBadRequest(
+				$this->users->getErrors()
+			);
 	}
 }
