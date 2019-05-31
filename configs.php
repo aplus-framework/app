@@ -53,12 +53,21 @@ $config['cache']['files'] = [
 ];
 $config['cache']['default'] = $config['cache']['files'];
 /**
+ * Console.
+ *
+ * @see App::getConsole
+ */
+$config['console']['default'] = [
+	'enabled' => true,
+	'defaults' => true,
+];
+/**
  * Language.
  *
  * @see App::getLanguage
  */
 $config['language']['default'] = [
-	'default' => 'en',
+	'default' => 'es',
 	'supported' => [
 		'en',
 		'es',

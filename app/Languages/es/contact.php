@@ -1,8 +1,8 @@
 <?php
 return [
 	'contact' => 'Contacto',
-	'name' => 'Nombre',
 	'email' => 'Email',
 	'message' => 'Mensaje',
+	'name' => 'Nombre',
 	'send' => 'Enviar',
 ];
