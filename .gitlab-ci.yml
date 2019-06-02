@@ -28,11 +28,11 @@ test:php7.3:
     # Run PHPUnit
     - vendor/bin/phpunit --colors=never
     # ApiGen
-    - vendor/bin/apigen generate App.php app --destination build/api/
+    # - vendor/bin/apigen generate App.php app --destination build/api/
   artifacts:
     paths:
       - build/coverage/
-      - build/api/
+      # - build/api/
   coverage: '/^\s*Lines:\s*\d+.\d+\%/'
 
 pages:
@@ -46,7 +46,7 @@ pages:
     - mv public/ app-public/
     - mkdir public/
     - mv build/coverage/ public/
-    - mv build/api/ public/
+    # - mv build/api/ public/
     - curl -sS https://the-framework.gitlab.io/redirect.php | php
     - 'curl --request POST --header "PRIVATE-TOKEN: $BUILD_TOKEN" "https://gitlab.com/api/v4/projects/11395127/pipeline?ref=master"'
   artifacts:
