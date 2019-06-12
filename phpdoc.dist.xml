@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdocumentor>
+    <title>Framework App</title>
+    <parser>
+        <target>build/api-cache</target>
+        <markers>
+            <item>TODO</item>
+            <item>FIXME</item>
+        </markers>
+    </parser>
+    <transformer>
+        <target>build/api</target>
+    </transformer>
+    <files>
+        <directory>.</directory>
+        <ignore>build/*</ignore>
+        <ignore>tests/*</ignore>
+        <ignore>vendor/*</ignore>
+    </files>
+    <transformations>
+        <template name="clean"/>
+    </transformations>
+</phpdocumentor>

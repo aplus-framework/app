@@ -1,9 +1,0 @@
----
-parameters:
-  visibilityLevels:
-    - public
-  annotationGroups:
-    - deprecated
-  title: "Docs API"
-  baseUrl: ""
-  overwrite: true
