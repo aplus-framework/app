@@ -21,8 +21,8 @@
 	},
 	"require-dev": {
 		"ext-xdebug": "*",
-		"apigen/apigen": "dev-master#85290e8",
 		"framework/coding-standard": "dev-master",
+		"fzaninotto/faker": "^1.8",
 		"localheinz/composer-normalize": "^1.1",
 		"phpmd/phpmd": "^2.6",
 		"phpstan/phpstan": "^0.11",

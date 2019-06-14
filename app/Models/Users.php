@@ -11,6 +11,7 @@ class Users extends Model
 	];
 	protected $validationRules = [
 		'email' => 'email',
-		'name' => 'latin:true|minLength:5|maxLength:32',
+		'name' => 'minLength:5|maxLength:32',
 	];
+	protected $useDatetime = true;
 }
