@@ -23,10 +23,10 @@
 		"ext-xdebug": "*",
 		"framework/coding-standard": "dev-master",
 		"fzaninotto/faker": "^1.8",
-		"localheinz/composer-normalize": "^1.1",
+		"localheinz/composer-normalize": "^1.2",
 		"phpmd/phpmd": "^2.6",
 		"phpstan/phpstan": "^0.11",
-		"phpunit/phpunit": "^7.5"
+		"phpunit/phpunit": "^8.2"
 	},
 	"autoload": {
 		"psr-4": {
