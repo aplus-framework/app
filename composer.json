@@ -6,7 +6,7 @@
 		"app",
 		"application"
 	],
-	"homepage": "https://gitlab.com/the-framework/packages/app",
+	"homepage": "https://the-framework.gitlab.io/packages/app.html",
 	"license": "proprietary",
 	"authors": [
 		{
@@ -60,8 +60,8 @@
 	"support": {
 		"email": "natanfelles@gmail.com",
 		"issues": "https://gitlab.com/the-framework/packages/app/issues",
-		"wiki": "https://gitlab.com/the-framework/packages/app",
+		"wiki": "https://gitlab.com/the-framework/packages/app/wikis/home",
 		"source": "https://gitlab.com/the-framework/packages/app",
-		"docs": "https://the-framework.gitlab.io/packages/app/api"
+		"docs": "https://the-framework.gitlab.io/packages/app/docs/"
 	}
 }
