@@ -62,6 +62,15 @@ $config['console']['default'] = [
 	'defaults' => true,
 ];
 /**
+ * Exceptions.
+ *
+ * @see App::run()
+ */
+$config['exceptions']['default'] = [
+	'clearBuffer' => true,
+	'viewsDir' => null,
+];
+/**
  * Language.
  *
  * @see App::getLanguage
