@@ -87,6 +87,17 @@ $config['language']['default'] = [
 	'negotiate' => true,
 ];
 /**
+ * Logger.
+ *
+ * @see  App::getLogger
+ *
+ * @todo Update directory
+ */
+$config['logger']['default'] = [
+	'directory' => '/tmp',
+	'level' => \Framework\Log\Logger::DEBUG,
+];
+/**
  * Mailer.
  *
  * @see App::getMailer
