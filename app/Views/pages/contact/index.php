@@ -1,4 +1,7 @@
 <h1><?= lang('contact.contact'); ?></h1>
+<?php if (old('success')): ?>
+	<p>Message successful sent.</p>
+<?php endif ?>
 <form action="<?= route_url('contact.create'); ?>" method="post">
 	<label for="name"><?= lang('contact.name'); ?></label>
 	<input type="text" id="name" name="name" value="<?= old('name'); ?>">
