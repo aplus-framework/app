@@ -1,8 +1,8 @@
 <h1><?= lang('contact.contact') ?></h1>
 <?php if (old('success')) : ?>
-	<p style="color: green">Message successful sent.</p>
+	<p style="color: green"><?= lang('contact.messageSuccess') ?></p>
 <?php elseif (old('errors', false)) : ?>
-	<p style="color: red">Some error ocurred.</p>
+	<p style="color: red"><?= lang('contact.hasErrors') ?></p>
 <?php endif ?>
 <form action="<?= route_url('contact.create') ?>" method="post">
 	<label for="name"><?= lang('contact.name') ?></label>

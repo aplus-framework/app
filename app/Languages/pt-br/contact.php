@@ -5,4 +5,6 @@ return [
 	'message' => 'Mensagem',
 	'name' => 'Nome',
 	'send' => 'Enviar',
+	'messageSuccess' => 'Mensagem enviada com sucesso.',
+	'hasErrors' => 'Alguns errors aconteceram.',
 ];

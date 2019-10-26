@@ -23,8 +23,10 @@ class Contacts extends Model
 
 	public function __construct()
 	{
-		$this->validationLabels['email'] = lang('contact.email');
-		$this->validationLabels['name'] = lang('contact.name');
-		$this->validationLabels['message'] = lang('contact.message');
+		$this->validationLabels = [
+			'email' => lang('contact.email'),
+			'name' => lang('contact.name'),
+			'message' => lang('contact.message'),
+		];
 	}
 }
