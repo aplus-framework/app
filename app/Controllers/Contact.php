@@ -19,6 +19,9 @@ class Contact extends BaseController
 		$contacts = new Contacts();
 		$data['success'] = (bool) $contacts->create($data);
 		$data['errors'] = $contacts->getErrors();
+		if ($data['success']) {
+			unset($data['name'], $data['email'], $data['message']);
+		}
 		session();
 		$this->response->redirect(route_url('contact'), $data);
 	}
