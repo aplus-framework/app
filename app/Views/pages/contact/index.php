@@ -1,18 +1,34 @@
 <h1><?= lang('contact.contact') ?></h1>
 <?php if (old('success')) : ?>
-	<p style="color: green"><?= lang('contact.messageSuccess') ?></p>
+	<div class="alert alert-success">
+		<?= lang('contact.messageSuccess') ?>
+	</div>
 <?php elseif (old('errors', false)) : ?>
-	<p style="color: red"><?= lang('contact.hasErrors') ?></p>
+	<div class="alert alert-danger">
+		<?= lang('contact.hasErrors') ?>
+	</div>
 <?php endif ?>
 <form action="<?= route_url('contact.create') ?>" method="post">
-	<label for="name"><?= lang('contact.name') ?></label>
-	<input type="text" id="name" name="name" value="<?= old('name') ?>">
-	<div style="color:red"><?= old('errors[name]') ?></div>
-	<label for="email"><?= lang('contact.email'); ?></label>
-	<input type="email" id="email" name="email" value="<?= old('email') ?>">
-	<div style="color:red"><?= old('errors[email]') ?></div>
-	<label for="message"><?= lang('contact.message') ?></label>
-	<textarea id="message" name="message"><?= old('message') ?></textarea>
-	<div style="color:red"><?= old('errors[message]') ?></div>
-	<button><?= lang('contact.send') ?></button>
+	<div class="form-group">
+		<label for="name"><?= lang('contact.name') ?></label>
+		<input type="text" id="name" name="name" value="<?= old('name') ?>" class="form-control <?=
+		old('errors[name]') ? ' is-invalid' : ''
+		?>">
+		<div class="invalid-feedback"><?= old('errors[name]') ?></div>
+	</div>
+	<div class="form-group">
+		<label for="email"><?= lang('contact.email') ?></label>
+		<input type="email" id="email" name="email" value="<?= old('email') ?>" class="form-control <?=
+		old('errors[email]') ? ' is-invalid' : ''
+		?>">
+		<div class="invalid-feedback"><?= old('errors[email]') ?></div>
+	</div>
+	<div class="form-group">
+		<label for="message"><?= lang('contact.message') ?></label>
+		<textarea id="message" name="message" class="form-control <?=
+		old('errors[message]') ? ' is-invalid' : ''
+		?>"><?= old('message') ?></textarea>
+		<div class="invalid-feedback"><?= old('errors[message]') ?></div>
+	</div>
+	<button class="btn btn-primary"><?= lang('contact.send') ?></button>
 </form>

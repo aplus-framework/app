@@ -26,18 +26,6 @@ $config['autoloader']['default'] = [
 	'classes' => [],
 ];
 /**
- * Database.
- *
- * @see App::getDatabase
- * @see \Framework\Database\Database::makeConfig
- */
-$config['database']['default'] = [
-	'username' => 'root',
-	'password' => 'password',
-	'schema' => 'framework-tests',
-	'host' => 'localhost',
-];
-/**
  * Cache.
  *
  * @see App::getCache
@@ -60,6 +48,18 @@ $config['cache']['default'] = $config['cache']['files'];
 $config['console']['default'] = [
 	'enabled' => true,
 	'defaults' => true,
+];
+/**
+ * Database.
+ *
+ * @see App::getDatabase
+ * @see \Framework\Database\Database::makeConfig
+ */
+$config['database']['default'] = [
+	'username' => 'root',
+	'password' => 'password',
+	'schema' => 'framework-tests',
+	'host' => 'localhost',
 ];
 /**
  * Exceptions.
