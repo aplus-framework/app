@@ -82,7 +82,7 @@ $config['language']['default'] = [
 		'es',
 		'pt-br',
 	],
-	'fallback_level' => 2,
+	'fallback_level' => \Framework\Language\Language::FALLBACK_DEFAULT,
 	'directories' => null,
 	'negotiate' => true,
 ];
