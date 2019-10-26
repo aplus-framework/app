@@ -4,4 +4,4 @@
  */
 ?>
 <h1>Home</h1>
-<p><?= lang('home.hello'); ?></p>
+<p><?= lang('home.hello') ?></p>
