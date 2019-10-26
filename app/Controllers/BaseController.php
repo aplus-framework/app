@@ -12,7 +12,6 @@ abstract class BaseController extends Controller
 			'title' => $data['title'] ?? 'App',
 			'header' => view('includes/header'),
 			'main' => view("pages/{$page}", $data),
-			'sidebar' => view('includes/sidebar'),
 			'footer' => view('includes/footer'),
 		], $instance ?? $this->viewInstance);
 	}

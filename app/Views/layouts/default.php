@@ -8,23 +8,21 @@
  */
 ?>
 <!doctype html>
-<html>
+<html lang="<?= App::getLanguage()->getCurrentLocale() ?>">
 <head>
 	<meta charset="utf-8">
 	<title><?= esc($title); ?></title>
+	<!--	<link rel="stylesheet" href="/assets/app.css">-->
 </head>
 <body>
 <header>
-	<?= $header; ?>
+	<?= $header ?>
 </header>
 <main>
-	<?= $main; ?>
+	<?= $main ?>
 </main>
-<aside>
-	<?= $sidebar; ?>
-</aside>
 <footer>
-	<?= $footer; ?>
+	<?= $footer ?>
 </footer>
 </body>
 </html>
