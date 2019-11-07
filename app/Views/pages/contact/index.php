@@ -13,7 +13,7 @@
 		<label for="name"><?= lang('contact.name') ?></label>
 		<input type="text" id="name" name="name" value="<?= old('name') ?>" class="form-control <?=
 		old('errors[name]') ? ' is-invalid' : ''
-		?>">
+		?>" minlength="5" maxlength="32" required>
 		<div class="invalid-feedback"><?= old('errors[name]') ?></div>
 	</div>
 	<div class="form-group">
