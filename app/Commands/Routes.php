@@ -25,7 +25,7 @@ class Routes extends Command
 					$method,
 					$route->getOrigin(),
 					$route->getPath(),
-					\is_callable($route->getAction()) ? '{closure}' : $route->getAction(),
+					\is_string($route->getAction()) ? $route->getAction() : '{closure}',
 					$route->getName() ?? '',
 				];
 			}
