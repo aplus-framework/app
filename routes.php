@@ -2,7 +2,7 @@
 
 use Framework\Routing\Collection;
 
-App::getRouter()->serve('http://localhost:{port}', static function (Collection $routes) {
+App::router()->serve('http://localhost:{port}', static function (Collection $routes) {
 	$routes->namespace('App\Controllers', [
 		$routes->get('/', 'Home::index', 'home'),
 		$routes->group('/contact', [

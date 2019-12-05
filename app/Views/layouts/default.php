@@ -8,7 +8,7 @@
  */
 ?>
 <!doctype html>
-<html lang="<?= App::getLanguage()->getCurrentLocale() ?>">
+<html lang="<?= App::language()->getCurrentLocale() ?>">
 <head>
 	<meta charset="utf-8">
 	<title><?= esc($title); ?></title>
