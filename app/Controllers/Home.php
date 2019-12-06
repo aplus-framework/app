@@ -4,6 +4,7 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		echo $this->renderPage('home/index');
+		$this->theme->setTitle(lang('home.home'));
+		return $this->renderPage('home/index');
 	}
 }

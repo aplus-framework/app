@@ -6,7 +6,8 @@ class Contact extends BaseController
 {
 	public function index()
 	{
-		echo $this->renderPage('contact/index');
+		$this->theme->setTitle(lang('contact.contact'));
+		return $this->renderPage('contact/index');
 	}
 
 	public function create()
