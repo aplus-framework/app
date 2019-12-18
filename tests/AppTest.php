@@ -1,4 +1,4 @@
-<?php namespace Tests\Sample;
+<?php namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 
