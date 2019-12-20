@@ -90,11 +90,9 @@ $config['language']['default'] = [
  * Logger.
  *
  * @see  App::logger
- *
- * @todo Update directory
  */
 $config['logger']['default'] = [
-	'directory' => '/tmp',
+	'directory' => __DIR__ . '/storage/logs/',
 	'level' => \Framework\Log\Logger::DEBUG,
 ];
 /**
