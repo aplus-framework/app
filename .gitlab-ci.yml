@@ -1,7 +1,7 @@
 ---
 image: natanfelles/php-base
 
-test:php7.3:
+test:php:
   stage: test
   cache:
     paths:
@@ -38,7 +38,7 @@ test:php7.3:
 pages:
   stage: deploy
   dependencies:
-    - test:php7.3
+    - test:php
   environment:
     name: production
     url: https://the-framework.gitlab.io
