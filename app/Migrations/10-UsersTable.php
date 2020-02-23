@@ -5,7 +5,7 @@ use Framework\Database\Extra\Migration;
 
 class UsersTable extends Migration
 {
-	protected $table = 'Users';
+	protected string $table = 'Users';
 
 	public function up()
 	{

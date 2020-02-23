@@ -5,9 +5,9 @@ use Framework\Database\Extra\Migrator;
 
 class MigrateDown extends AbstractMigration
 {
-	protected $name = 'migrate:down';
-	protected $description = 'Run migrations down.';
-	protected $usage = 'migrate:down';
+	protected string $name = 'migrate:down';
+	protected string $description = 'Run migrations down.';
+	protected string $usage = 'migrate:down';
 
 	protected function prepare()
 	{

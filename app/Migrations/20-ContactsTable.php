@@ -5,7 +5,7 @@ use Framework\Database\Extra\Migration;
 
 class ContactsTable extends Migration
 {
-	protected $table = 'Contacts';
+	protected string $table = 'Contacts';
 
 	public function up()
 	{

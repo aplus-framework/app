@@ -5,7 +5,7 @@ use Framework\Database\Extra\Seeder;
 
 class Users extends Seeder
 {
-	protected $count = 100;
+	protected int $count = 100;
 
 	public function run()
 	{

@@ -5,9 +5,9 @@ use Framework\Database\Extra\Migrator;
 
 class MigrateUp extends AbstractMigration
 {
-	protected $name = 'migrate:up';
-	protected $description = 'Run migrations up.';
-	protected $usage = 'migrate:up';
+	protected string $name = 'migrate:up';
+	protected string $description = 'Run migrations up.';
+	protected string $usage = 'migrate:up';
 
 	protected function prepare()
 	{

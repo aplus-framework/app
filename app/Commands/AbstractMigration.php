@@ -7,7 +7,7 @@ use Framework\Database\Extra\Migrator;
 
 abstract class AbstractMigration extends Command
 {
-	protected $options = [
+	protected array $options = [
 		'-l, --list' => 'List files.',
 		'-y, --yes' => 'Proceed migration without prompt.',
 	];

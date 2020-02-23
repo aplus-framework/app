@@ -15,7 +15,7 @@
 		}
 	],
 	"require": {
-		"php": ">=7.3",
+		"php": ">=7.4",
 		"natanfelles/mvc": "dev-master",
 		"natanfelles/theme": "dev-master"
 	},
@@ -24,7 +24,7 @@
 		"ergebnis/composer-normalize": "^2.0",
 		"fzaninotto/faker": "^1.8",
 		"natanfelles/coding-standard": "^1.0",
-		"phpmd/phpmd": "^2.7",
+		"phpmd/phpmd": "^2.8",
 		"phpstan/phpstan": "^0.12",
 		"phpunit/phpunit": "^8.5"
 	},

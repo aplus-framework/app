@@ -6,17 +6,17 @@ use Framework\Routing\Route;
 
 class Routes extends Command
 {
-	protected $name = 'routes';
-	protected $description = 'Show routes list.';
-	protected $usage = 'routes [options]';
-	protected $options = [
+	protected string $name = 'routes';
+	protected string $description = 'Show routes list.';
+	protected string $usage = 'routes [options]';
+	protected array $options = [
 		'--order' => 'Order by column',
 	];
 
 	public function run(array $options = [], array $arguments = []) : void
 	{
 		$body = [];
-		foreach (\App::getRouter()->getRoutes() as $method => $routes) {
+		foreach (\App::router()->getRoutes() as $method => $routes) {
 			foreach ($routes as $route) {
 				/**
 				 * @var Route $route
