@@ -28,11 +28,11 @@ test:php:
     # Run PHPUnit
     - vendor/bin/phpunit --colors=never
     # Run phpDocumentor
-    - phpdoc
+    # - phpdoc
   artifacts:
     paths:
       - build/coverage/
-      - build/docs/
+      # - build/docs/
   coverage: '/^\s*Lines:\s*\d+.\d+\%/'
 
 pages:
@@ -46,7 +46,7 @@ pages:
     - mv public/ app-public/
     - mkdir public/
     - mv build/coverage/ public/
-    - mv build/docs/ public/
+    # - mv build/docs/ public/
   artifacts:
     paths:
       - public
