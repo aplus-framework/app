@@ -16,8 +16,7 @@
 	],
 	"require": {
 		"php": ">=7.4",
-		"natanfelles/mvc": "dev-master",
-		"natanfelles/theme": "dev-master"
+		"natanfelles/mvc": "dev-master"
 	},
 	"require-dev": {
 		"ext-xdebug": "*",
