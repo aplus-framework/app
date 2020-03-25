@@ -7,7 +7,7 @@
 		"application"
 	],
 	"homepage": "https://the-framework.gitlab.io/packages/app.html",
-	"license": "proprietary",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Natan Felles",
