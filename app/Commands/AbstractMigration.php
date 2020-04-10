@@ -29,10 +29,10 @@ abstract class AbstractMigration extends Command
 
 	public function run(array $options = [], array $arguments = []) : void
 	{
-		$migrator = new Migrator(\App::getDatabase(), \App::getLocator());
+		$migrator = new Migrator(\App::database(), \App::locator());
 		$this->showCurrentVersion($migrator);
 		$migrator->addFiles(
-			\App::getLocator()->getFiles('Migrations')
+			\App::locator()->getFiles('Migrations')
 		);
 		if (isset($options['l'])) {
 			$this->listFiles($migrator);
@@ -51,7 +51,9 @@ abstract class AbstractMigration extends Command
 	{
 		CLI::write(
 			$this->console->getLanguage()
-				->render('migrations', 'currentVersion', [$migrator->getCurrentVersion()])
+				->render('migrations', 'currentVersion', [
+					$migrator->getCurrentVersion() ?: 0,
+				])
 		);
 	}
 
@@ -61,6 +63,8 @@ abstract class AbstractMigration extends Command
 			$this->console->getLanguage()->render('migrations', 'filesFound')
 		);
 		foreach ($migrator->getFiles() as $version => $file) {
+			$version = CLI::style($version, CLI::FG_YELLOW);
+			$file = CLI::style($file, CLI::FG_GREEN);
 			CLI::write(" {$version} - {$file}");
 		}
 	}
