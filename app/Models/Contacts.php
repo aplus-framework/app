@@ -17,7 +17,7 @@ class Contacts extends Model
 	];
 	protected $validationRules = [
 		'email' => 'required|email',
-		'name' => 'required|latin:true|minLength:5|maxLength:32',
+		'name' => 'required|minLength:5|maxLength:32',
 		'message' => 'required|minLength:10|maxLength:1024',
 	];
 
