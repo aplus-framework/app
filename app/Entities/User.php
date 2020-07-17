@@ -16,6 +16,8 @@ class User extends Entity
 	protected $id;
 	protected $email;
 	protected $name;
+	protected $locale;
+	protected $passwordHash;
 	protected $createdAt;
 	protected $updatedAt;
 
@@ -27,5 +29,17 @@ class User extends Entity
 	protected function setUpdatedAt($updatedAt) : void
 	{
 		$this->updatedAt = $this->fromDateTime($updatedAt);
+	}
+
+	public function jsonSerialize() : array
+	{
+		return [
+			'id' => $this->id,
+			'email' => $this->email,
+			'name' => $this->name,
+			'locale' => $this->locale,
+			'createdAt' => $this->createdAt,
+			'updatedAt' => $this->updatedAt,
+		];
 	}
 }

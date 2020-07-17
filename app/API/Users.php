@@ -18,7 +18,7 @@ class Users extends ResourceController
 
 	public function index()
 	{
-		$page = $this->request->getGET('page', \FILTER_SANITIZE_NUMBER_INT) ?: 1;
+		$page = $this->request->getQuery('page', \FILTER_SANITIZE_NUMBER_INT) ?: 1;
 		$this->respondOK($this->users->paginate($page));
 	}
 
