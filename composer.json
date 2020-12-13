@@ -21,11 +21,11 @@
 	"require-dev": {
 		"ext-xdebug": "*",
 		"ergebnis/composer-normalize": "^2.0",
-		"fzaninotto/faker": "^1.8",
+		"fakerphp/faker": "^1.9",
 		"natanfelles/coding-standard": "^1.0",
-		"phpmd/phpmd": "^2.8",
+		"phpmd/phpmd": "^2.9",
 		"phpstan/phpstan": "^0.12",
-		"phpunit/phpunit": "^8.5"
+		"phpunit/phpunit": "^9.3"
 	},
 	"autoload": {
 		"psr-4": {

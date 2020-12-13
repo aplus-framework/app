@@ -3,6 +3,6 @@
 use Framework\CodingStandard\Config;
 use Framework\CodingStandard\Finder;
 
-return Config::create()->setFinder(
+return (new Config())->setFinder(
 	Finder::create()->in(__DIR__)
 );
