@@ -14,15 +14,15 @@ use Framework\MVC\Model;
  */
 class Users extends Model
 {
-	protected $table = 'Users';
-	protected $allowedColumns = [
+	protected ?string $table = 'Users';
+	protected array $allowedColumns = [
 		'email',
 		'name',
 	];
-	protected $validationRules = [
+	protected array $validationRules = [
 		'email' => 'email',
 		'name' => 'minLength:5|maxLength:32',
 	];
-	protected $useDatetime = true;
-	protected $returnType = User::class;
+	protected bool $useDatetime = true;
+	protected string $returnType = User::class;
 }

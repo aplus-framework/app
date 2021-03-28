@@ -4,18 +4,18 @@ use Framework\MVC\Model;
 
 class Contacts extends Model
 {
-	protected $allowedColumns = [
+	protected array $allowedColumns = [
 		'email',
 		'name',
 		'message',
 	];
-	protected $useDatetime = true;
-	protected $validationLabels = [
+	protected bool $useDatetime = true;
+	protected array $validationLabels = [
 		'email' => 'Email',
 		'name' => 'Name',
 		'message' => 'Message',
 	];
-	protected $validationRules = [
+	protected array $validationRules = [
 		'email' => 'required|email',
 		'name' => 'required|minLength:5|maxLength:32',
 		'message' => 'required|minLength:10|maxLength:1024',
