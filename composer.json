@@ -15,7 +15,7 @@
 		}
 	],
 	"require": {
-		"php": ">=7.4",
+		"php": ">=8.0",
 		"natanfelles/mvc": "dev-master"
 	},
 	"require-dev": {
