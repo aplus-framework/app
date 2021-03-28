@@ -9,7 +9,7 @@ class Seed extends Command
 	protected string $description = 'Seed database.';
 	protected string $usage = 'seed';
 
-	public function run(array $options = [], array $arguments = []) : void
+	public function run() : void
 	{
 		(new Seeder(\App::database()))->run();
 	}

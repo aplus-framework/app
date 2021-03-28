@@ -13,7 +13,7 @@ class Routes extends Command
 		'--order' => 'Order by column',
 	];
 
-	public function run(array $options = [], array $arguments = []) : void
+	public function run() : void
 	{
 		$body = [];
 		foreach (\App::router()->getRoutes() as $method => $routes) {
@@ -30,6 +30,7 @@ class Routes extends Command
 				];
 			}
 		}
+		$options = $this->console->getOptions();
 		$index = $options['order'] ?? 1;
 		\usort($body, static function ($str1, $str2) use ($index) {
 			return \strcmp($str1[$index], $str2[$index]);

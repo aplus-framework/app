@@ -27,13 +27,14 @@ abstract class AbstractMigration extends Command
 			->render('migrations', 'noPrompt');
 	}
 
-	public function run(array $options = [], array $arguments = []) : void
+	public function run() : void
 	{
 		$migrator = new Migrator(\App::database(), \App::locator());
 		$this->showCurrentVersion($migrator);
 		$migrator->addFiles(
 			\App::locator()->getFiles('Migrations')
 		);
+		$options = $this->console->getOptions();
 		if (isset($options['l'])) {
 			$this->listFiles($migrator);
 		}
