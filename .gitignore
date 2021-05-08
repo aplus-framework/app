@@ -15,7 +15,7 @@ storage/session/*
 !storage/uploads/
 storage/uploads/*
 !storage/uploads/.gitkeep
-.php_cs.cache
+.php-cs-fixer.cache
 composer.phar
 phpstan.neon
 phpunit.xml
