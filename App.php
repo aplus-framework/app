@@ -2,5 +2,5 @@
 
 class App extends \Framework\MVC\App
 {
-	public const DEBUG = true;
+	public const DEBUG = false;
 }
