@@ -16,6 +16,8 @@ storage/session/*
 storage/uploads/*
 !storage/uploads/.gitkeep
 .php-cs-fixer.cache
+.phpunit.result.cache
+composer.lock
 composer.phar
 phpstan.neon
 phpunit.xml
