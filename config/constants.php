@@ -1,6 +1,6 @@
 <?php
-define('APP_PATH', dirname(__DIR__) . '/app');
-define('CONFIG_PATH', dirname(__DIR__) . '/config');
-define('PUBLIC_PATH', dirname(__DIR__) . '/public');
-define('STORAGE_PATH', dirname(__DIR__) . '/storage');
-define('TESTS_PATH', dirname(__DIR__) . '/tests');
+define('ROOT_DIR', dirname(__DIR__) . '/');
+define('APP_DIR', ROOT_DIR . 'app/');
+define('CONFIG_DIR', ROOT_DIR . 'config/');
+define('PUBLIC_DIR', ROOT_DIR . 'public/');
+define('STORAGE_DIR', ROOT_DIR . 'storage/');
