@@ -1,10 +1,11 @@
 <?php namespace App\Controllers;
 
-class Home extends BaseController
+use Framework\MVC\Controller;
+
+class Home extends Controller
 {
 	public function index()
 	{
-		$this->theme->setTitle(lang('home.home'));
-		return $this->renderPage('home/index');
+		return view('home/index');
 	}
 }
