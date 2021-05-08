@@ -45,7 +45,7 @@ pages:
   script:
     - mv public/ app-public/
     - mkdir public/
-    - mv build/coverage/ public/
+    # - mv build/coverage/ public/
     # - mv build/docs/ public/
   artifacts:
     paths:
