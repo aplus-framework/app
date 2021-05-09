@@ -33,6 +33,9 @@
 		},
 		"classmap": [
 			"App.php"
+		],
+		"files": [
+			"config/constants.php"
 		]
 	},
 	"autoload-dev": {
