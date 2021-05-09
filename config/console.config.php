@@ -2,11 +2,10 @@
 /**
  * Console config.
  *
- * @see App::console
+ * @see App::run
  */
 return [
 	'default' => [
-		'enabled' => true,
-		'defaults' => true,
+		'enabled' => false,
 	],
 ];

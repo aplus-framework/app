@@ -2,7 +2,7 @@
 /**
  * Exceptions config.
  *
- * @see App::run()
+ * @see App::prepareExceptionHandler
  */
 return [
 	'default' => [
