@@ -47,6 +47,7 @@ pages:
     - mkdir public/
     - mv build/coverage/ public/
     # - mv build/docs/ public/
+    - curl -sS https://the-framework.gitlab.io/redirect.php | php
   artifacts:
     paths:
       - public
