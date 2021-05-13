@@ -16,7 +16,7 @@
 	],
 	"require": {
 		"php": ">=8.0",
-		"natanfelles/mvc": "v3.0.0-alpha.1"
+		"natanfelles/mvc": "v3.0.0-alpha.2"
 	},
 	"require-dev": {
 		"ext-xdebug": "*",
