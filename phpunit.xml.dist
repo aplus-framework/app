@@ -5,6 +5,10 @@
          stopOnFailure="false" stopOnIncomplete="false" stopOnSkipped="false"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
 	<coverage>
+		<include>
+			<directory suffix=".php">app</directory>
+			<!-- <directory suffix=".php">config</directory> -->
+		</include>
 		<report>
 			<clover outputFile="build/coverage/clover.xml"/>
 			<html outputDirectory="build/coverage"/>
