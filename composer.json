@@ -6,7 +6,7 @@
 		"app",
 		"application"
 	],
-	"homepage": "https://the-framework.gitlab.io/packages/app.html",
+	"homepage": "https://the-framework.gitlab.io/libraries/app.html",
 	"license": "MIT",
 	"authors": [
 		{
@@ -52,9 +52,9 @@
 	},
 	"support": {
 		"email": "natanfelles@gmail.com",
-		"issues": "https://gitlab.com/the-framework/packages/app/issues",
-		"wiki": "https://gitlab.com/the-framework/packages/app/wikis/home",
-		"source": "https://gitlab.com/the-framework/packages/app",
-		"docs": "https://the-framework.gitlab.io/packages/app/docs/"
+		"issues": "https://gitlab.com/the-framework/libraries/app/issues",
+		"wiki": "https://gitlab.com/the-framework/libraries/app/wikis/home",
+		"source": "https://gitlab.com/the-framework/libraries/app",
+		"docs": "https://the-framework.gitlab.io/libraries/app/docs/"
 	}
 }
