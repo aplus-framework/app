@@ -22,6 +22,7 @@
 		"ext-xdebug": "*",
 		"ergebnis/composer-normalize": "^2.13",
 		"natanfelles/coding-standard": "^1.2",
+		"natanfelles/php-server": "^2.11",
 		"phpmd/phpmd": "^2.10",
 		"phpstan/phpstan": "^0.12",
 		"phpunit/phpunit": "^9.5"
