@@ -11,7 +11,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 	 *
 	 * @param bool $is_cli True if is a CLI request, otherwise false
 	 */
-	public function runApp(bool $is_cli = false) : void
+	protected function runApp(bool $is_cli = false) : void
 	{
 		App::init(new Config(CONFIG_DIR));
 		App::setIsCLI($is_cli);
