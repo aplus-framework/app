@@ -15,7 +15,9 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 	{
 		App::init(new Config(CONFIG_DIR));
 		App::setIsCLI($is_cli);
+		\ob_start(); // Avoid phpunit terminal output
 		App::run();
+		\ob_end_clean();
 	}
 
 	/**
