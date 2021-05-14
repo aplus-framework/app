@@ -23,7 +23,14 @@
 	</rule>
 
 	<rule ref="rulesets/design.xml"/>
+
 	<rule ref="rulesets/naming.xml"/>
+	<rule ref="rulesets/naming.xml/ShortVariable">
+		<properties>
+			<property name="minimum" value="2"/>
+		</properties>
+	</rule>
+
 	<rule ref="rulesets/unusedcode.xml"/>
 
 </ruleset>
