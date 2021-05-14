@@ -9,14 +9,14 @@ use Framework\Language\Language;
 
 return [
 	'default' => [
-		'default' => 'es',
+		'default' => 'en',
 		'supported' => [
 			'en',
 			'es',
 			'pt-br',
 		],
-		'fallback_level' => Language::FALLBACK_DEFAULT,
+		'fallback_level' => Language::FALLBACK_NONE,
 		'directories' => null,
-		'negotiate' => true,
+		'negotiate' => false,
 	],
 ];
