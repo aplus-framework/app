@@ -12,10 +12,7 @@ class HomeTest extends TestCase
 	{
 		$this->prepareRequest('http://localhost:8080')->runApp();
 		$this->assertEquals(200, App::response()->getStatusCode());
-		$this->assertStringContainsString(
-			'Framework App',
-			App::response()->getSendedBody()
-		);
+		$this->assertStringContainsString('Framework App', App::response()->getBody());
 		$this->assertEquals('home', App::router()->getMatchedRoute()->getName());
 	}
 }
