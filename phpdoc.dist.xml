@@ -12,10 +12,7 @@
         <target>build/docs</target>
     </transformer>
     <files>
-        <directory>.</directory>
-        <ignore>build/*</ignore>
-        <ignore>tests/*</ignore>
-        <ignore>vendor/*</ignore>
+        <directory>app</directory>
     </files>
     <transformations>
         <template name="clean"/>
