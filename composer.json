@@ -8,12 +8,6 @@
 	],
 	"homepage": "https://the-framework.gitlab.io/libraries/app.html",
 	"license": "MIT",
-	"authors": [
-		{
-			"name": "Natan Felles",
-			"email": "natanfelles@gmail.com"
-		}
-	],
 	"require": {
 		"php": ">=8.0",
 		"natanfelles/mvc": "v3.0.0-alpha.2"
@@ -49,12 +43,5 @@
 		"post-update-cmd": [
 			"composer dump-autoload --optimize"
 		]
-	},
-	"support": {
-		"email": "natanfelles@gmail.com",
-		"issues": "https://gitlab.com/the-framework/libraries/app/issues",
-		"wiki": "https://gitlab.com/the-framework/libraries/app/wikis/home",
-		"source": "https://gitlab.com/the-framework/libraries/app",
-		"docs": "https://the-framework.gitlab.io/libraries/app/docs/"
 	}
 }
