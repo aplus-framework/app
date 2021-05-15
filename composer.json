@@ -21,6 +21,11 @@
 		"phpstan/phpstan": "^0.12",
 		"phpunit/phpunit": "^9.5"
 	},
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
 	"autoload": {
 		"psr-4": {
 			"App\\": "app/"
