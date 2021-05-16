@@ -6,7 +6,7 @@
 		"app",
 		"application"
 	],
-	"homepage": "https://the-framework.gitlab.io/libraries/app.html",
+	"homepage": "https://the-framework.gitlab.io/projects/app.html",
 	"license": "MIT",
 	"require": {
 		"php": ">=8.0",
