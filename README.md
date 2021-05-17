@@ -1,4 +1,4 @@
-# Framework App
+# The Framework App Project
 
 - [Homepage](https://the-framework.gitlab.io/projects/app.html)
 - [API Documentation](https://the-framework.gitlab.io/projects/app/docs/)
