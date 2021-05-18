@@ -43,10 +43,5 @@
 		}
 	},
 	"minimum-stability": "dev",
-	"prefer-stable": true,
-	"scripts": {
-		"post-update-cmd": [
-			"composer dump-autoload --optimize"
-		]
-	}
+	"prefer-stable": true
 }
