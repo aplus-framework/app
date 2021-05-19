@@ -34,7 +34,8 @@
 			"App.php"
 		],
 		"files": [
-			"config/constants.php"
+			"config/constants.php",
+			"config/helpers.php"
 		]
 	},
 	"autoload-dev": {
