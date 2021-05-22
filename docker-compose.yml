@@ -8,6 +8,7 @@ services:
       - .:/package
     depends_on:
       - mariadb
+    tty: true
   mariadb:
     image: mariadb
     restart: always
