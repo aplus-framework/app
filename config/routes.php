@@ -8,6 +8,9 @@ App::router()->serve('http://localhost:{port}', static function (Collection $rou
 	$routes->namespace('App\Controllers', [
 		$routes->get('/', 'Home::index', 'home'),
 	]);
+	$routes->notFound(static function () {
+		return not_found();
+	});
 });
 
 App::router()->setDefaultRouteNotFound(static function (
