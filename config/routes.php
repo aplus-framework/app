@@ -27,5 +27,9 @@ App::router()->setDefaultRouteNotFound(static function (
 			],
 		]);
 	}
-	return $response->setBody('<h1>Error 404</h1><p>Page not found</p>');
+	$origin = App::router()->getMatchedOrigin();
+	$path = App::router()->getMatchedPath();
+	$body = '<h1>Error 404</h1>';
+	$body .= "<p>Path <code>{$path}</code> not found in the origin <code>{$origin}</code>.</p>";
+	return $response->setBody($body);
 });
