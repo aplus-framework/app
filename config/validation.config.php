@@ -4,13 +4,8 @@
  *
  * @see App::validation
  */
-
-use Framework\MVC\Validator;
-
 return [
 	'default' => [
-		'validators' => [
-			Validator::class,
-		],
+		'validators' => [],
 	],
 ];
