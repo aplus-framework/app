@@ -10,7 +10,7 @@
 	"license": "MIT",
 	"require": {
 		"php": ">=8.0",
-		"natanfelles/mvc": "v3.0.0-alpha.4"
+		"natanfelles/mvc": "v3.0.0-alpha.5"
 	},
 	"require-dev": {
 		"ext-xdebug": "*",

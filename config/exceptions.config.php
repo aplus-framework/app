@@ -12,8 +12,7 @@ return [
 		'environment' => ENVIRONMENT === 'development'
 			? ExceptionHandler::ENV_DEV
 			: ExceptionHandler::ENV_PROD,
-		'clearBuffer' => true,
-		'viewsDir' => null,
+		'views_dir' => null,
 		'log' => true,
 	],
 ];

@@ -4,14 +4,17 @@
  *
  * @see App::cache
  */
+
+use Framework\Cache\Cache;
+use Framework\Cache\Files;
+
 return [
 	'default' => [
-		'driver' => 'Files',
+		'driver' => Files::class,
 		'configs' => [
 			'directory' => STORAGE_DIR . 'cache/',
-			'length' => 4096,
 		],
 		'prefix' => null,
-		'serializer' => 'php',
+		'serializer' => Cache::SERIALIZER_PHP,
 	],
 ];
