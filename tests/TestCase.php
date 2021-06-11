@@ -1,8 +1,8 @@
 <?php namespace Tests;
 
 use App;
+use Framework\Config\Config;
 use Framework\HTTP\URL;
-use Framework\MVC\Config;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
@@ -13,10 +13,9 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 	 */
 	protected function runApp(bool $is_cli = false) : void
 	{
-		App::init(new Config(CONFIG_DIR));
-		App::setIsCLI($is_cli);
 		\ob_start(); // Avoid phpunit terminal output
-		App::run();
+		App::setIsCLI($is_cli);
+		(new App(new Config(CONFIG_DIR)))->run();
 		\ob_end_clean();
 	}
 
