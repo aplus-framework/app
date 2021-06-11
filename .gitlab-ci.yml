@@ -16,18 +16,9 @@ test:php:
   before_script:
     - composer install
   script:
-    # composer.json normalization
     - composer normalize --dry-run --indent-size=1 --indent-style=tab
-    # Check if syntax errors was fixed with php-cs-fixer
     - vendor/bin/php-cs-fixer fix --diff --dry-run --verbose
-    # Analyse code with PHPStan
-    # - vendor/bin/phpstan analyse
-    # PHPMD
-    # - vendor/bin/phpmd src/ text phpmd.xml
-    # - vendor/bin/phpmd tests/ text phpmd.xml
-    # Run PHPUnit
     - vendor/bin/phpunit --colors=never
-    # Run phpDocumentor
     - phpdoc
   artifacts:
     paths:
