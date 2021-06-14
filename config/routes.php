@@ -4,7 +4,7 @@ use Framework\HTTP\Request;
 use Framework\HTTP\Response;
 use Framework\Routing\Collection;
 
-App::router()->serve('http://localhost:{port}', static function (Collection $routes) {
+App::router()->serve('http://localhost:{port}', static function (Collection $routes) : void {
 	$routes->namespace('App\Controllers', [
 		$routes->get('/', 'Home::index', 'home'),
 	]);

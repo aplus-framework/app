@@ -8,7 +8,7 @@ use Tests\TestCase;
  */
 class HomeTest extends TestCase
 {
-	public function testIndex()
+	public function testIndex() : void
 	{
 		$this->prepareRequest('http://localhost:8080')->runApp();
 		$this->assertEquals(200, App::response()->getStatusCode());
