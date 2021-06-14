@@ -2,9 +2,9 @@
 
 use Framework\MVC\Controller;
 
-class Home extends Controller
+final class Home extends Controller
 {
-	public function index()
+	public function index() : string
 	{
 		return view('home/index');
 	}
