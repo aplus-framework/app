@@ -6,7 +6,7 @@ use Tests\TestCase;
 /**
  * @runTestsInSeparateProcesses
  */
-class HomeTest extends TestCase
+final class HomeTest extends TestCase
 {
 	public function testIndex() : void
 	{
