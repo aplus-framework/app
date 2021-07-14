@@ -4,7 +4,16 @@
 	"description": "The Framework App Project",
 	"keywords": [
 		"app",
-		"application"
+		"application",
+		"libraries",
+		"mvc",
+		"database",
+		"routing",
+		"http",
+		"config",
+		"session",
+		"skeleton",
+		"project"
 	],
 	"homepage": "https://the-framework.gitlab.io/projects/app.html",
 	"license": "MIT",
