@@ -16,7 +16,7 @@ test:php:
   before_script:
     - composer install
   script:
-    - composer normalize --dry-run --indent-size=1 --indent-style=tab
+    - composer normalize --dry-run --indent-size=4 --indent-style=space
     - vendor/bin/php-cs-fixer fix --diff --dry-run --verbose
     - vendor/bin/phpunit --colors=never
     - phpdoc
