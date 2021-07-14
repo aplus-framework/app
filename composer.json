@@ -1,57 +1,57 @@
 {
-	"name": "natanfelles/app",
-	"type": "project",
-	"description": "The Framework App Project",
-	"keywords": [
-		"app",
-		"application",
-		"libraries",
-		"mvc",
-		"database",
-		"routing",
-		"http",
-		"config",
-		"session",
-		"skeleton",
-		"project"
-	],
-	"homepage": "https://the-framework.gitlab.io/projects/app.html",
-	"license": "MIT",
-	"require": {
-		"php": ">=8.0",
-		"natanfelles/mvc": "v3.0.0-alpha.5"
-	},
-	"require-dev": {
-		"ext-xdebug": "*",
-		"ergebnis/composer-normalize": "^2.13",
-		"natanfelles/coding-standard": "^1.2",
-		"natanfelles/php-server": "^2.11",
-		"phpmd/phpmd": "^2.10",
-		"phpstan/phpstan": "^0.12",
-		"phpunit/phpunit": "^9.5"
-	},
-	"config": {
-		"optimize-autoloader": true,
-		"preferred-install": "dist",
-		"sort-packages": true
-	},
-	"autoload": {
-		"psr-4": {
-			"App\\": "app/"
-		},
-		"classmap": [
-			"App.php"
-		],
-		"files": [
-			"config/constants.php",
-			"config/helpers.php"
-		]
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"Tests\\": "tests/"
-		}
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+    "name": "natanfelles/app",
+    "type": "project",
+    "description": "The Framework App Project",
+    "keywords": [
+        "app",
+        "application",
+        "libraries",
+        "mvc",
+        "database",
+        "routing",
+        "http",
+        "config",
+        "session",
+        "skeleton",
+        "project"
+    ],
+    "homepage": "https://the-framework.gitlab.io/projects/app.html",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "natanfelles/mvc": "v3.0.0-alpha.5"
+    },
+    "require-dev": {
+        "ext-xdebug": "*",
+        "ergebnis/composer-normalize": "^2.13",
+        "natanfelles/coding-standard": "^1.2",
+        "natanfelles/php-server": "^2.11",
+        "phpmd/phpmd": "^2.10",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "App.php"
+        ],
+        "files": [
+            "config/constants.php",
+            "config/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
