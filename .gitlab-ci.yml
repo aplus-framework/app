@@ -41,6 +41,6 @@ pages:
     - curl -sS https://the-framework.gitlab.io/redirect.php | php
   artifacts:
     paths:
-      - public
+      - public/
   only:
     - master
