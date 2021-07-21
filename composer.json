@@ -1,7 +1,7 @@
 {
-    "name": "natanfelles/app",
+    "name": "aplus/app",
     "type": "project",
-    "description": "The Framework App Project",
+    "description": "Aplus Framework App Project",
     "keywords": [
         "app",
         "application",
@@ -15,16 +15,16 @@
         "skeleton",
         "project"
     ],
-    "homepage": "https://the-framework.gitlab.io/projects/app.html",
+    "homepage": "https://aplus-framework.com/docs/app",
     "license": "MIT",
     "require": {
         "php": ">=8.0",
-        "natanfelles/mvc": "v3.0.0-alpha.5"
+        "aplus/mvc": "dev-development"
     },
     "require-dev": {
         "ext-xdebug": "*",
-        "ergebnis/composer-normalize": "^2.13",
-        "natanfelles/coding-standard": "^1.2",
+        "aplus/coding-standard": "^1.9",
+        "ergebnis/composer-normalize": "^2.15",
         "natanfelles/php-server": "^2.11",
         "phpmd/phpmd": "^2.10",
         "phpstan/phpstan": "^0.12",
