@@ -43,8 +43,8 @@
             "App.php"
         ],
         "files": [
-            "config/constants.php",
-            "config/helpers.php"
+            "extra/constants.php",
+            "extra/helpers.php"
         ]
     },
     "autoload-dev": {
