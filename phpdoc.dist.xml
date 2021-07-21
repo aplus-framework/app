@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<phpdocumentor>
-    <title>The Framework App Project</title>
-    <parser>
-        <target>build/docs-cache</target>
-        <markers>
-            <item>TODO</item>
-            <item>FIXME</item>
-        </markers>
-    </parser>
-    <transformer>
-        <target>build/docs</target>
-    </transformer>
-    <files>
-        <directory>app</directory>
-    </files>
-    <transformations>
-        <template name="clean"/>
-    </transformations>
+<phpdocumentor
+    configVersion="3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://www.phpdoc.org"
+    xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
+>
+    <title>Aplus Framework App Project</title>
+    <paths>
+        <output>build/docs</output>
+        <cache>build/docs-cache</cache>
+    </paths>
+    <version number="latest">
+        <folder>latest</folder>
+        <api>
+            <source dsn=".">
+                <path>src</path>
+            </source>
+            <default-package-name>App</default-package-name>
+            <include-source>true</include-source>
+        </api>
+        <guide>
+            <source dsn=".">
+                <path>guide</path>
+            </source>
+            <output>guide</output>
+        </guide>
+    </version>
+    <setting name="graphs.enabled" value="true"/>
+    <setting name="guides.enabled" value="true"/>
+    <template name="default"/>
 </phpdocumentor>
+
