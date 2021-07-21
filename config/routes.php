@@ -5,7 +5,7 @@
  * @see App::prepareRoutes
  */
 return [
-	'default' => [
-		CONFIG_DIR . 'routes.php',
-	],
+    'default' => [
+        EXTRA_DIR . 'routes.php',
+    ],
 ];
