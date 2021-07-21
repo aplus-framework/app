@@ -1,9 +1,8 @@
 parameters:
     level: 7
     paths:
-        - %currentWorkingDirectory%/app
-        - %currentWorkingDirectory%/config
-        - %currentWorkingDirectory%/public
-        - %currentWorkingDirectory%/tests
-    ignoreErrors:
-        - '#Function [a-zA-Z0-9_]+ not found\.#'
+        - app
+        - config
+        - extra
+        - public
+        - tests
