@@ -43,6 +43,7 @@
             "App.php"
         ],
         "files": [
+            "extra/bootstrap.php",
             "extra/constants.php",
             "extra/helpers.php"
         ]
