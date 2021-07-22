@@ -14,7 +14,7 @@
         <folder>latest</folder>
         <api>
             <source dsn=".">
-                <path>src</path>
+                <path>app</path>
             </source>
             <default-package-name>App</default-package-name>
             <include-source>true</include-source>
