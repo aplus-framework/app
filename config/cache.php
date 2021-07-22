@@ -15,7 +15,7 @@ return [
     'default' => [
         'class' => FilesCache::class,
         'configs' => [
-            'directory' => STORAGE_DIR . 'cache/',
+            'directory' => STORAGE_DIR . 'cache',
         ],
         'prefix' => null,
         'serializer' => Cache::SERIALIZER_PHP,
