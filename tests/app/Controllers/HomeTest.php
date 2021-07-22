@@ -8,11 +8,11 @@ use Tests\TestCase;
  */
 final class HomeTest extends TestCase
 {
-	public function testIndex() : void
-	{
-		$this->prepareRequest('http://localhost:8080')->runApp();
-		$this->assertEquals(200, App::response()->getStatusCode());
-		$this->assertStringContainsString('Framework App', App::response()->getBody());
-		$this->assertEquals('home', App::router()->getMatchedRoute()->getName());
-	}
+    public function testIndex() : void
+    {
+        $this->prepareRequest('http://localhost:8080')->runApp();
+        self::assertSame(200, App::response()->getStatusCode());
+        self::assertStringContainsString('Aplus Framework', App::response()->getBody());
+        self::assertSame('home', App::router()->getMatchedRoute()->getName());
+    }
 }
