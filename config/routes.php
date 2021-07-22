@@ -2,7 +2,7 @@
 /**
  * Routes config.
  *
- * @see App::prepareRoutes
+ * @see App::prepareRoutes()
  */
 return [
     'default' => [

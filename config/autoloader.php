@@ -2,13 +2,13 @@
 /**
  * Autoloader config.
  *
- * @see App::autoloader
+ * @see App::autoloader()
  */
 return [
-	'default' => [
-		'namespaces' => [
-			'App' => APP_DIR,
-		],
-		'classes' => [],
-	],
+    'default' => [
+        'namespaces' => [
+            'App' => APP_DIR,
+        ],
+        'classes' => [],
+    ],
 ];

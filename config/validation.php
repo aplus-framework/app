@@ -2,10 +2,10 @@
 /**
  * Validation config.
  *
- * @see App::validation
+ * @see App::validation()
  */
 return [
-	'default' => [
-		'validators' => [],
-	],
+    'default' => [
+        'validators' => [],
+    ],
 ];

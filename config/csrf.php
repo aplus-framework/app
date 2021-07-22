@@ -1,12 +1,12 @@
 <?php
 /**
- * CSRF config.
+ * AntiCSRF config.
  *
- * @see App::csrf
+ * @see App::antiCsrf()
  */
 return [
-	'default' => [
-		'enabled' => true,
-		'token_name' => 'csrf_token',
-	],
+    'default' => [
+        'enabled' => true,
+        'token_name' => 'csrf_token',
+    ],
 ];

@@ -2,14 +2,14 @@
 /**
  * Logger config.
  *
- * @see  App::logger
+ * @see  App::logger()
  */
 
 use Framework\Log\Logger;
 
 return [
-	'default' => [
-		'directory' => STORAGE_DIR . 'logs/',
-		'level' => Logger::DEBUG,
-	],
+    'default' => [
+        'directory' => STORAGE_DIR . 'logs/',
+        'level' => Logger::DEBUG,
+    ],
 ];
