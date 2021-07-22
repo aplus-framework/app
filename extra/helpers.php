@@ -283,6 +283,9 @@ function config(string $name, string $key = 'default') : mixed
         return $config;
     }
     $pos = strpos($keys, ']');
+    if ($pos === false) {
+        $pos = strlen($key);
+    }
     $parent = substr($keys, 0, $pos);
     $keys = substr($keys, $pos + 1);
     $key = $parent . $keys;

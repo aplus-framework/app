@@ -59,7 +59,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
             }
         }
         $_GET = $url->getQueryData();
-        App::request()->setBody($body);
+        App::request()->setBody($body); // @phpstan-ignore-line
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SERVER['HTTP_CONTENT_TYPE'])
             && ($_SERVER['HTTP_CONTENT_TYPE'] === 'application/x-www-form-urlencoded')
         ) {

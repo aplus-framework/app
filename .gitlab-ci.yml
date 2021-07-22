@@ -18,6 +18,8 @@ test:php:
   script:
     - composer normalize --dry-run --indent-size=4 --indent-style=space
     - vendor/bin/php-cs-fixer fix --diff --dry-run --verbose
+    - vendor/bin/phpmd app xml phpmd.xml
+    - vendor/bin/phpstan analyse -vvv
     - vendor/bin/phpunit --colors=never
     - phpdoc
   artifacts:
@@ -32,13 +34,12 @@ pages:
     - test:php
   environment:
     name: production
-    url: https://the-framework.gitlab.io
+    url: https://aplus-framework.gitlab.io
   script:
     - mv public/ app-public/
     - mkdir public/
     - mv build/coverage/ public/
     - mv build/docs/ public/
-    - curl -sS https://the-framework.gitlab.io/redirect.php | php
   artifacts:
     paths:
       - public/
