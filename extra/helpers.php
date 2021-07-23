@@ -92,7 +92,7 @@ function view(string $path, array $variables = [], string $instance = 'default')
  */
 function current_url() : string
 {
-    return App::request()->getURL()->getAsString();
+    return App::request()->getUrl()->getAsString();
 }
 
 /**
@@ -124,7 +124,7 @@ function route_url(string $name, array $pathArgs = [], array $originArgs = []) :
     ) {
         $originArgs = App::router()->getMatchedOriginArguments();
     }
-    return $route->getURL($originArgs, $pathArgs);
+    return $route->getUrl($originArgs, $pathArgs);
 }
 
 /**
