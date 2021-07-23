@@ -262,7 +262,9 @@ function not_found(array $data = []) : Response
  */
 function redirect(string $location, array $data = [], int $code = null) : Response
 {
-    App::session();
+    if ($data) {
+        App::session();
+    }
     return App::response()->redirect($location, $data, $code);
 }
 
