@@ -98,7 +98,7 @@ function current_url() : string
 /**
  * Get the current Route.
  *
- * @return Route
+ * @return Framework\Routing\Route
  */
 function current_route() : Route
 {
@@ -149,7 +149,7 @@ function lang(string $line, array $args = [], string $locale = null) : ?string
  *
  * @param string $instance
  *
- * @return Cache
+ * @return Framework\Cache\Cache
  */
 function cache(string $instance = 'default') : Cache
 {
@@ -159,7 +159,7 @@ function cache(string $instance = 'default') : Cache
 /**
  * Get the Session instance.
  *
- * @return Session
+ * @return Framework\Session\Session
  */
 function session() : Session
 {
@@ -172,8 +172,8 @@ function session() : Session
  * @param string|null $key Set null to return all data
  * @param bool $escape
  *
- * @see Request::getRedirectData()
- * @see Response::redirect()
+ * @see Framework\HTTP\Request::getRedirectData()
+ * @see Framework\HTTP\Response::redirect()
  * @see redirect()
  *
  * @return mixed The old value. If $escape is true and the value is not
@@ -191,9 +191,17 @@ function old(?string $key, bool $escape = true) : mixed
     return $data;
 }
 
-function csrf_input() : string
+/**
+ * Renders the AntiCSRF input.
+ *
+ * @param string $instance The antiCsrf service instance name
+ *
+ * @return string An HTML hidden input if antiCsrf service is enable or an empty
+ * string if it is disabled
+ */
+function csrf_input(string $instance = 'default') : string
 {
-    return App::antiCsrf()->input();
+    return App::antiCsrf($instance)->input();
 }
 
 /**
@@ -202,7 +210,7 @@ function csrf_input() : string
  *
  * @param array<string,mixed> $data
  *
- * @return Response
+ * @return Framework\HTTP\Response
  */
 function not_found(array $data = []) : Response
 {
@@ -253,12 +261,12 @@ function not_found(array $data = []) : Response
  * based on the current HTTP method.
  *
  * @see http://en.wikipedia.org/wiki/Post/Redirect/Get
- * @see Request::getRedirectData()
+ * @see Framework\HTTP\Request::getRedirectData()
  * @see old()
  *
  * @throws InvalidArgumentException for invalid Redirection code
  *
- * @return Response
+ * @return Framework\HTTP\Response
  */
 function redirect(string $location, array $data = [], int $code = null) : Response
 {
