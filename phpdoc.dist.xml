@@ -15,6 +15,7 @@
         <api>
             <source dsn=".">
                 <path>app</path>
+                <path>extra</path>
             </source>
             <default-package-name>App</default-package-name>
             <include-source>true</include-source>
