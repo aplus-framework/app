@@ -1,4 +1,5 @@
 .idea/
+.vscode/
 build/
 raw-tests/
 vendor/
