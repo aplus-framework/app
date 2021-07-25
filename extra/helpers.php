@@ -9,7 +9,7 @@ use Framework\Session\Session;
 use JetBrains\PhpStorm\Pure;
 
 /**
- * Loads helper files.
+ * Load helper files.
  *
  * @param array<int,string>|string $helper A list of helper names as array
  * or a helper name as string
@@ -196,8 +196,8 @@ function old(?string $key, bool $escape = true) : mixed
  *
  * @param string $instance The antiCsrf service instance name
  *
- * @return string An HTML hidden input if antiCsrf service is enable or an empty
- * string if it is disabled
+ * @return string An HTML hidden input if antiCsrf service is enabled or an
+ * empty string if it is disabled
  */
 function csrf_input(string $instance = 'default') : string
 {
