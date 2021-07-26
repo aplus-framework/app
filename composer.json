@@ -19,17 +19,17 @@
     "license": "MIT",
     "require": {
         "php": ">=8.0",
-        "aplus/mvc": "dev-development"
+        "aplus/mvc": "dev-master"
     },
     "require-dev": {
         "ext-xdebug": "*",
         "aplus/coding-standard": "^1.9",
+        "aplus/testing": "dev-master",
         "ergebnis/composer-normalize": "^2.15",
         "jetbrains/phpstorm-attributes": "^1.0",
         "natanfelles/php-server": "^2.11",
         "phpmd/phpmd": "^2.10",
-        "phpstan/phpstan": "^0.12",
-        "phpunit/phpunit": "^9.5"
+        "phpstan/phpstan": "^0.12"
     },
     "config": {
         "optimize-autoloader": true,
