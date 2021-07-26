@@ -55,5 +55,13 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts": {
+        "post-create-project-cmd": [
+            "php -r \"chmod(__DIR__ . '/storage/cache', 0777);\"",
+            "php -r \"chmod(__DIR__ . '/storage/logs', 0777);\"",
+            "php -r \"chmod(__DIR__ . '/storage/sessions', 0777);\"",
+            "php -r \"chmod(__DIR__ . '/storage/uploads', 0777);\""
+        ]
+    }
 }
