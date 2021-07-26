@@ -62,6 +62,13 @@
             "php -r \"chmod(__DIR__ . '/storage/logs', 0777);\"",
             "php -r \"chmod(__DIR__ . '/storage/sessions', 0777);\"",
             "php -r \"chmod(__DIR__ . '/storage/uploads', 0777);\""
-        ]
+        ],
+        "cs-diff": "php-cs-fixer fix --diff --dry-run -vvv",
+        "cs-fix": "php-cs-fixer fix -vvv",
+        "md": "phpmd app xml phpmd.xml",
+        "md-app": "phpmd App.php xml phpmd.xml",
+        "server": "php-server",
+        "stan": "phpstan analyse -vvv",
+        "unit": "phpunit"
     }
 }
