@@ -3,6 +3,7 @@
  * View config.
  *
  * @see App::view()
+ * @see https://aplus-framework.com/docs/app/config#view
  */
 return [
     'default' => [

@@ -3,6 +3,7 @@
  * AntiCSRF config.
  *
  * @see App::antiCsrf()
+ * @see https://aplus-framework.com/docs/app/config#anti-csrf
  */
 return [
     'default' => [

@@ -4,6 +4,7 @@
  *
  * @see App::mailer()
  * @see Framework\Email\Mailer::makeConfig()
+ * @see https://aplus-framework.com/docs/app/config#mailer
  */
 return [
     'default' => [

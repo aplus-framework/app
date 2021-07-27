@@ -8,6 +8,7 @@
  * @see Framework\Session\SaveHandlers\FilesHandler::prepareConfig()
  * @see Framework\Session\SaveHandlers\MemcachedHandler::prepareConfig()
  * @see Framework\Session\SaveHandlers\RedisHandler::prepareConfig()
+ * @see https://aplus-framework.com/docs/app/config#session
  */
 
 use Framework\Session\SaveHandlers\FilesHandler;
