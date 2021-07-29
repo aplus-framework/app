@@ -1,6 +1,12 @@
 ---
 image: natanfelles/php-base
 
+include:
+  - template: Security/SAST.gitlab-ci.yml
+
+variables:
+  SAST_EXCLUDED_PATHS: guide, tests, vendor
+
 test:php:
   stage: test
   cache:
