@@ -19,6 +19,7 @@
     "license": "MIT",
     "require": {
         "php": ">=8.0",
+        "ext-sodium": "*",
         "aplus/mvc": "dev-master"
     },
     "require-dev": {
@@ -61,7 +62,8 @@
             "php -r \"chmod('storage/cache', 0777);\"",
             "php -r \"chmod('storage/logs', 0777);\"",
             "php -r \"chmod('storage/sessions', 0777);\"",
-            "php -r \"chmod('storage/uploads', 0777);\""
+            "php -r \"chmod('storage/uploads', 0777);\"",
+            "php -r \"file_put_contents('config/crypto.php',strtr(file_get_contents('config/crypto.php'),[\\\"'secret'\\\"=>\\\"sodium_base642bin('\\\".sodium_bin2base64(sodium_crypto_secretbox_keygen(),SODIUM_BASE64_VARIANT_ORIGINAL).\\\"', SODIUM_BASE64_VARIANT_ORIGINAL)\\\"]));\""
         ],
         "aplus": "php public/index.php",
         "cs-diff": "php-cs-fixer fix --diff --dry-run -vvv",
