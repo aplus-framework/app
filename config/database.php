@@ -12,5 +12,6 @@ return [
         'password' => 'password',
         'schema' => 'framework-tests',
         'host' => 'localhost',
+        'logger_instance' => 'default',
     ],
 ];

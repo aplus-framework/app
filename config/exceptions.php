@@ -15,6 +15,7 @@ return [
             ? ExceptionHandler::DEVELOPMENT
             : ExceptionHandler::PRODUCTION,
         'views_dir' => null,
-        'log' => true,
+        'logger_instance' => 'default',
+        'language_instance' => 'default',
     ],
 ];

@@ -25,5 +25,6 @@ return [
                 'match_ua' => false,
             ],
         ],
+        'logger_instance' => 'default',
     ],
 ];
