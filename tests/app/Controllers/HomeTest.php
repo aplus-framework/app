@@ -9,7 +9,7 @@ final class HomeTest extends TestCase
 {
     public function testIndex() : void
     {
-        $this->app()->runHttp('http://localhost:8080');
+        $this->app->runHttp('http://localhost:8080');
         self::assertResponseStatusCode(200);
         self::assertResponseBodyContains('Aplus Framework');
         self::assertMatchedRouteName('home');
