@@ -65,7 +65,7 @@
             "php -r \"chmod('storage/uploads', 0777);\"",
             "php -r \"file_put_contents('config/crypto.php',strtr(file_get_contents('config/crypto.php'),[\\\"'secret'\\\"=>\\\"sodium_base642bin('\\\".sodium_bin2base64(sodium_crypto_secretbox_keygen(),SODIUM_BASE64_VARIANT_ORIGINAL).\\\"', SODIUM_BASE64_VARIANT_ORIGINAL)\\\"]));\""
         ],
-        "aplus": "php public/index.php",
+        "aplus": "./cli.php",
         "cs-diff": "php-cs-fixer fix --diff --dry-run -vvv",
         "cs-fix": "php-cs-fixer fix -vvv",
         "md": "phpmd app xml phpmd.xml",
