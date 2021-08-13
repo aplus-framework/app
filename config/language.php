@@ -3,7 +3,7 @@
  * Language config.
  *
  * @see App::language()
- * @see https://aplus-framework.com/docs/app/config#language
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/language.html
  */
 
 use Framework\Language\Language;

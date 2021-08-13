@@ -2,8 +2,8 @@
 /**
  * Logger config.
  *
- * @see  App::logger()
- * @see https://aplus-framework.com/docs/app/config#logger
+ * @see App::logger()
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/logger.html
  */
 
 use Framework\Log\Logger;

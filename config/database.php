@@ -4,7 +4,7 @@
  *
  * @see App::database()
  * @see Framework\Database\Database::makeConfig()
- * @see https://aplus-framework.com/docs/app/config#database
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/database.html
  */
 return [
     'default' => [

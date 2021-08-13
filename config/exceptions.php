@@ -3,7 +3,7 @@
  * Exceptions config.
  *
  * @see App::prepareExceptionHandler()
- * @see https://aplus-framework.com/docs/app/config#exceptions
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/exceptions.html
  */
 
 use Framework\Debug\ExceptionHandler;

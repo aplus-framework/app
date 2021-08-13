@@ -3,7 +3,7 @@
  * Routes config.
  *
  * @see App::prepareRoutes()
- * @see https://aplus-framework.com/docs/app/config#routes
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/routes.html
  */
 return [
     'default' => [

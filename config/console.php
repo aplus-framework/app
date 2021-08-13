@@ -4,7 +4,7 @@
  *
  * @see App::console()
  * @see App::run()
- * @see https://aplus-framework.com/docs/app/config#console
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/console.html
  */
 return [
     'default' => [

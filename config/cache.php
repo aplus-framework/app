@@ -6,7 +6,7 @@
  * @see Framework\Cache\FilesCache::$configs
  * @see Framework\Cache\MemcachedCache::$configs
  * @see Framework\Cache\RedisCache::$configs
- * @see https://aplus-framework.com/docs/app/config#cache
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/cache.html
  */
 
 use Framework\Cache\Cache;

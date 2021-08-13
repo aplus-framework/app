@@ -4,7 +4,7 @@
  *
  * @see App::mailer()
  * @see Framework\Email\Mailer::makeConfig()
- * @see https://aplus-framework.com/docs/app/config#mailer
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/mailer.html
  */
 
 use Framework\Email\SMTP;

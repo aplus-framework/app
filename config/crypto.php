@@ -4,7 +4,7 @@
  *
  * @see encrypt()
  * @see decrypt()
- * @see https://aplus-framework.com/docs/app/config#crypto
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/crypto.html
  */
 return [
     'default' => [

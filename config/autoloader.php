@@ -3,7 +3,7 @@
  * Autoloader config.
  *
  * @see App::autoloader()
- * @see https://aplus-framework.com/docs/app/config#autoloader
+ * @see https://docs.aplus-framework.com/guides/projects/app/config/autoloader.html
  */
 return [
     'default' => [
