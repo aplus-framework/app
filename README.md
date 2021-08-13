@@ -1,7 +1,6 @@
 # Aplus Framework App Project
 
-- [Homepage](https://aplus-framework.com/docs/app)
-- [API Documentation](https://aplus-framework.gitlab.io/projects/app/docs/)
+- [Documentation](https://docs.aplus-framework.com/guides/projects/app/)
 
 [![Pipeline](https://gitlab.com/aplus-framework/projects/app/badges/master/pipeline.svg)](https://gitlab.com/aplus-framework/projects/app/-/pipelines?scope=branches)
 [![Coverage](https://gitlab.com/aplus-framework/projects/app/badges/master/coverage.svg?job=test:php)](https://aplus-framework.gitlab.io/projects/app/coverage/)
