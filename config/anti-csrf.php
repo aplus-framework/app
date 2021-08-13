@@ -1,6 +1,6 @@
 <?php
 /**
- * AntiCSRF config.
+ * Anti-CSRF config.
  *
  * @see App::antiCsrf()
  * @see https://docs.aplus-framework.com/guides/projects/app/config/anti-csrf.html
