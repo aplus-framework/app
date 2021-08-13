@@ -1,9 +1,16 @@
 App
 ===
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Aplus Framework App Project.
+
+- `Installation`_
+
+Installation
+------------
+
+The installation of this project can be done with Composer:
+
+.. code-block::
+
+    composer create-project aplus/app:dev-master aplus
+
