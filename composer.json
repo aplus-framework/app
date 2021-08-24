@@ -20,7 +20,7 @@
     "require": {
         "php": ">=8.0",
         "ext-sodium": "*",
-        "aplus/mvc": "dev-master"
+        "aplus/framework": "dev-master"
     },
     "require-dev": {
         "ext-xdebug": "*",
