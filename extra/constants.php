@@ -1,5 +1,8 @@
 <?php
 /**
+ * @package app
+ */
+/**
  * The current environment name.
  */
 define('ENVIRONMENT', $_SERVER['ENVIRONMENT'] ?? 'production');

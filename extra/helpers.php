@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
-
+/**
+ * @package app
+ */
 use Framework\Cache\Cache;
 use Framework\Factories\Factory;
 use Framework\Helpers\ArraySimple;

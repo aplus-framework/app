@@ -18,7 +18,7 @@
                 <path>extra</path>
                 <path>App.php</path>
             </source>
-            <default-package-name>App</default-package-name>
+            <default-package-name>application</default-package-name>
             <include-source>true</include-source>
         </api>
         <guide>
