@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 
 use Framework\Cache\Cache;
+use Framework\Factories\Factory;
 use Framework\Helpers\ArraySimple;
 use Framework\HTTP\Response;
 use Framework\MVC\App;
@@ -361,4 +362,16 @@ function decrypt(string $base64, string $instance = 'default') : false | string
     $nonce = substr($bin, 0, \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
     $ciphertext = substr($bin, \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
     return sodium_crypto_secretbox_open($ciphertext, $nonce, $key);
+}
+
+/**
+ * Get (existing or created) Factory instance based on a custom name.
+ *
+ * @param string $name The Factory name
+ *
+ * @return Factory The Factory instance
+ */
+function factory(string $name = 'default') : Factory
+{
+    return Factory::getFactory($name);
 }
