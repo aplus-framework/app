@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-<h1>Aplus Framework</h1>
-<p>The app is running! Yep!</p>
+<h1><?= lang('home.title') ?></h1>
+<p><?= lang('home.description') ?></p>
 </body>
 </html>
