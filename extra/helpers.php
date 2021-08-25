@@ -377,7 +377,7 @@ function decrypt(string $base64, string $instance = 'default') : false | string
  *
  * @param string $name The Factory name
  *
- * @return Factory The Factory instance
+ * @return Framework\Factories\Factory The Factory instance
  */
 function factory(string $name = 'default') : Factory
 {
