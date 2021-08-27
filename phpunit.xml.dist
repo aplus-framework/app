@@ -8,6 +8,7 @@
         <include>
             <directory suffix=".php">app</directory>
             <!-- <directory suffix=".php">config</directory> -->
+            <file>App.php</file>
         </include>
         <report>
             <clover outputFile="build/coverage/clover.xml"/>
