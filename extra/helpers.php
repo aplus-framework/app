@@ -217,11 +217,11 @@ function csrf_input(string $instance = 'default') : string
  * Set Response status as "404 Not Found" and auto set body as
  * JSON or HTML page based on Request Content-Type header.
  *
- * @param array<string,mixed> $data
+ * @param array<string,mixed> $variables
  *
  * @return Framework\HTTP\Response
  */
-function not_found(array $data = []) : Response
+function not_found(array $variables = []) : Response
 {
     $response = App::response();
     $response->setStatus($response::CODE_NOT_FOUND);
@@ -235,27 +235,10 @@ function not_found(array $data = []) : Response
             ],
         ]);
     }
-    $lang = App::language()->getCurrentLocale();
-    $dir = App::language()->getCurrentLocaleDirection();
-    $data['title'] ??= lang('routing.error404');
-    $data['message'] ??= lang('routing.pageNotFound');
-    $title = strip_tags($data['title']);
+    $variables['title'] ??= lang('routing.error404');
+    $variables['message'] ??= lang('routing.pageNotFound');
     return $response->setBody(
-        <<<EOL
-            <!doctype html>
-            <html lang="{$lang}" dir="{$dir}">
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <title>{$title}</title>
-            </head>
-            <body>
-            <h1>{$data['title']}</h1>
-            <p>{$data['message']}</p>
-            </body>
-            </html>
-
-            EOL
+        view('errors/404', $variables)
     );
 }
 
