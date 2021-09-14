@@ -1,5 +1,5 @@
 ---
-image: registry.gitlab.com/aplus-framework/images/php
+image: registry.gitlab.com/aplus-framework/images/lempa
 
 include:
   - template: Security/SAST.gitlab-ci.yml
@@ -12,13 +12,6 @@ test:php:
   cache:
     paths:
       - vendor/
-  services:
-    - mariadb
-    - memcached
-    - redis
-  variables:
-    MYSQL_DATABASE: framework-tests
-    MYSQL_ROOT_PASSWORD: password
   before_script:
     - composer install
   script:
