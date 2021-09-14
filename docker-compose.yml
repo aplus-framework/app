@@ -7,4 +7,6 @@ services:
     volumes:
       - .:/var/www/aplus
     network_mode: host
+    environment:
+      - APLUS_PRELOAD=false
     tty: true
