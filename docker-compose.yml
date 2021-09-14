@@ -1,20 +1,10 @@
 version: "3.0"
 services:
-  package:
-    image: registry.gitlab.com/aplus-framework/images/package
-    container_name: package-app
-    working_dir: /package
+  lempa:
+    image: registry.gitlab.com/aplus-framework/images/lempa
+    container_name: lempa-app
+    working_dir: /var/www/aplus
     volumes:
-      - .:/package
-    depends_on:
-      - mariadb
+      - .:/var/www/aplus
+    network_mode: host
     tty: true
-  mariadb:
-    image: mariadb
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: framework-tests
-      MYSQL_USER: root
-      MYSQL_PASSWORD: password
-    container_name: app-mariadb
