@@ -15,7 +15,7 @@ return [
     'default' => [
         'base_dir' => APP_DIR . 'Views',
         'extension' => '.php',
-        'layout_prefix' => null,
-        'include_prefix' => null,
+        'layout_prefix' => '_layouts',
+        'include_prefix' => '_includes',
     ],
 ];
