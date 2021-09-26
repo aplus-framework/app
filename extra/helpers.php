@@ -118,8 +118,8 @@ function current_route() : Route
  * Get an URL based in a Route name.
  *
  * @param string $name Route name
- * @param array<int,string> $pathArgs Route path arguments
- * @param array<int,string> $originArgs Route origin arguments
+ * @param array<mixed> $pathArgs Route path arguments
+ * @param array<mixed> $originArgs Route origin arguments
  *
  * @return string The Route URL
  */
