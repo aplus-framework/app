@@ -14,7 +14,7 @@
  */
 return [
     'default' => [
-        'enabled' => false,
+        'enabled' => true,
         'language_instance' => 'default',
         'locator_instance' => 'default',
     ],
