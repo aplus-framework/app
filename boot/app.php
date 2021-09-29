@@ -7,12 +7,11 @@
  */
 if (is_file(__DIR__ . '/../vendor/autoload.php')) {
     require __DIR__ . '/../vendor/autoload.php';
-} else {
-    require __DIR__ . '/../extra/init.php';
-    require __DIR__ . '/../extra/constants.php';
-    require EXTRA_DIR . 'helpers.php';
-    require ROOT_DIR . 'App.php';
 }
+require __DIR__ . '/../extra/init.php';
+require __DIR__ . '/../extra/constants.php';
+require EXTRA_DIR . 'helpers.php';
+require ROOT_DIR . 'App.php';
 
 use Framework\Config\Config;
 
