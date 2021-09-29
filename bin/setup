@@ -1,17 +1,19 @@
 #!/usr/bin/env php
 <?php
+require __DIR__ . '/../extra/constants.php';
+
 // Set permissions
-chmod(__DIR__ . '/../storage/cache', 0777);
-chmod(__DIR__ . '/../storage/logs', 0777);
-chmod(__DIR__ . '/../storage/sessions', 0777);
-chmod(__DIR__ . '/../storage/uploads', 0777);
+chmod(STORAGE_DIR . 'cache', 0777);
+chmod(STORAGE_DIR . 'logs', 0777);
+chmod(STORAGE_DIR . 'sessions', 0777);
+chmod(STORAGE_DIR . 'uploads', 0777);
 
 // Set Crypto config default secret value
-$contents = file_get_contents(__DIR__ . '/../config/crypto.php');
+$contents = file_get_contents(CONFIG_DIR . 'crypto.php');
 $contents = strtr($contents, [
     "'secret'" => "sodium_base642bin('" . sodium_bin2base64(
-            sodium_crypto_secretbox_keygen(),
-            SODIUM_BASE64_VARIANT_ORIGINAL
-        ) . "', SODIUM_BASE64_VARIANT_ORIGINAL)",
+        sodium_crypto_secretbox_keygen(),
+        \SODIUM_BASE64_VARIANT_ORIGINAL
+    ) . "', SODIUM_BASE64_VARIANT_ORIGINAL)",
 ]);
-file_put_contents(__DIR__ . '/../config/crypto.php', $contents);
+file_put_contents(CONFIG_DIR . 'crypto.php', $contents);
