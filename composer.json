@@ -43,6 +43,10 @@
         },
         "classmap": [
             "App.php"
+        ],
+        "files": [
+            "extra/constants.php",
+            "extra/helpers.php"
         ]
     },
     "autoload-dev": {
