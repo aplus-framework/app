@@ -56,7 +56,7 @@
         "post-create-project-cmd": [
             "@php bin/setup"
         ],
-        "aplus": "./cli.php",
+        "aplus": "@php bin/console",
         "cs-diff": "php-cs-fixer fix --diff --dry-run -vvv",
         "cs-fix": "php-cs-fixer fix -vvv",
         "md": "phpmd app xml phpmd.xml",
