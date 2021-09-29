@@ -21,6 +21,14 @@ define('ROOT_DIR', dirname(__DIR__) . \DIRECTORY_SEPARATOR);
  */
 define('APP_DIR', ROOT_DIR . 'app' . \DIRECTORY_SEPARATOR);
 /**
+ * Path to the bin directory.
+ */
+define('BIN_DIR', ROOT_DIR . 'bin' . \DIRECTORY_SEPARATOR);
+/**
+ * Path to the boot directory.
+ */
+define('BOOT_DIR', ROOT_DIR . 'boot' . \DIRECTORY_SEPARATOR);
+/**
  * Path to the config directory.
  */
 define('CONFIG_DIR', ROOT_DIR . 'config' . \DIRECTORY_SEPARATOR);
