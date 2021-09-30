@@ -45,6 +45,7 @@
             "App.php"
         ],
         "files": [
+            "extra/init.php",
             "extra/constants.php",
             "extra/helpers.php"
         ]
