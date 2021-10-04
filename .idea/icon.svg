@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   height="400px"
+   width="400px"
+   version="1.1"
+   id="svg2">
+  <title
+     id="title1084">App Project Icon</title>
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>App Project Icon</dc:title>
+        <cc:license
+           rdf:resource="" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Aplus Framework Team</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:description>Created with Font Awesome Free Icons - License: https://fontawesome.com/license/free</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath831">
+      <circle
+         style="fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.68091303"
+         id="circle833"
+         cx="52.916668"
+         cy="244.08331"
+         r="46.302082" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter1914">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1904" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1906" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="2"
+         result="blur"
+         id="feGaussianBlur1908" />
+      <feOffset
+         dx="2"
+         dy="2"
+         result="offset"
+         id="feOffset1910" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite1912" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter1578">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1568" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1570" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="2"
+         result="blur"
+         id="feGaussianBlur1572" />
+      <feOffset
+         dx="4"
+         dy="4"
+         result="offset"
+         id="feOffset1574" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite1576" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter869">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood859" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite861" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="2"
+         result="blur"
+         id="feGaussianBlur863" />
+      <feOffset
+         dx="2"
+         dy="2"
+         result="offset"
+         id="feOffset865" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite867" />
+    </filter>
+  </defs>
+  <rect
+     style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.19054365"
+     id="rect1151"
+     width="400"
+     height="400"
+     x="0"
+     y="0" />
+  <path
+     id="path896"
+     d="M 266.41053,153.125 H 210.06287 L 230.86365,89.74609 C 232.81678,82.32422 227.20154,75 219.53553,75 h -70.3125 c -5.85938,0 -10.83985,4.3457 -11.6211,10.15625 l -15.625,117.1875 c -0.92773,7.03125 4.54102,13.28125 11.6211,13.28125 h 57.95898 l -22.50976,94.9707 C 167.28943,318.01758 172.9535,325 180.4242,325 c 4.10156,0 8.00781,-2.14844 10.15625,-5.85938 l 85.9375,-148.4375 c 4.54101,-7.76367 -1.07422,-17.57812 -10.10742,-17.57812 z"
+     style="fill:#ffffff;stroke-width:0.48828125" />
+</svg>
