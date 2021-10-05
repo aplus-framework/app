@@ -1,0 +1,171 @@
+#!/usr/bin/env php
+<?php
+// Creates doc comments to reveal Model and Entity magics.
+require __DIR__ . '/../boot/app.php';
+
+use Framework\MVC\Entity;
+use Framework\MVC\Model;
+
+$files = App::locator()->listFiles(APP_DIR);
+foreach ($files as $file) {
+    if ( ! str_ends_with($file, '.php')) {
+        continue;
+    }
+    $className = App::locator()->getClassName($file);
+    if (empty($className)) {
+        continue;
+    }
+    $class = new ReflectionClass($className);
+    if ($class->isSubclassOf(Entity::class)) {
+        update_entity($file, $class);
+        continue;
+    }
+    if ($class->isSubclassOf(Model::class)) {
+        update_model($file, $class);
+    }
+}
+
+function update_entity(string $file, ReflectionClass $class) : void
+{
+    if ( ! $class->isSubclassOf(Entity::class)) {
+        return;
+    }
+    $propertyLines = [];
+    foreach ($class->getProperties() as $property) {
+        if ($property->isStatic() || $property->isPublic()) {
+            continue;
+        }
+        $name = $property->getName();
+        $types = [];
+        $type = $property->getType();
+        if ($type === null) {
+            $types[] = 'mixed';
+        } else {
+            if ($type instanceof ReflectionNamedType) {
+                $types = [$type->isBuiltin() ? $type->getName() : '\\' . $type->getName()];
+            } elseif ($type instanceof ReflectionUnionType) {
+                foreach ($type->getTypes() as $unionType) {
+                    if ($unionType->getName() === 'null') {
+                        continue;
+                    }
+                    $types[] = $unionType->isBuiltin()
+                        ? $unionType->getName()
+                        : '\\' . $unionType->getName();
+                }
+                sort($types);
+            }
+            if ($type->allowsNull()) {
+                $types[] = 'null';
+            }
+        }
+        $type = implode('|', $types);
+        $propertyLines[] = '@property ' . $type . ' $' . $name;
+    }
+    $classDocOriginal = $class->getDocComment();
+    if ($classDocOriginal) {
+        $classDoc = explode("\n", $classDocOriginal);
+        foreach ($classDoc as $line => $contents) {
+            $contents = normalize_whitespaces($contents);
+            if (str_starts_with($contents, '* @property')) {
+                unset($classDoc[$line]);
+            }
+        }
+        array_pop($classDoc);
+        foreach ($propertyLines as $line) {
+            $classDoc[] = ' * ' . $line;
+        }
+        $classDoc[] = ' */';
+        $classDoc = implode("\n", $classDoc);
+        $code = file_get_contents($file);
+        $code = substr_replace($code, $classDoc, strpos($code, '/**'), strlen($classDocOriginal));
+        file_put_contents($file, $code);
+        return;
+    }
+    $classDoc = ['/**'];
+    foreach ($propertyLines as $line) {
+        $classDoc[] = ' * ' . $line;
+    }
+    $classDoc[] = ' */';
+    $classDoc = implode("\n", $classDoc);
+    $code = file_get_contents($file);
+    $pos = strpos($code, "\nclass " . $class->getShortName() . ' ');
+    $code = substr_replace($code, "\n" . $classDoc . "\n", $pos, 1);
+    file_put_contents($file, $code);
+}
+
+function update_model(string $file, ReflectionClass $class) : void
+{
+    if ( ! $class->isSubclassOf(Model::class)) {
+        return;
+    }
+    $returnType = $class->getProperty('returnType');
+    $returnType = $returnType->getDefaultValue();
+    $returnType = '\\' . $returnType;
+    $methodFind = $class->getMethod('find');
+    $parameters = get_parameters($methodFind);
+    $methodFind = '@method ' . $returnType . '|null find(' . $parameters . ')';
+    $methodPaginate = $class->getMethod('paginate');
+    $parameters = get_parameters($methodPaginate);
+    $methodPaginate = '@method ' . $returnType . '[] paginate(' . $parameters . ')';
+    $methodLines = [
+        $methodFind,
+        $methodPaginate,
+    ];
+    $classDocOriginal = $class->getDocComment();
+    if ($classDocOriginal) {
+        $classDoc = explode("\n", $classDocOriginal);
+        foreach ($classDoc as $line => $contents) {
+            $contents = normalize_whitespaces($contents);
+            if (str_starts_with($contents, '* @method')) {
+                if (strpos($contents, ' find(') || strpos($contents, ' paginate(')) {
+                    unset($classDoc[$line]);
+                }
+            }
+        }
+        array_pop($classDoc);
+        foreach ($methodLines as $line) {
+            $classDoc[] = ' * ' . $line;
+        }
+        $classDoc[] = ' */';
+        $classDoc = implode("\n", $classDoc);
+        $code = file_get_contents($file);
+        $code = substr_replace($code, $classDoc, strpos($code, '/**'), strlen($classDocOriginal));
+        file_put_contents($file, $code);
+        return;
+    }
+    $classDoc = ['/**'];
+    foreach ($methodLines as $line) {
+        $classDoc[] = ' * ' . $line;
+    }
+    $classDoc[] = ' */';
+    $classDoc = implode("\n", $classDoc);
+    $code = file_get_contents($file);
+    $pos = strpos($code, "\nclass " . $class->getShortName() . ' ');
+    $code = substr_replace($code, "\n" . $classDoc . "\n", $pos, 1);
+    file_put_contents($file, $code);
+}
+
+function get_parameters(ReflectionMethod $method) : string
+{
+    $parameters = [];
+    foreach ($method->getParameters() as $parameter) {
+        $types = [];
+        $type = $parameter->getType();
+        if ($type instanceof ReflectionNamedType) {
+            $types = [$type->isBuiltin() ? $type->getName() : '\\' . $type->getName()];
+        } elseif ($type instanceof ReflectionUnionType) {
+            foreach ($type->getTypes() as $type) {
+                $types[] = $type->isBuiltin() ? $type->getName() : '\\' . $type->getName();
+            }
+            sort($types);
+        }
+        unset($type);
+        $type = implode('|', $types);
+        $value = '';
+        if ($parameter->isDefaultValueAvailable()) {
+            $value = ' = ' . $parameter->getDefaultValue();
+        }
+        $parameters[] = $type . ' $' . $parameter->getName() . $value;
+    }
+    return implode(', ', $parameters);
+}

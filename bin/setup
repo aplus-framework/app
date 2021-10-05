@@ -5,6 +5,7 @@ require __DIR__ . '/../extra/constants.php';
 // Set permissions
 chmod(BIN_DIR . 'console', 0755);
 chmod(BIN_DIR . 'ps-meta', 0755);
+chmod(BIN_DIR . 'rev', 0755);
 chmod(BIN_DIR . 'setup', 0755);
 chmod(STORAGE_DIR . 'cache', 0777);
 chmod(STORAGE_DIR . 'logs', 0777);
