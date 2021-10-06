@@ -68,6 +68,11 @@ registerArgumentsSet(
     'home/index',
 );
 expectedArguments(
+    \Framework\MVC\Controller::render(),
+    0,
+    argumentsSet('views')
+);
+expectedArguments(
     \view(),
     0,
     argumentsSet('views')
