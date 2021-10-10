@@ -1,3 +1,5 @@
+<a href="https://gitlab.com/aplus-framework/projects/app"><img src="https://gitlab.com/aplus-framework/projects/app/-/raw/master/guide/image.png" alt="Aplus Framework App Project" align="right" width="100"></a>
+
 # Aplus Framework App Project
 
 - [User Guide](https://docs.aplus-framework.com/guides/projects/app/index.html)
