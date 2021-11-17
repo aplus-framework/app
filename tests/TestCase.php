@@ -9,5 +9,5 @@ namespace Tests;
 
 abstract class TestCase extends \Framework\Testing\TestCase
 {
-    protected array | string $configs = CONFIG_DIR;
+    protected array | string | null $configs = CONFIG_DIR;
 }
