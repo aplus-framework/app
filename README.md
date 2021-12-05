@@ -2,6 +2,7 @@
 
 # Aplus Framework App Project
 
+- [Homepage](https://aplus-framework.com/packages/app)
 - [User Guide](https://docs.aplus-framework.com/guides/projects/app/index.html)
 - [API Documentation](https://docs.aplus-framework.com/packages/app.html)
 
@@ -33,7 +34,7 @@ If your project is proprietary, you can add your custom license or
 [not](https://choosealicense.com/no-permission/).
 
 Edit the `.php-cs-fixer.dist.php` file.
-Set the project name and copyright information. 
+Set the project name and copyright information.
 
 To update the comment header in all PHP files, run:
 
@@ -45,7 +46,7 @@ vendor/bin/php-cs-fixer fix -vvv
 
 Aplus Framework uses Code Quality Tools in all its projects.
 
-By default, App Project also uses the following tools as dev-dependencies: 
+By default, App Project also uses the following tools as dev-dependencies:
 
 - [PHP-CS-Fixer](https://cs.symfony.com)
 - [phpDocumentor](https://phpdoc.org)
@@ -61,11 +62,11 @@ You can find bugs in your code without writing tests by running:
 vendor/bin/phpstan analyse
 ```
 
-See the `phpstan.neon.dist` file for more details. 
+See the `phpstan.neon.dist` file for more details.
 
 #### Mess Detector
 
-You can look for several potential problems in the source code by running: 
+You can look for several potential problems in the source code by running:
 
 ```
 vendor/bin/phpmd app xml phpmd.xml
@@ -75,7 +76,7 @@ Customize your rules in the `phpmd.xml` file.
 
 #### Coding Standard
 
-We extend PHP-CS-Fixer to create our own
+We extend PHP-CS-Fixer to create the
 [Coding Standard Library](https://gitlab.com/aplus-framework/libraries/coding-standard).
 
 It is [PSR-12](https://www.php-fig.org/psr/psr-12/) compatible.
@@ -88,7 +89,7 @@ vendor/bin/php-cs-fixer fix --diff --dry-run --verbose
 
 #### Testing
 
-We extend PHPUnit to create our own
+We extend PHPUnit to create the
 [Testing Library](https://gitlab.com/aplus-framework/libraries/testing).
 
 You can unit test your code by running:
@@ -97,13 +98,13 @@ You can unit test your code by running:
 vendor/bin/phpunit
 ```
 
-See the `phpunit.xml.dist` file for more details. 
+See the `phpunit.xml.dist` file for more details.
 
 #### Documenting
 
 Good software usually has good documentation.
 
-You can build beautiful HTML pages about your project's documentation. 
+You can build beautiful HTML pages about your project's documentation.
 
 You must have phpDocumentor installed on your computer or run `phpdoc`
 [inside a container](#containers).
@@ -119,9 +120,9 @@ Just run
 vendor/bin/php-server
 ```
 
-and your project will listen in http://localhost:8080
+and your project will be available at http://localhost:8080.
 
-See the `php-server.ini` file for more details. 
+See the `php-server.ini` file for more details.
 
 #### Containers
 
@@ -155,6 +156,14 @@ Just upload your project to GitLab and it will run
 
 ### And now?
 
+Go build an awesome app! ⚡
+
+See you.
+
+---
+
+If you have a little time...
+
 Visit the Aplus Framework website: https://aplus-framework.com
 
 Follow Aplus on:
@@ -180,4 +189,43 @@ Share your experiences about meet us!
 >
 > **Code with Love!**
 
-The Aplus Framework Team.
+<details> 
+<summary>Ok! Ok, John! But I'm not an artist. I'm not an engineer.</summary>
+<blockquote>
+Fique calmo, amigo. Eu também não sou. Quando eu era criança, minha mãe sempre 
+dizia que eu fazia arte. Eu brincava na terra e construia cidades inteiras. Meus
+carrinhos eram de madeira. Meu tio, que era semi-analfabeto, brincava comigo e 
+trabalhava com eletrônica. Junto com meu avô e seus irmãos, eles construiram um
+caminhão com materiais de sucata e cavaram um açude enorme com pás, fizeram as
+bordas com pedras e aquilo tudo era magnifico (haviam gansos sinaleira! tinha
+ovos, filhotes, grama verde, trilhos, galpões). Meu avô faleceu quando eu tinha
+dez anos. Eu nunca deixei de ser criança. Não se preocupe muito, meu amigo.
+Seja o que você quiser, ninguém te conhece melhor do que você mesmo.
+Eu sou você!
+<br><br>
+Construa seu app. Vá nas documentações. Vá nos códigos-fonte. Existem muitas
+pessoas que amam você. E muitas querem um app. ❤️ ⚡⚡
+<br><br>
+<sub>
+Desculpe. Meu inglês não é muito bom. No ensino médio tinhamos 50 minutos
+semanais, mas na maioria do tempo a minha professora só falava de festas, das
+pessoas que ela conhecia e dos lugares incríveis que ela havia conhecido por ela
+saber falar em inglês. Ela falava sobre a lingua inglesa o tempo todo, mas não
+ensinou praticamente nada sobre inglês. E eu aprendi com ela que o inglês é
+importante.
+</sub>
+</blockquote>
+</details>
+
+Are you good with English or other languages and would like to collaborate by
+improving the User Guides and PHPDocs or by adding translations in languages you
+master in Aplus Framework?
+
+Please feel free to open Issues and Merge Requests currently in
+[these repositories](https://gitlab.com/aplus-framework).
+
+We will love your help! Thank you very much. ☕
+
+---
+
+The Aplus Framework Team
