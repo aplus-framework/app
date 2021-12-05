@@ -1,7 +1,8 @@
 {
     "name": "aplus/app",
-    "type": "project",
     "description": "Aplus Framework App Project",
+    "license": "MIT",
+    "type": "project",
     "keywords": [
         "app",
         "application",
@@ -15,8 +16,20 @@
         "skeleton",
         "project"
     ],
-    "homepage": "https://aplus-framework.com/docs/app",
-    "license": "MIT",
+    "homepage": "https://aplus-framework.com/packages/app",
+    "support": {
+        "email": "support@aplus-framework.com",
+        "issues": "https://gitlab.com/aplus-framework/projects/app/issues",
+        "forum": "https://aplus-framework.com/forum",
+        "source": "https://gitlab.com/aplus-framework/projects/app",
+        "docs": "https://docs.aplus-framework.com/guides/projects/app/"
+    },
+    "funding": [
+        {
+            "type": "Aplus Sponsor",
+            "url": "https://aplus-framework.com/sponsor"
+        }
+    ],
     "require": {
         "php": ">=8.0",
         "ext-sodium": "*",
@@ -32,11 +45,8 @@
         "phpmd/phpmd": "^2.10",
         "phpstan/phpstan": "^0.12"
     },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "App\\": "app/"
@@ -55,8 +65,11 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
     "scripts": {
         "post-create-project-cmd": [
             "@php bin/setup"
