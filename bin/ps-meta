@@ -7,13 +7,15 @@ $app->prepareRoutes();
 // Configs ---------------------------------------------------------------------
 $configs = [];
 foreach (App::locator()->listFiles(CONFIG_DIR) as $file) {
-    $file = substr($file, strrpos($file, DIRECTORY_SEPARATOR) + 1);
-    if ($file === '_config.php' || ! str_ends_with($file, '.php')) {
+    $name = substr($file, strrpos($file, DIRECTORY_SEPARATOR) + 1);
+    if ($name === '_config.php' || ! str_ends_with($name, '.php')) {
         continue;
     }
-    $configs[] = substr($file, 0, -4);
+    $name = substr($name, 0, -4);
+    $configs[$name] = array_keys(require $file);
+    sort($configs[$name]);
 }
-sort($configs);
+ksort($configs);
 
 // Helpers ---------------------------------------------------------------------
 $helpers = [];
@@ -78,8 +80,8 @@ ob_start();
 // Configs
 registerArgumentsSet(
     'configs',
-<?php foreach ($configs as $config): ?>
-    <?= "'{$config}',\n" ?>
+<?php foreach (array_keys($configs) as $name): ?>
+    <?= "'{$name}',\n" ?>
 <?php endforeach ?>
 );
 expectedArguments(
@@ -87,6 +89,26 @@ expectedArguments(
     0,
     argumentsSet('configs')
 );
+<?php
+foreach ($configs as $name => $instances):
+    $setName = 'configs_' . strtr($name, ['-' => '_']);
+    $serviceName = ucwords($name,'-_');
+    $serviceName = strtr($serviceName, ['-' => '', '_' => '']);
+    $serviceName = lcfirst($serviceName);
+?>
+
+registerArgumentsSet(
+    '<?= $setName ?>',
+<?php foreach ($instances as $instance): ?>
+    '<?= $instance ?>',
+<?php endforeach ?>
+);
+expectedArguments(
+    \App::<?= $serviceName ?>(),
+    0,
+    argumentsSet('<?= $setName ?>')
+);
+<?php endforeach ?>
 
 // Helpers
 registerArgumentsSet(
@@ -120,6 +142,16 @@ registerArgumentsSet(
 <?php foreach ($routes as $route): ?>
     <?= "'{$route}',\n" ?>
 <?php endforeach ?>
+);
+expectedArguments(
+    \Framework\Routing\Router::getNamedRoute(),
+    0,
+    argumentsSet('routes')
+);
+expectedArguments(
+    \Framework\Routing\Router::hasNamedRoute(),
+    0,
+    argumentsSet('routes')
 );
 expectedArguments(
     \route_url(),
