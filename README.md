@@ -2,10 +2,11 @@
 
 # Aplus Framework App Project
 
-- [Homepage](https://aplus-framework.com/packages/app)
+- [Home](https://aplus-framework.com/packages/app)
 - [User Guide](https://docs.aplus-framework.com/guides/projects/app/index.html)
 - [API Documentation](https://docs.aplus-framework.com/packages/app.html)
 
+[![tests](https://github.com/aplus-framework/app/actions/workflows/tests.yml/badge.svg)](https://github.com/aplus-framework/app/actions/workflows/tests.yml)
 [![pipeline](https://gitlab.com/aplus-framework/projects/app/badges/master/pipeline.svg)](https://gitlab.com/aplus-framework/projects/app/-/pipelines?scope=branches)
 [![coverage](https://gitlab.com/aplus-framework/projects/app/badges/master/coverage.svg?job=test:php)](https://aplus-framework.gitlab.io/projects/app/coverage/)
 [![packagist](https://img.shields.io/packagist/v/aplus/app)](https://packagist.org/packages/aplus/app)
@@ -145,18 +146,27 @@ See the `docker-compose.yml` file for more details.
 
 ### Continuous Integration
 
-To run your code externally, alone or as a team, you can use
-[GitLab](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/).
+App Project is cross-platform and can be used in public and private projects.
 
-The App Project is already pre-configured to run in a CI environment,
-see the `.gitlab-ci.yml` file for more details.
+You can use it on [GitLab](https://about.gitlab.com/stages-devops-lifecycle/continuous-integration/),
+on [GitHub](https://docs.github.com/en/actions/automating-builds-and-tests/about-continuous-integration),
+on your computer, anywhere you want.
+
+The App Project is already pre-configured to run in a GitLab CI environment.
+
+See the `.gitlab-ci.yml` file for more details.
 
 Just upload your project to GitLab and it will run
 [pipelines](https://docs.gitlab.com/ee/ci/pipelines/#view-pipelines).
 
+On GitHub, it will run [workflows](https://docs.github.com/en/actions) to test
+your code every Push or Pull Request.
+
+Check the `.github` folder to see more.
+
 ### And now?
 
-Go build an awesome app! ⚡
+Go build an API or a website, an awesome app! ⚡
 
 See you.
 
@@ -164,12 +174,12 @@ See you.
 
 If you have a little time...
 
-Visit the Aplus Framework website: https://aplus-framework.com
+Visit the Aplus Framework website: [aplus-framework.com](https://aplus-framework.com)
 
 Follow Aplus on:
 
-- [GitLab](https://gitlab.com/aplus-framework/projects/app)
-- [GitHub](https://github.com/aplus-framework/app)
+- [GitLab](https://gitlab.com/aplus-framework)
+- [GitHub](https://github.com/aplus-framework)
 - [Twitter](https://twitter.com/AplusFramework)
 - [Gab](https://gab.com/AplusFramework)
 - [Facebook](https://www.facebook.com/AplusFramework)
@@ -221,8 +231,8 @@ Are you good with English or other languages and would like to collaborate by
 improving the User Guides and PHPDocs or by adding translations in languages you
 master in Aplus Framework?
 
-Please feel free to open Issues and Merge Requests currently in
-[these repositories](https://gitlab.com/aplus-framework).
+Please feel free collaborating with Issues and Merge Requests, sending good
+energies and sponsoring us.
 
 We will love your help! Thank you very much. ☕
 
