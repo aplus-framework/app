@@ -6,7 +6,9 @@ services:
     working_dir: /var/www/aplus
     volumes:
       - .:/var/www/aplus
-    network_mode: host
-    environment:
-      - APLUS_PRELOAD=false
+    ports:
+      - "80:80"
+      - "443:443"
+    #environment:
+    #  - PRELOAD=/var/www/aplus/preload.php
     tty: true
