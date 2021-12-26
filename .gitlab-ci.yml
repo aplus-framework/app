@@ -9,6 +9,7 @@ variables:
 
 test:php:
   stage: test
+  timeout: 30 minutes
   cache:
     paths:
       - vendor/
@@ -29,6 +30,7 @@ test:php:
 
 pages:
   stage: deploy
+  timeout: 10 minutes
   dependencies:
     - test:php
   environment:
