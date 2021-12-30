@@ -16,6 +16,7 @@ use Framework\Debug\ExceptionHandler;
 
 return [
     'default' => [
+        'initialize' => true,
         // @phpstan-ignore-next-line
         'environment' => ENVIRONMENT === 'development'
             ? ExceptionHandler::DEVELOPMENT

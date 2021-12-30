@@ -23,7 +23,10 @@ return [
             'pt-br',
         ],
         'fallback_level' => Language::FALLBACK_NONE,
-        'directories' => null,
+        'directories' => [
+            APP_DIR . 'Languages',
+        ],
+        'find_in_namespaces' => false,
         'negotiate' => false,
     ],
 ];

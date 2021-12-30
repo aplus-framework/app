@@ -13,6 +13,8 @@
  */
 return [
     'default' => [
+        'register' => true,
+        'extensions' => '.php',
         'namespaces' => [
             'App' => APP_DIR,
         ],

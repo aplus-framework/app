@@ -14,7 +14,10 @@
  */
 return [
     'default' => [
-        'enabled' => true,
+        'directories' => [
+            APP_DIR . 'Commands',
+        ],
+        'find_in_namespaces' => false,
         'language_instance' => 'default',
         'locator_instance' => 'default',
     ],

@@ -13,6 +13,12 @@
  */
 return [
     'default' => [
+        'files' => [
+            EXTRA_DIR . 'routes.php',
+        ],
+        'auto_options' => false,
+        'auto_methods' => false,
+        'placeholders' => [],
         'response_instance' => 'default',
         'language_instance' => 'default',
     ],

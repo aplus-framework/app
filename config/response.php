@@ -13,6 +13,10 @@
  */
 return [
     'default' => [
+        'headers' => [],
+        'auto_etag' => false,
+        'auto_language' => false,
+        'cache' => null,
         'request_instance' => 'default',
     ],
 ];

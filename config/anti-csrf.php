@@ -15,5 +15,7 @@ return [
     'default' => [
         'enabled' => true,
         'token_name' => 'csrf_token',
+        'request_instance' => 'default',
+        'session_instance' => 'default',
     ],
 ];

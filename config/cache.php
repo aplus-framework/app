@@ -26,5 +26,6 @@ return [
         ],
         'prefix' => null,
         'serializer' => Cache::SERIALIZER_PHP,
+        'logger_instance' => 'default',
     ],
 ];
