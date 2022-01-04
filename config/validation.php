@@ -9,7 +9,7 @@
  * Validation config.
  *
  * @see App::validation()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/validation.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#validation-service
  */
 
 use Framework\MVC\Validator;

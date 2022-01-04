@@ -10,7 +10,7 @@
  *
  * @see App::console()
  * @see App::run()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/console.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#console-service
  */
 return [
     'default' => [

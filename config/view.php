@@ -9,7 +9,7 @@
  * View config.
  *
  * @see App::view()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/view.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#view-service
  */
 return [
     'default' => [

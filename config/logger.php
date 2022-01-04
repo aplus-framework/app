@@ -9,7 +9,7 @@
  * Logger config.
  *
  * @see App::logger()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/logger.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#logger-service
  */
 
 use Framework\Log\Logger;

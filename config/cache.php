@@ -12,7 +12,7 @@
  * @see Framework\Cache\FilesCache::$configs
  * @see Framework\Cache\MemcachedCache::$configs
  * @see Framework\Cache\RedisCache::$configs
- * @see https://docs.aplus-framework.com/guides/projects/app/config/cache.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#cache-service
  */
 
 use Framework\Cache\Cache;

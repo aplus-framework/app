@@ -10,7 +10,7 @@
  *
  * @see App::mailer()
  * @see Framework\Email\Mailer::makeConfig()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/mailer.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#mailer-service
  */
 
 use Framework\Email\SMTP;

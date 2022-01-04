@@ -9,7 +9,7 @@
  * Locator config.
  *
  * @see App::locator()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/locator.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#locator-service
  */
 return [
     'default' => [

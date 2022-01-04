@@ -9,7 +9,7 @@
  * Autoloader config.
  *
  * @see App::autoloader()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/autoloader.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#autoloader-service
  */
 return [
     'default' => [

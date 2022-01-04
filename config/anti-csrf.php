@@ -9,7 +9,7 @@
  * Anti-CSRF config.
  *
  * @see App::antiCsrf()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/anti-csrf.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#anti-csrf-service
  */
 return [
     'default' => [

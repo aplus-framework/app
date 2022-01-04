@@ -9,7 +9,7 @@
  * Request config.
  *
  * @see App::request()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/request.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#request-service
  */
 return [
     'default' => [

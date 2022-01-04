@@ -9,7 +9,7 @@
  * Router config.
  *
  * @see App::router()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/router.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#router-service
  */
 return [
     'default' => [

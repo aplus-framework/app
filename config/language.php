@@ -9,7 +9,7 @@
  * Language config.
  *
  * @see App::language()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/language.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#language-service
  */
 
 use Framework\Language\Language;

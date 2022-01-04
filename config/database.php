@@ -10,7 +10,7 @@
  *
  * @see App::database()
  * @see Framework\Database\Database::makeConfig()
- * @see https://docs.aplus-framework.com/guides/projects/app/config/database.html
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#database-service
  */
 return [
     'default' => [
