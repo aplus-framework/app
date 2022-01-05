@@ -14,10 +14,12 @@
  */
 return [
     'default' => [
-        'username' => 'root',
-        'password' => 'password',
-        'schema' => 'framework-tests',
-        'host' => 'localhost',
+        'config' => [
+            'username' => 'root',
+            'password' => 'password',
+            'schema' => 'framework-tests',
+            'host' => 'localhost',
+        ],
         'logger_instance' => 'default',
     ],
 ];

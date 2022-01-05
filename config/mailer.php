@@ -18,13 +18,15 @@ use Framework\Email\SMTP;
 return [
     'default' => [
         'class' => SMTP::class,
-        'server' => 'localhost',
-        'port' => 587,
-        'tls' => true,
-        'username' => null,
-        'password' => null,
-        'charset' => 'utf-8',
-        'crlf' => "\r\n",
-        'keep_alive' => false,
+        'config' => [
+            'server' => 'localhost',
+            'port' => 587,
+            'tls' => true,
+            'username' => null,
+            'password' => null,
+            'charset' => 'utf-8',
+            'crlf' => "\r\n",
+            'keep_alive' => false,
+        ],
     ],
 ];
