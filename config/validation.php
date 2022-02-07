@@ -21,5 +21,6 @@ return [
             Validator::class,
             FilesValidator::class,
         ],
+        'language_instance' => 'default',
     ],
 ];

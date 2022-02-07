@@ -17,6 +17,7 @@ return [
         'auto_etag' => false,
         'auto_language' => false,
         'cache' => null,
+        'language_instance' => 'default',
         'request_instance' => 'default',
     ],
 ];
