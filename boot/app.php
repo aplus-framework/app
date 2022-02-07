@@ -16,6 +16,4 @@ if (class_exists(Composer\Autoload\ClassLoader::class, false) === false
     require ROOT_DIR . 'App.php';
 }
 
-use Framework\Config\Config;
-
-return new App(new Config(CONFIG_DIR));
+return new App(CONFIG_DIR, ENVIRONMENT === 'development');
