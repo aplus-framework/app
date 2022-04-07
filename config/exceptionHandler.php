@@ -8,8 +8,8 @@
 /**
  * Exceptions config.
  *
- * @see App::prepareExceptionHandler()
- * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#exceptions-service
+ * @see App::exceptionHandler()
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#exceptionHandler-service
  */
 
 use Framework\Debug\ExceptionHandler;
