@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: ['8.0', '8.1']
+        php: ['8.1']
 
     name: PHP ${{ matrix.php }}
 
@@ -60,4 +60,4 @@ jobs:
           cp build/coverage/clover.xml build/logs/clover.xml
           composer global require php-coveralls/php-coveralls
           php-coveralls --coverage_clover=build/logs/clover.xml -v
-        if: matrix.php == '8.0'
+        if: matrix.php == '8.1'

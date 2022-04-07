@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   lempa:
-    image: registry.gitlab.com/aplus-framework/images/lempa
+    image: registry.gitlab.com/aplus-framework/images/lempa:2
     container_name: lempa-app
     working_dir: /var/www/aplus
     volumes:

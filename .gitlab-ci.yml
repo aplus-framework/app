@@ -1,5 +1,5 @@
 ---
-image: registry.gitlab.com/aplus-framework/images/lempa
+image: registry.gitlab.com/aplus-framework/images/lempa:2
 
 include:
   - template: Security/SAST.gitlab-ci.yml
