@@ -45,6 +45,7 @@ class LanguagesTest extends TestCase
      */
     protected function getCodes() : array
     {
+        // @phpstan-ignore-next-line
         $codes = \array_filter((array) \glob($this->langDir . '*'), 'is_dir');
         $length = \strlen($this->langDir);
         $result = [];
