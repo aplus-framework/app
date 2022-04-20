@@ -13,13 +13,13 @@
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#mailer-service
  */
 
-use Framework\Email\SMTP;
+use Framework\Email\Mailers\SMTPMailer;
 
 return [
     'default' => [
-        'class' => SMTP::class,
+        'class' => SMTPMailer::class,
         'config' => [
-            'server' => 'localhost',
+            'host' => 'localhost',
             'port' => 587,
             'tls' => true,
             'username' => null,

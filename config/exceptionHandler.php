@@ -21,7 +21,6 @@ return [
         'environment' => ENVIRONMENT === 'development'
             ? ExceptionHandler::DEVELOPMENT
             : ExceptionHandler::PRODUCTION,
-        'views_dir' => null,
         'logger_instance' => 'default',
         'language_instance' => 'default',
     ],

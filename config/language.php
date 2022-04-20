@@ -12,7 +12,7 @@
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#language-service
  */
 
-use Framework\Language\Language;
+use Framework\Language\FallbackLevel;
 
 return [
     'default' => [
@@ -22,7 +22,7 @@ return [
             'es',
             'pt-br',
         ],
-        'fallback_level' => Language::FALLBACK_NONE,
+        'fallback_level' => FallbackLevel::none,
         'directories' => [
             APP_DIR . 'Languages',
         ],

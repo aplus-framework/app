@@ -12,11 +12,13 @@
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#logger-service
  */
 
-use Framework\Log\Logger;
+use Framework\Log\Loggers\MultiFileLogger;
+use Framework\Log\LogLevel;
 
 return [
     'default' => [
-        'directory' => STORAGE_DIR . 'logs',
-        'level' => Logger::DEBUG,
+        'class' => MultiFileLogger::class,
+        'destination' => STORAGE_DIR . 'logs',
+        'level' => LogLevel::DEBUG,
     ],
 ];

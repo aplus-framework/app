@@ -15,8 +15,8 @@
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#cache-service
  */
 
-use Framework\Cache\Cache;
 use Framework\Cache\FilesCache;
+use Framework\Cache\Serializer;
 
 return [
     'default' => [
@@ -25,7 +25,7 @@ return [
             'directory' => STORAGE_DIR . 'cache',
         ],
         'prefix' => null,
-        'serializer' => Cache::SERIALIZER_PHP,
+        'serializer' => Serializer::PHP,
         'logger_instance' => 'default',
     ],
 ];

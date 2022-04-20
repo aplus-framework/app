@@ -14,5 +14,6 @@
 return [
     'default' => [
         'allowed_hosts' => null,
+        'force_https' => false,
     ],
 ];
