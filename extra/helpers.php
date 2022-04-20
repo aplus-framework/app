@@ -224,14 +224,12 @@ function csrf_input(string $instance = 'default') : string
 function not_found(array $variables = []) : Response
 {
     $response = App::response();
-    $response->setStatus($response::CODE_NOT_FOUND);
+    $response->setStatus(404);
     if (App::request()->isJson()) {
         return $response->setJson([
             'error' => [
-                'code' => $response::CODE_NOT_FOUND,
-                'reason' => $response::getReasonByCode(
-                    $response::CODE_NOT_FOUND
-                ),
+                'code' => 404,
+                'reason' => 'Not Found',
             ],
         ]);
     }
