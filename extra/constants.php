@@ -48,3 +48,7 @@ define('STORAGE_DIR', ROOT_DIR . 'storage' . \DIRECTORY_SEPARATOR);
  * Path to the vendor directory.
  */
 define('VENDOR_DIR', ROOT_DIR . 'vendor' . \DIRECTORY_SEPARATOR);
+/**
+ * Path to the aplus directory.
+ */
+define('APLUS_DIR', VENDOR_DIR . 'aplus' . \DIRECTORY_SEPARATOR);

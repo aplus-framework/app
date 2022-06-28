@@ -15,7 +15,7 @@
 return [
     'default' => [
         'directories' => [
-            VENDOR_DIR . 'aplus/dev-commands/src',
+            APLUS_DIR . 'dev-commands/src',
             APP_DIR . 'Commands',
         ],
         'find_in_namespaces' => false,
