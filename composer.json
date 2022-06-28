@@ -56,9 +56,9 @@
             "App.php"
         ],
         "files": [
-            "extra/init.php",
-            "extra/constants.php",
-            "extra/helpers.php"
+            "boot/init.php",
+            "boot/constants.php",
+            "boot/helpers.php"
         ]
     },
     "autoload-dev": {

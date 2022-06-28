@@ -33,10 +33,6 @@ define('BOOT_DIR', ROOT_DIR . 'boot' . \DIRECTORY_SEPARATOR);
  */
 define('CONFIG_DIR', ROOT_DIR . 'config' . \DIRECTORY_SEPARATOR);
 /**
- * Path to the extra directory.
- */
-define('EXTRA_DIR', ROOT_DIR . 'extra' . \DIRECTORY_SEPARATOR);
-/**
  * Path to the public directory.
  */
 define('PUBLIC_DIR', ROOT_DIR . 'public' . \DIRECTORY_SEPARATOR);

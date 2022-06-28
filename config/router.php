@@ -14,7 +14,7 @@
 return [
     'default' => [
         'files' => [
-            EXTRA_DIR . 'routes.php',
+            BOOT_DIR . 'routes.php',
         ],
         'auto_options' => false,
         'auto_methods' => false,

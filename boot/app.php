@@ -10,10 +10,10 @@ if (class_exists(Composer\Autoload\ClassLoader::class, false) === false
 ) {
     require __DIR__ . '/../vendor/autoload.php';
 } else {
-    require __DIR__ . '/../extra/init.php';
-    require __DIR__ . '/../extra/constants.php';
-    require EXTRA_DIR . 'helpers.php';
+    require __DIR__ . '/init.php';
+    require __DIR__ . '/constants.php';
+    require BOOT_DIR . 'helpers.php';
     require ROOT_DIR . 'App.php';
 }
 
-return new App(CONFIG_DIR, ENVIRONMENT === 'development');
+return new App(CONFIG_DIR, ENVIRONMENT === 'development'); // @phpstan-ignore-line
