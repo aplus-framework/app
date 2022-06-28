@@ -10,7 +10,6 @@ Aplus Framework App Project.
 - `Structure`_
 - `Bootstrap`_
 - `Configuration`_
-- `Extra files`_
 - `Storage`_
 - `The global class App`_
 - `The App namespace`_
@@ -57,14 +56,13 @@ This is the basic directory tree:
     ├── bin/
     │   └── console
     ├── boot/
-    │   └── app.php
-    ├── composer.json
-    ├── config/
-    ├── extra/
+    │   ├── app.php
     │   ├── constants.php
     │   ├── helpers.php
     │   ├── init.php
     │   └── routes.php
+    ├── composer.json
+    ├── config/
     ├── preload.php
     ├── public/
     │   └── index.php
@@ -74,6 +72,18 @@ This is the basic directory tree:
 
 Bootstrap
 ---------
+
+Init
+####
+
+Constants
+#########
+
+Routes
+######
+
+Helpers
+#######
 
 
 Configuration
@@ -91,21 +101,6 @@ or routines needed for `helpers`_ and `libraries <https://docs.aplus-framework.c
 For more details see the `Config <https://docs.aplus-framework.com/guides/libraries/config/index.html>`_
 and `MVC <https://docs.aplus-framework.com/guides/libraries/mvc/index.html>`_
 libraries documentation.
-
-Extra files
------------
-
-Init
-####
-
-Constants
-#########
-
-Routes
-######
-
-Helpers
-#######
 
 Storage
 -------
