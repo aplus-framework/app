@@ -44,3 +44,7 @@ define('PUBLIC_DIR', ROOT_DIR . 'public' . \DIRECTORY_SEPARATOR);
  * Path to the storage directory.
  */
 define('STORAGE_DIR', ROOT_DIR . 'storage' . \DIRECTORY_SEPARATOR);
+/**
+ * Path to the vendor directory.
+ */
+define('VENDOR_DIR', ROOT_DIR . 'vendor' . \DIRECTORY_SEPARATOR);
