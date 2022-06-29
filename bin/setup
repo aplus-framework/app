@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-require __DIR__ . '/../extra/constants.php';
+require __DIR__ . '/../boot/constants.php';
 
 // Set permissions
 chmod(BIN_DIR . 'console', 0755);
