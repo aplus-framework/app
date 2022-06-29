@@ -11,7 +11,5 @@ App::router()->serve(null, static function (RouteCollection $routes) : void {
     $routes->namespace('App\Controllers', [
         $routes->get('/', 'Home::index', 'home'),
     ]);
-    $routes->notFound(static function () {
-        return not_found();
-    });
+    $routes->notFound(static fn () => not_found());
 });
