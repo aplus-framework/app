@@ -9,7 +9,7 @@
  * Exceptions config.
  *
  * @see App::exceptionHandler()
- * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#exceptionHandler-service
+ * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#exception-handler-service
  */
 
 use Framework\Debug\ExceptionHandler;
