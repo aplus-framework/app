@@ -16,4 +16,4 @@ if (class_exists(Composer\Autoload\ClassLoader::class, false) === false
     require ROOT_DIR . 'App.php';
 }
 
-return new App(CONFIG_DIR, ENVIRONMENT === 'development'); // @phpstan-ignore-line
+return new App(CONFIG_DIR, ENVIRONMENT === 'development');

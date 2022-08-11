@@ -6,3 +6,14 @@ parameters:
         - config
         - public
         - tests
+    dynamicConstantNames:
+        - ENVIRONMENT
+        - ROOT_DIR
+        - APP_DIR
+        - BIN_DIR
+        - BOOT_DIR
+        - CONFIG_DIR
+        - PUBLIC_DIR
+        - STORAGE_DIR
+        - VENDOR_DIR
+        - APLUS_DIR
