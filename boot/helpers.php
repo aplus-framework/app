@@ -190,7 +190,7 @@ function session() : Session
  */
 function old(?string $key, bool $escape = true) : mixed
 {
-    App::session();
+    App::session()->activate();
     $data = App::request()->getRedirectData($key);
     if ($escape) {
         $data = is_scalar($data) || (is_object($data) && method_exists($data, '__toString'))
@@ -261,7 +261,7 @@ function not_found(array $variables = []) : Response
 function redirect(string $location, array $data = [], int $code = null) : Response
 {
     if ($data) {
-        App::session();
+        App::session()->activate();
     }
     return App::response()->redirect($location, $data, $code);
 }
