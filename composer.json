@@ -73,18 +73,5 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
-    },
-    "scripts": {
-        "post-create-project-cmd": [
-            "@php bin/setup"
-        ],
-        "aplus": "@php bin/console",
-        "cs-diff": "php-cs-fixer fix --diff --dry-run -vvv",
-        "cs-fix": "php-cs-fixer fix -vvv",
-        "md": "phpmd app xml phpmd.xml",
-        "md-app": "phpmd App.php xml phpmd.xml",
-        "server": "php-server",
-        "stan": "phpstan analyse -vvv",
-        "unit": "phpunit"
     }
 }
