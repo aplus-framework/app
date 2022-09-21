@@ -293,67 +293,6 @@ function config(string $name, string $key = 'default') : mixed
 }
 
 /**
- * Encrypt a plaintext message to a base64 encoded ciphertext.
- *
- * @param string $message The plaintext message
- * @param string $instance The crypto config instance name
- *
- * @throws LengthException If the crypto config binary key length is wrong
- * @throws Exception If an appropriate source of randomness cannot be found
- * @throws SodiumException If libsodium found an error
- *
- * @return string The base64 encoded ciphertext
- */
-function encrypt(string $message, string $instance = 'default') : string
-{
-    $key = App::config()->get('crypto', $instance)['key'] ?? '';
-    if (mb_strlen($key, '8bit') !== \SODIUM_CRYPTO_SECRETBOX_KEYBYTES) {
-        throw new LengthException(
-            sprintf(
-                "Binary crypto key has not %d bytes on '%s' config",
-                \SODIUM_CRYPTO_SECRETBOX_KEYBYTES,
-                $instance
-            )
-        );
-    }
-    $nonce = random_bytes(\SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
-    $ciphertext = sodium_crypto_secretbox($message, $nonce, $key);
-    return sodium_bin2base64($nonce . $ciphertext, \SODIUM_BASE64_VARIANT_URLSAFE_NO_PADDING);
-}
-
-/**
- * Decrypt a base64 encoded ciphertext.
- *
- * @param string $base64 The base64 encoded ciphertext
- * @param string $instance The crypto config instance name
- *
- * @throws LengthException If the crypto config binary key length is wrong
- * @throws SodiumException If libsodium found an error
- *
- * @return false|string The plaintext message or false if cannot be decrypted
- */
-function decrypt(string $base64, string $instance = 'default') : false | string
-{
-    $key = App::config()->get('crypto', $instance)['key'] ?? '';
-    if (mb_strlen($key, '8bit') !== \SODIUM_CRYPTO_SECRETBOX_KEYBYTES) {
-        throw new LengthException(
-            sprintf(
-                "Binary crypto key has not %d bytes on '%s' config",
-                \SODIUM_CRYPTO_SECRETBOX_KEYBYTES,
-                $instance
-            )
-        );
-    }
-    $bin = sodium_base642bin($base64, \SODIUM_BASE64_VARIANT_URLSAFE_NO_PADDING);
-    if (mb_strlen($bin, '8bit') <= \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES) {
-        return false;
-    }
-    $nonce = substr($bin, 0, \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
-    $ciphertext = substr($bin, \SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
-    return sodium_crypto_secretbox_open($ciphertext, $nonce, $key);
-}
-
-/**
  * Get (existing or created) Factory instance based on a custom name.
  *
  * @param string $name The Factory name
