@@ -18,7 +18,7 @@ class Index extends \Framework\CLI\Commands\Index
 {
     protected function showHeader() : void
     {
-        $text = <<<'EOL'
+        $banner = <<<'EOL'
                 _          _                _
                / \   _ __ | |_   _ ___     / \   _ __  _ __
               / _ \ | '_ \| | | | / __|   / _ \ | '_ \| '_ \
@@ -27,6 +27,6 @@ class Index extends \Framework\CLI\Commands\Index
                     |_|                         |_|   |_|
 
             EOL;
-        CLI::write($text, CLI::FG_GREEN);
+        CLI::write($banner, CLI::FG_GREEN);
     }
 }
