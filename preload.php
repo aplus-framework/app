@@ -10,8 +10,8 @@ require __DIR__ . '/vendor/autoload.php';
 use Framework\Autoload\Preloader;
 
 $files = (new Preloader())->load();
-echo 'Preloading: ' . PHP_EOL;
+echo 'Preloading: ' . \PHP_EOL;
 foreach ($files as $index => $file) {
-    echo ++$index . ') ' . $file . PHP_EOL;
+    echo ++$index . ') ' . $file . \PHP_EOL;
 }
-echo 'Total of ' . count($files) . ' preloaded files.' . PHP_EOL . PHP_EOL;
+echo 'Total of ' . count($files) . ' preloaded files.' . \PHP_EOL . \PHP_EOL;
