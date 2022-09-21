@@ -8,8 +8,6 @@
 /**
  * @package app
  */
-use Framework\Cache\Cache;
-use Framework\Factories\Factory;
 use Framework\Helpers\ArraySimple;
 use Framework\HTTP\Response;
 use Framework\MVC\App;
@@ -59,28 +57,6 @@ function esc(?string $text, string $encoding = 'UTF-8') : string
 }
 
 /**
- * Normalize string whitespaces.
- *
- * @param string $string
- *
- * @return string
- */
-function normalize_whitespaces(string $string) : string
-{
-    return trim(preg_replace('/\s+/', ' ', $string));
-}
-
-/**
- * Indicates if the current request is a command line request.
- *
- * @return bool TRUE if is a CLI request, otherwise FALSE
- */
-function is_cli() : bool
-{
-    return App::isCli();
-}
-
-/**
  * Renders a view.
  *
  * @param string $path View path
@@ -115,7 +91,7 @@ function current_route() : Route
 }
 
 /**
- * Get an URL based in a Route name.
+ * Get a URL based in a Route name.
  *
  * @param string $name Route name
  * @param array<mixed> $pathArgs Route path arguments
@@ -151,18 +127,6 @@ function route_url(string $name, array $pathArgs = [], array $originArgs = []) :
 function lang(string $line, array $args = [], string $locale = null) : ?string
 {
     return App::language()->lang($line, $args, $locale);
-}
-
-/**
- * Get a Cache instance.
- *
- * @param string $instance
- *
- * @return Framework\Cache\Cache
- */
-function cache(string $instance = 'default') : Cache
-{
-    return App::cache($instance);
 }
 
 /**
@@ -290,16 +254,4 @@ function config(string $name, string $key = 'default') : mixed
     $keys = substr($keys, $pos + 1);
     $key = $parent . $keys;
     return ArraySimple::value($key, $config);
-}
-
-/**
- * Get (existing or created) Factory instance based on a custom name.
- *
- * @param string $name The Factory name
- *
- * @return Framework\Factories\Factory The Factory instance
- */
-function factory(string $name = 'default') : Factory
-{
-    return Factory::getFactory($name);
 }
