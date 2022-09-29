@@ -7,6 +7,7 @@
  */
 namespace Tests\boot;
 
+use Framework\HTTP\Status;
 use Tests\TestCase;
 
 /**
@@ -17,7 +18,7 @@ final class RoutesTest extends TestCase
     public function testNotFound() : void
     {
         $this->app->runHttp('http://localhost:8080/foo');
-        self::assertResponseStatusCode(404);
+        self::assertResponseStatusCode(Status::NOT_FOUND);
         self::assertResponseBodyContains('Error 404');
         self::assertMatchedRouteName('collection-not-found');
     }

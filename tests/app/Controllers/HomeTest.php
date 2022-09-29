@@ -7,6 +7,7 @@
  */
 namespace Tests\app\Controllers;
 
+use Framework\HTTP\Status;
 use Tests\TestCase;
 
 /**
@@ -17,7 +18,7 @@ final class HomeTest extends TestCase
     public function testIndex() : void
     {
         $this->app->runHttp('http://localhost:8080');
-        self::assertResponseStatusCode(200);
+        self::assertResponseStatusCode(Status::OK);
         self::assertResponseBodyContains('Aplus Framework');
         self::assertMatchedRouteName('home');
     }
