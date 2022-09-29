@@ -13,7 +13,7 @@ use Tests\TestCase;
 /**
  * Class LanguagesTest.
  */
-class LanguagesTest extends TestCase
+final class LanguagesTest extends TestCase
 {
     protected string $langDir = APP_DIR . 'Languages/';
 
