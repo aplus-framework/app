@@ -10,9 +10,6 @@ namespace Tests\app\Languages;
 use App;
 use Tests\TestCase;
 
-/**
- * Class LanguagesTest.
- */
 final class LanguagesTest extends TestCase
 {
     protected string $langDir = APP_DIR . 'Languages/';

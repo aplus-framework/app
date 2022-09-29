@@ -11,8 +11,6 @@ use App;
 use Framework\Config\Config;
 
 /**
- * Class AppTest.
- *
  * @runTestsInSeparateProcesses
  */
 final class AppTest extends TestCase

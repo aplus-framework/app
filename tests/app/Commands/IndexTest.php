@@ -10,8 +10,6 @@ namespace Tests\app\Commands;
 use Tests\TestCase;
 
 /**
- * Class IndexTest.
- *
  * @runTestsInSeparateProcesses
  */
 final class IndexTest extends TestCase
