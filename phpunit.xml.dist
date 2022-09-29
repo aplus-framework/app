@@ -9,6 +9,7 @@
             <directory suffix=".php">app</directory>
             <directory suffix=".php">config</directory>
             <file>App.php</file>
+            <file>boot/helpers.php</file>
         </include>
         <report>
             <clover outputFile="build/coverage/clover.xml"/>
