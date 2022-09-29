@@ -10,6 +10,7 @@
             <directory suffix=".php">config</directory>
             <file>App.php</file>
             <file>boot/helpers.php</file>
+            <file>boot/routes.php</file>
         </include>
         <report>
             <clover outputFile="build/coverage/clover.xml"/>
