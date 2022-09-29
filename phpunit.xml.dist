@@ -7,7 +7,7 @@
     <coverage>
         <include>
             <directory suffix=".php">app</directory>
-            <!-- <directory suffix=".php">config</directory> -->
+            <directory suffix=".php">config</directory>
             <file>App.php</file>
         </include>
         <report>
