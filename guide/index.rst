@@ -24,13 +24,7 @@ The installation of this project can be done with Composer:
 
 .. code-block::
 
-    composer create-project aplus/app:dev-master aplus
-
-or with the `Aplus Command Line Tool <https://docs.aplus-framework.com/guides/aplus/index.html>`_:
-
-.. code-block::
-
-    aplus new-app
+    composer create-project aplus/app:dev-master
 
 Structure
 ---------
