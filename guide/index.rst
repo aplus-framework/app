@@ -15,6 +15,7 @@ Aplus Framework App Project.
 - `The App namespace`_
 - `Running an Aplus App`_
 - `Testing`_
+- `Deployment`_
 - `Conclusion`_
 
 Installation
@@ -218,6 +219,305 @@ Testing
 
 Unit tests can be created within the **tests** directory. See the tests that
 come inside it as an example.
+
+Deployment
+----------
+
+We will see how to deploy to a `Shared Hosting`_ and a `Private Server`_:
+
+In the following examples, configurations will be made for the domain ``domain.tld``.
+Replace it with the domain of your application.
+
+Shared Hosting
+##############
+
+In shared hosting, it is common that you can upload the project files only by FTP.
+
+Also, typically the document root is a publicly accessible directory called
+``www``, ``web`` or ``public_html``.
+
+And the server is Apache, which allows configurations through files called
+``.htaccess``.
+
+In the following example the settings can be made locally and then sent to the
+hosting server.
+
+URL Origin
+""""""""""
+
+Make sure that the URL Origin has the correct domain in the ``boot/routes.php``
+file:
+
+.. code-block:: php
+
+    App::router()->serve('http://domain.tld', ...);
+
+Install Dependencies
+""""""""""""""""""""
+
+Install dependencies with Composer:
+
+.. code-block::
+
+    composer install --no-dev
+
+.htaccess files
+"""""""""""""""
+
+In the document root of the application add a ``.htaccess`` file with this
+content:
+
+.. code-block:: apacheconf
+
+    Options All -Indexes
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteRule ^$ public/ [L]
+        RewriteRule (.*) public/$1 [L]
+    </IfModule>
+
+Inside the ``public`` directory of the application, add another ``.htaccess``
+file:
+
+.. code-block:: apacheconf
+
+    Options All -Indexes
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^ index.php [QSA,L]
+    </IfModule>
+
+Finishing
+"""""""""
+
+Upload the files to the public directory of your hosting.
+
+Access the domain through the browser: http://domain.tld
+
+It should open the home page of your project.
+
+Private Server
+##############
+
+We will be using Ubuntu 22.04 LTS which is supported until 2032 and already
+comes with PHP 8.1.
+
+Replace ``domain.tld`` with your domain.
+
+Installing PHP and required packages:
+
+.. code-block::
+
+    sudo apt-get -y install \
+    composer \
+    curl \
+    git \
+    php8.1-apcu \
+    php8.1-cli \
+    php8.1-curl \
+    php8.1-fpm \
+    php8.1-gd \
+    php8.1-igbinary \
+    php8.1-imap \
+    php8.1-intl \
+    php8.1-mbstring \
+    php8.1-memcached \
+    php8.1-msgpack \
+    php8.1-mysql \
+    php8.1-opcache \
+    php8.1-readline \
+    php8.1-redis \
+    php8.1-xdebug \
+    php8.1-xml \
+    php8.1-yaml \
+    php8.1-zip \
+    unzip
+
+Make the application directory:
+
+.. code-block::
+
+    sudo mkdir -p /var/www/domain.tld
+
+Set directory ownership. Replace "username" with your username:
+
+.. code-block::
+
+    sudo chown username:username /var/www/domain.tld
+
+Enter the application directory...
+
+.. code-block::
+
+    cd /var/www/domain.tld
+
+... and clone or download your project.
+
+As an example, we'll install a new app:
+
+.. code-block::
+
+    git clone https://github.com/aplus-framework/app.git .
+
+Set storage directory permissions:
+
+.. code-block::
+
+    chmod -R 777 storage/*
+
+Edit the URL Origin of your project in the routes file, ``boot/routes.php``:
+
+.. code-block:: php
+
+    App::router()->serve('http://domain.tld', ...);
+
+Install the necessary PHP packages through Composer:
+
+.. code-block::
+
+    composer install --no-dev
+
+Web Servers
+"""""""""""
+
+In these examples, we will see how to install and configure two web servers:
+
+- `Apache`_
+- `Nginx (recommended)`_
+
+Apache
+^^^^^^
+
+Install required packages:
+
+.. code-block::
+
+    sudo apt install apache2 libapache2-mod-php
+
+Enable modules:
+
+.. code-block::
+
+    sudo a2enmod rewrite
+
+Create the file ``/etc/apache2/sites-available/domain.tld.conf``:
+
+.. code-block:: apacheconf
+
+    <Directory /var/www/domain.tld/public>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+    <VirtualHost *:80>
+        ServerName domain.tld
+        SetEnv ENVIRONMENT production
+        DocumentRoot /var/www/domain.tld/public
+    </VirtualHost>
+
+Enable the site:
+
+.. code-block::
+
+    sudo a2ensite domain.tld
+
+Reload the server:
+
+.. code-block::
+
+    sudo systemctl reload apache2
+
+Create the file ``/var/www/domain.tld/public/.htaccess`` with the following contents:
+
+.. code-block:: apacheconf
+
+    Options All -Indexes
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^ index.php [QSA,L]
+    </IfModule>
+
+Access the domain through the browser: http://domain.tld
+
+It should open the home page of your project.
+
+Nginx (recommended)
+^^^^^^^^^^^^^^^^^^^
+
+Edit the ``php.ini`` file:
+
+.. code-block::
+
+    sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/8.1/fpm/php.ini
+
+Restart PHP-FPM:
+
+.. code-block::
+
+    sudo systemctl restart php8.1-fpm
+
+Install required packages:
+
+.. code-block::
+
+    sudo apt install nginx
+
+Create the file ``/etc/nginx/sites-available/domain.tld.conf``:
+
+.. code-block:: nginx
+
+    server {
+        listen 80;
+
+        root /var/www/domain.tld/public;
+
+        index index.php;
+
+        server_name domain.tld;
+
+        location / {
+            try_files $uri $uri/ /index.php?$args;
+        }
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_param ENVIRONMENT production;
+            fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        }
+
+        location ~ /\. {
+            deny all;
+        }
+    }
+
+Enable the site:
+
+.. code-block::
+
+    sudo ln -s /etc/nginx/sites-available/domain.tld.conf /etc/nginx/sites-enabled/
+
+Test Nginx configurations:
+
+.. code-block::
+
+    sudo nginx -t
+
+Restart Nginx:
+
+.. code-block::
+
+    sudo systemctl restart nginx
+
+Access the domain through the browser: http://domain.tld
+
+It should open the home page of your project.
 
 Conclusion
 ----------
