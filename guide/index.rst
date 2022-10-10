@@ -264,32 +264,11 @@ Install dependencies with Composer:
 .htaccess files
 """""""""""""""
 
-In the document root of the application add a ``.htaccess`` file with this
-content:
+In the document root and in the ``public`` directory of the application has
+``.htaccess`` files that can be configured as needed.
 
-.. code-block:: apacheconf
-
-    Options All -Indexes
-
-    <IfModule mod_rewrite.c>
-        RewriteEngine On
-        RewriteRule ^$ public/ [L]
-        RewriteRule (.*) public/$1 [L]
-    </IfModule>
-
-Inside the ``public`` directory of the application, add another ``.htaccess``
-file:
-
-.. code-block:: apacheconf
-
-    Options All -Indexes
-
-    <IfModule mod_rewrite.c>
-        RewriteEngine On
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteRule ^ index.php [QSA,L]
-    </IfModule>
+For example, redirecting insecure requests to **HTTPS** or redirecting to the
+**www** subdomain.
 
 Finishing
 """""""""
@@ -430,19 +409,6 @@ Reload the server:
 .. code-block::
 
     sudo systemctl reload apache2
-
-Create the file ``/var/www/domain.tld/public/.htaccess`` with the following contents:
-
-.. code-block:: apacheconf
-
-    Options All -Indexes
-
-    <IfModule mod_rewrite.c>
-        RewriteEngine On
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteRule ^ index.php [QSA,L]
-    </IfModule>
 
 Access the domain through the browser: http://domain.tld
 
