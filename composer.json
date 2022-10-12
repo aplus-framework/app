@@ -39,7 +39,7 @@
         "ext-xdebug": "*",
         "aplus/coding-standard": "^1.12",
         "aplus/dev-commands": "dev-master",
-        "aplus/testing": "dev-master",
+        "aplus/testing": "^1.0",
         "ergebnis/composer-normalize": "^2.25",
         "jetbrains/phpstorm-attributes": "^1.0",
         "natanfelles/php-server": "^2.11",
