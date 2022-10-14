@@ -38,7 +38,7 @@
     "require-dev": {
         "ext-xdebug": "*",
         "aplus/coding-standard": "^1.12",
-        "aplus/dev-commands": "dev-master",
+        "aplus/dev-commands": "^1.0",
         "aplus/testing": "^1.0",
         "ergebnis/composer-normalize": "^2.25",
         "jetbrains/phpstorm-attributes": "^1.0",
