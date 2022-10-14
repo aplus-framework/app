@@ -32,7 +32,6 @@
     ],
     "require": {
         "php": ">=8.1",
-        "ext-sodium": "*",
         "aplus/framework": "dev-master"
     },
     "require-dev": {
