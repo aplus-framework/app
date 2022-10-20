@@ -282,7 +282,7 @@ It should open the home page of your project.
 Private Server
 ##############
 
-We will be using Ubuntu 22.04 LTS which is supported until 2032 and already
+We will be using Ubuntu 22.04 LTS which is supported until 2027 and already
 comes with PHP 8.1.
 
 Replace ``domain.tld`` with your domain.
