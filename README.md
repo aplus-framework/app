@@ -185,7 +185,7 @@ Follow Aplus on:
 - [Twitter](https://twitter.com/AplusFramework)
 - [Gab](https://gab.com/AplusFramework)
 - [Facebook](https://www.facebook.com/AplusFramework)
-- [YouTube](https://www.youtube.com/channel/UCPeXnwhvq7wUnBauiSMZ-wg)
+- [YouTube](https://www.youtube.com/@AplusFramework)
 
 Stay tuned for our updates.
 
