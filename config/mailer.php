@@ -27,6 +27,7 @@ return [
             'charset' => 'utf-8',
             'crlf' => "\r\n",
             'keep_alive' => false,
+            'add_logs' => true,
         ],
     ],
 ];
