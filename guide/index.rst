@@ -25,7 +25,7 @@ The installation of this project can be done with Composer:
 
 .. code-block::
 
-    composer create-project aplus/app:dev-master
+    composer create-project aplus/app
 
 Structure
 ---------

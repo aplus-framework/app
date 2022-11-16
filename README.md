@@ -19,7 +19,7 @@ Make sure you have [Composer](https://getcomposer.org/doc/00-intro.md) installed
 Follow the installation instructions in the [User Guide](https://docs.aplus-framework.com/guides/projects/app/index.html).
 
 ```
-composer create-project aplus/app:dev-master aplus 
+composer create-project aplus/app
 ```
 
 Enter the project directory.
