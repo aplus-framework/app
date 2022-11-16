@@ -27,6 +27,12 @@ The installation of this project can be done with Composer:
 
     composer create-project aplus/app
 
+Or, to install the latest `LTS <https://aplus-framework.com/lts>`_ version:
+
+.. code-block::
+
+    composer create-project aplus/app:^2
+
 Structure
 ---------
 

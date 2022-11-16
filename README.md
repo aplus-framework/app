@@ -18,8 +18,16 @@ Make sure you have [Composer](https://getcomposer.org/doc/00-intro.md) installed
 
 Follow the installation instructions in the [User Guide](https://docs.aplus-framework.com/guides/projects/app/index.html).
 
+To install the latest version:
+
 ```
 composer create-project aplus/app
+```
+
+Or, to install the latest [LTS](https://aplus-framework.com/lts) version:
+
+```
+composer create-project aplus/app:^2
 ```
 
 Enter the project directory.
