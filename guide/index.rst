@@ -31,7 +31,7 @@ Or, to install the latest `LTS <https://aplus-framework.com/lts>`_ version:
 
 .. code-block::
 
-    composer create-project aplus/app:^2
+    composer create-project aplus/app:^22
 
 Structure
 ---------
