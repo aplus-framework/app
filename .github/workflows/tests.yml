@@ -13,10 +13,8 @@ jobs:
 
     strategy:
       fail-fast: true
-      matrix:
-        php: ['8.1']
 
-    name: PHP ${{ matrix.php }}
+    name: PHP 8.1
 
     steps:
       - name: Checkout
@@ -25,7 +23,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: 8.1
           tools: composer
           coverage: xdebug
 
@@ -47,7 +45,7 @@ jobs:
 
       - name: PHPStan
         run:
-          vendor/bin/phpstan analyse -vvv
+          vendor/bin/phpstan analyse --xdebug -vvv
 
       - name: PHPUnit
         run: vendor/bin/phpunit --verbose
@@ -60,4 +58,30 @@ jobs:
           cp build/coverage/clover.xml build/logs/clover.xml
           composer global require php-coveralls/php-coveralls
           php-coveralls --coverage_clover=build/logs/clover.xml -v
-        if: matrix.php == '8.1'
+
+  tests-last:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: true
+
+    name: PHP 8.2 - Last
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          tools: composer
+          coverage: xdebug
+
+      - name: Install dependencies
+        run:
+          composer update
+
+      - name: PHPUnit
+        run: vendor/bin/phpunit --verbose
