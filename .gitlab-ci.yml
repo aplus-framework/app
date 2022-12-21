@@ -14,12 +14,13 @@ test:php:
     paths:
       - vendor/
   before_script:
+    - php -v
     - composer update
   script:
     - composer normalize --dry-run --indent-size=4 --indent-style=space
     - vendor/bin/php-cs-fixer fix --diff --dry-run --verbose
     - vendor/bin/phpmd app xml phpmd.xml
-    - vendor/bin/phpstan analyse -vvv
+    - vendor/bin/phpstan analyse --xdebug -vvv
     - vendor/bin/phpunit --colors=never
     - phpdoc
   artifacts:
