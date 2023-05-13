@@ -17,6 +17,8 @@ return [
         'auto_etag' => false,
         'auto_language' => false,
         'cache' => null,
+        'csp' => [],
+        'csp_report_only' => [],
         'language_instance' => 'default',
         'request_instance' => 'default',
     ],
