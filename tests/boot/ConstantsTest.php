@@ -18,6 +18,7 @@ final class ConstantsTest extends TestCase
     {
         require_once __DIR__ . '/../../boot/constants.php';
         self::assertIsString(ENVIRONMENT);
+        self::assertIsBool(IS_DEV);
         self::assertDirectoryExists(ROOT_DIR);
         self::assertDirectoryExists(APP_DIR);
         self::assertDirectoryExists(BIN_DIR);

@@ -8,6 +8,7 @@ parameters:
         - tests
     dynamicConstantNames:
         - ENVIRONMENT
+        - IS_DEV
         - ROOT_DIR
         - APP_DIR
         - BIN_DIR

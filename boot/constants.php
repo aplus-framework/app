@@ -13,6 +13,10 @@
  */
 define('ENVIRONMENT', $_SERVER['ENVIRONMENT'] ?? 'production');
 /**
+ * True if it is in development environment, otherwise false.
+ */
+define('IS_DEV', ENVIRONMENT === 'development');
+/**
  * Path to the root directory.
  */
 define('ROOT_DIR', dirname(__DIR__) . \DIRECTORY_SEPARATOR);

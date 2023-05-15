@@ -17,7 +17,7 @@ use Framework\Debug\ExceptionHandler;
 return [
     'default' => [
         'initialize' => true,
-        'environment' => ENVIRONMENT === 'development'
+        'environment' => IS_DEV
             ? ExceptionHandler::DEVELOPMENT
             : ExceptionHandler::PRODUCTION,
         'development_view' => null,
