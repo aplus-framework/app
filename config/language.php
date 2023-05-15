@@ -17,6 +17,7 @@ use Framework\Language\FallbackLevel;
 return [
     'default' => [
         'default' => 'en',
+        'current' => 'en',
         'supported' => [
             'en',
             'es',
