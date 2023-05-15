@@ -9,6 +9,7 @@ namespace Tests\boot;
 
 use App;
 use Framework\HTTP\Response;
+use Framework\HTTP\Status;
 use Framework\Session\Session;
 use Tests\TestCase;
 
@@ -145,6 +146,47 @@ final class HelpersTest extends TestCase
         redirect('/bar', ['foo' => 'Foo']);
         self::assertSame('/bar', App::response()->getHeader('Location'));
         self::assertSame('Foo', App::request()->getRedirectData('foo'));
+    }
+
+    public function testRedirectTo() : void
+    {
+        $configs = App::config()->get('router');
+        $configs['files'][] = __DIR__ . '/../support/routes.php';
+        App::config()->set('router', $configs);
+        $this->app->runHttp('https://foo.com/users/25');
+        $response = redirect_to('home');
+        self::assertSame(
+            'http://localhost:8080/',
+            $response->getHeader('Location')
+        );
+        $response = redirect_to('test.users.show');
+        self::assertSame(
+            'https://foo.com/users/{int}',
+            $response->getHeader('Location')
+        );
+        $response = redirect_to(['test.users.show', [25]]);
+        self::assertSame(
+            'https://foo.com/users/25',
+            $response->getHeader('Location')
+        );
+        $response = redirect_to(['test.users.show', [13], ['http']]);
+        self::assertSame(
+            'http://foo.com/users/13',
+            $response->getHeader('Location')
+        );
+        $response = redirect_to('home', ['foo' => 'bar'], Status::SEE_OTHER);
+        self::assertSame(
+            Status::SEE_OTHER,
+            $response->getStatusCode()
+        );
+        self::assertSame(
+            'http://localhost:8080/',
+            $response->getHeader('Location')
+        );
+        self::assertSame(
+            ['foo' => 'bar'],
+            $response->getRequest()->getRedirectData()
+        );
     }
 
     public function testCsrfInput() : void

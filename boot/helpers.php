@@ -247,6 +247,35 @@ function redirect(string $location, array $data = [], int $code = null) : Respon
 }
 
 /**
+ * Redirect to a named route.
+ *
+ * @param array<mixed>|string $route route name as string or an array with the
+ * route name, an array with path args and other array with origin args
+ * @param array<mixed> $data Session data available on next
+ * Request
+ * @param int|null $code HTTP Redirect status code. Leave null to determine
+ * based on the current HTTP method.
+ *
+ * @see http://en.wikipedia.org/wiki/Post/Redirect/Get
+ * @see Framework\HTTP\Request::getRedirectData()
+ * @see old()
+ * @see redirect()
+ *
+ * @throws InvalidArgumentException for invalid Redirection code
+ *
+ * @return Framework\HTTP\Response
+ */
+function redirect_to(
+    array | string $route,
+    array $data = [],
+    int $code = null
+) : Response {
+    $route = (array) $route;
+    $route = route_url(...$route);
+    return redirect($route, $data, $code);
+}
+
+/**
  * Get configs from a service.
  *
  * @param string $name The service name
