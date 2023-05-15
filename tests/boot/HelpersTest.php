@@ -92,14 +92,7 @@ final class HelpersTest extends TestCase
 
     public function testOld() : void
     {
-        App::session()->activate();
-        App::response()->redirect('/foo', [
-            'user' => [
-                'name' => 'John Doe',
-            ],
-            'xss' => '<script>alert("xss")</script>',
-        ]);
-        App::session()->stop();
+        $this->setOldData();
         self::assertSame('', old('user'));
         self::assertSame('John Doe', old('user[name]'));
         self::assertSame(
@@ -110,6 +103,38 @@ final class HelpersTest extends TestCase
             '<script>alert("xss")</script>',
             old('xss', false)
         );
+    }
+
+    protected function setOldData() : void
+    {
+        App::session()->activate();
+        App::response()->redirect('/foo', [
+            'user' => [
+                'name' => 'John Doe',
+            ],
+            'xss' => '<script>alert("xss")</script>',
+        ]);
+        App::session()->stop();
+    }
+
+    public function testHasOld() : void
+    {
+        $this->setOldData();
+        self::assertTrue(has_old());
+        self::assertTrue(has_old('user'));
+        self::assertTrue(has_old('user[name]'));
+        self::assertTrue(has_old('xss'));
+        self::assertFalse(has_old('foo'));
+        self::assertFalse(has_old('bar'));
+        self::assertFalse(has_old('bar[bazzz]'));
+    }
+
+    public function testHasOldWithoutRedirectData() : void
+    {
+        self::assertFalse(has_old());
+        self::assertFalse(has_old('user'));
+        self::assertFalse(has_old('user[name]'));
+        self::assertFalse(has_old('bar[bazzz]'));
     }
 
     public function testRedirect() : void

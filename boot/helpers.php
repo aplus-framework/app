@@ -165,6 +165,22 @@ function old(?string $key, bool $escape = true) : mixed
 }
 
 /**
+ * Tells if session has old data.
+ *
+ * @param string|null $key null to check all data or a specific key in the
+ * array simple format
+ *
+ * @see old()
+ *
+ * @return bool
+ */
+function has_old(string $key = null) : bool
+{
+    App::session()->activate();
+    return App::request()->getRedirectData($key) !== null;
+}
+
+/**
  * Renders the AntiCSRF input.
  *
  * @param string $instance The antiCsrf service instance name
