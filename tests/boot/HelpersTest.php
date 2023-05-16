@@ -94,6 +94,7 @@ final class HelpersTest extends TestCase
     public function testOld() : void
     {
         $this->setOldData();
+        self::assertNull(old('unknown'));
         self::assertSame('', old('user'));
         self::assertSame('John Doe', old('user[name]'));
         self::assertSame(

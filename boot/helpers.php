@@ -156,7 +156,7 @@ function old(?string $key, bool $escape = true) : mixed
 {
     App::session()->activate();
     $data = App::request()->getRedirectData($key);
-    if ($escape) {
+    if ($data !== null && $escape) {
         $data = is_scalar($data) || (is_object($data) && method_exists($data, '__toString'))
             ? esc((string) $data)
             : '';
