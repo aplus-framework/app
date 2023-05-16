@@ -100,6 +100,7 @@ final class HelpersTest extends TestCase
             'xss' => '<script>alert("xss")</script>',
         ]);
         App::session()->stop();
+        self::assertNull(old('unknown'));
         self::assertSame('', old('user'));
         self::assertSame('John Doe', old('user[name]'));
         self::assertSame(
