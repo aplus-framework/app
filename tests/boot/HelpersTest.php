@@ -11,6 +11,7 @@ use App;
 use Framework\HTTP\Response;
 use Framework\HTTP\Status;
 use Framework\Session\Session;
+use Tests\support\Models\UsersModel;
 use Tests\TestCase;
 
 /**
@@ -222,5 +223,11 @@ final class HelpersTest extends TestCase
         self::assertSame(APP_DIR . 'Views', $baseDir);
         $baseDir = config('view', 'default[base_directory');
         self::assertNull($baseDir);
+    }
+
+    public function testModel() : void
+    {
+        self::assertInstanceOf(UsersModel::class, model(UsersModel::class));
+        self::assertSame('foo', model(UsersModel::class)->foo());
     }
 }

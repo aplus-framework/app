@@ -8,9 +8,11 @@
 /**
  * @package app
  */
+
 use Framework\Helpers\ArraySimple;
 use Framework\HTTP\Response;
 use Framework\MVC\App;
+use Framework\MVC\Model;
 use Framework\Routing\Route;
 use Framework\Session\Session;
 use JetBrains\PhpStorm\Pure;
@@ -299,4 +301,22 @@ function config(string $name, string $key = 'default') : mixed
     $keys = substr($keys, $pos + 1);
     $key = $parent . $keys;
     return ArraySimple::value($key, $config);
+}
+
+/**
+ * Get same Model instance.
+ *
+ * @template T of Model
+ *
+ * @param class-string<T> $class
+ *
+ * @return T
+ */
+function model(string $class) : Model
+{
+    static $models;
+    if ( ! isset($models[$class])) {
+        $models[$class] = new $class();
+    }
+    return $models[$class];
 }
