@@ -77,7 +77,7 @@ function view(string $path, array $variables = [], string $instance = 'default')
  */
 function current_url() : string
 {
-    return App::request()->getUrl()->getAsString();
+    return App::request()->getUrl()->toString();
 }
 
 /**
