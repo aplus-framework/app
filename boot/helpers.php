@@ -203,7 +203,7 @@ function csrf_input(string $instance = 'default') : string
  *
  * @return Framework\HTTP\Response
  */
-function not_found(array $variables = []) : Response
+function respond_not_found(array $variables = []) : Response
 {
     $response = App::response();
     $response->setStatus(404);

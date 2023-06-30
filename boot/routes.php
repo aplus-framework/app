@@ -11,5 +11,5 @@ App::router()->serve('http://localhost:8080', static function (RouteCollection $
     $routes->namespace('App\Controllers', [
         $routes->get('/', 'Home::index', 'home'),
     ]);
-    $routes->notFound(static fn () => not_found());
+    $routes->notFound(static fn () => respond_not_found());
 });

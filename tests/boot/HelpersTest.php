@@ -196,18 +196,18 @@ final class HelpersTest extends TestCase
         self::assertStringContainsString('<input', csrf_input());
     }
 
-    public function testNotFound() : void
+    public function testRespondNotFound() : void
     {
-        $response = not_found();
+        $response = respond_not_found();
         self::assertInstanceOf(Response::class, $response);
         self::assertStringContainsString('404', $response->getBody());
         self::assertSame(404, $response->getStatusCode());
     }
 
-    public function testNotFoundJson() : void
+    public function testRespondNotFoundJson() : void
     {
         $_SERVER['HTTP_CONTENT_TYPE'] = 'application/json';
-        $response = not_found();
+        $response = respond_not_found();
         self::assertInstanceOf(Response::class, $response);
         self::assertStringContainsString('404', $response->getBody());
         self::assertSame(404, $response->getStatusCode());
