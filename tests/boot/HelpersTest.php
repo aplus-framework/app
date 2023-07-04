@@ -202,15 +202,43 @@ final class HelpersTest extends TestCase
         self::assertInstanceOf(Response::class, $response);
         self::assertStringContainsString('404', $response->getBody());
         self::assertSame(404, $response->getStatusCode());
+        self::assertNull($response->getHeader('Content-Type'));
     }
 
-    public function testRespondNotFoundJson() : void
+    public function testRespondNotFoundWithContentTypeJson() : void
     {
         $_SERVER['HTTP_CONTENT_TYPE'] = 'application/json';
         $response = respond_not_found();
         self::assertInstanceOf(Response::class, $response);
         self::assertStringContainsString('404', $response->getBody());
         self::assertSame(404, $response->getStatusCode());
+        self::assertSame(
+            'application/json; charset=UTF-8',
+            $response->getHeader('Content-Type')
+        );
+    }
+
+    public function testRespondNotFoundWithAcceptJson() : void
+    {
+        $_SERVER['HTTP_ACCEPT'] = 'application/json';
+        $response = respond_not_found();
+        self::assertInstanceOf(Response::class, $response);
+        self::assertStringContainsString('404', $response->getBody());
+        self::assertSame(404, $response->getStatusCode());
+        self::assertSame(
+            'application/json; charset=UTF-8',
+            $response->getHeader('Content-Type')
+        );
+    }
+
+    public function testRespondNotFoundWithAcceptHtml() : void
+    {
+        $_SERVER['HTTP_ACCEPT'] = 'text/html';
+        $response = respond_not_found();
+        self::assertInstanceOf(Response::class, $response);
+        self::assertStringContainsString('404', $response->getBody());
+        self::assertSame(404, $response->getStatusCode());
+        self::assertNull($response->getHeader('Content-Type'));
     }
 
     public function testConfig() : void
