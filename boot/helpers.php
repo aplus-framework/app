@@ -187,9 +187,13 @@ function csrf_input(string $instance = 'default') : string
  */
 function not_found(array $variables = []) : Response
 {
+    $request = App::request();
     $response = App::response();
     $response->setStatus(404);
-    if (App::request()->isJson()) {
+    if ($request->isJson() || $request->negotiateAccept([
+            'text/html',
+            'application/json',
+        ]) === 'application/json') {
         return $response->setJson([
             'error' => [
                 'code' => 404,
