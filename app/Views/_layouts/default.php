@@ -5,8 +5,8 @@
  */
 ?>
 <!doctype html>
-<html lang="<?= App::language()->getCurrentLocale() ?>" dir="<?=
-App::language()->getCurrentLocaleDirection() ?>">
+<html lang="<?= App::language()->getCurrentLocale() ?>" dir="<?= App::language()
+    ->getCurrentLocaleDirection() ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
