@@ -19,9 +19,9 @@
     "homepage": "https://aplus-framework.com/packages/app",
     "support": {
         "email": "support@aplus-framework.com",
-        "issues": "https://gitlab.com/aplus-framework/projects/app/issues",
+        "issues": "https://github.com/aplus-framework/app/issues",
         "forum": "https://aplus-framework.com/forum",
-        "source": "https://gitlab.com/aplus-framework/projects/app",
+        "source": "https://github.com/aplus-framework/app",
         "docs": "https://docs.aplus-framework.com/guides/projects/app/"
     },
     "funding": [
