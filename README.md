@@ -85,7 +85,7 @@ Customize your rules in the `phpmd.xml` file.
 ### Coding Standard
 
 We extend PHP-CS-Fixer to create the
-[Coding Standard Library](https://gitlab.com/aplus-framework/libraries/coding-standard).
+[Coding Standard Library](https://github.com/aplus-framework/coding-standard).
 
 It is [PSR-12](https://www.php-fig.org/psr/psr-12/) compatible.
 
@@ -98,7 +98,7 @@ vendor/bin/php-cs-fixer fix --diff --dry-run --verbose
 ### Testing
 
 We extend PHPUnit to create the
-[Testing Library](https://gitlab.com/aplus-framework/libraries/testing).
+[Testing Library](https://github.com/aplus-framework/testing).
 
 You can unit test your code by running:
 
@@ -187,9 +187,9 @@ Visit the Aplus Framework website: [aplus-framework.com](https://aplus-framework
 
 Follow Aplus on:
 
-- [GitLab](https://gitlab.com/aplus-framework)
 - [GitHub](https://github.com/aplus-framework)
 - [Twitter](https://twitter.com/AplusFramework)
+- [GitLab](https://gitlab.com/aplus-framework)
 - [Gab](https://gab.com/AplusFramework)
 - [Facebook](https://www.facebook.com/AplusFramework)
 - [YouTube](https://www.youtube.com/@AplusFramework)
