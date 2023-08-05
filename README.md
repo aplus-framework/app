@@ -31,6 +31,10 @@ composer create-project aplus/app:^22
 
 Enter the project directory.
 
+---
+
+Optionally, you can start a new project on GitHub from [this template](https://github.com/new?template_name=app&template_owner=aplus-framework).
+
 ## Licensing
 
 Add a `LICENSE` file.
