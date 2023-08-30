@@ -11,7 +11,6 @@
 
 use Framework\Helpers\ArraySimple;
 use Framework\HTTP\Response;
-use Framework\MVC\App;
 use Framework\MVC\Model;
 use Framework\Routing\Route;
 use Framework\Session\Session;
