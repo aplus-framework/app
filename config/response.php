@@ -19,6 +19,7 @@ return [
         'cache' => null,
         'csp' => [],
         'csp_report_only' => [],
+        'json_flags' => null,
         'language_instance' => 'default',
         'request_instance' => 'default',
     ],

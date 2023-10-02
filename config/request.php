@@ -16,5 +16,6 @@ return [
         'allowed_hosts' => [],
         'force_https' => false,
         'server_vars' => [],
+        'json_flags' => null,
     ],
 ];
