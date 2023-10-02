@@ -318,7 +318,7 @@ function config(string $name, string $key = 'default') : mixed
 function model(string $class) : Model
 {
     static $models;
-    if ( ! isset($models[$class])) {
+    if (!isset($models[$class])) {
         $models[$class] = new $class();
     }
     return $models[$class];
