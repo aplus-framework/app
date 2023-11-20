@@ -6,7 +6,7 @@
  * file that was distributed with this source code.
  */
 if (isset($_SERVER['ENVIRONMENT']) && $_SERVER['ENVIRONMENT'] === 'development') {
-    error_reporting(-1);
+    error_reporting(\E_ALL);
     ini_set('display_errors', 'On');
 } else {
     error_reporting(\E_ALL & ~\E_DEPRECATED & ~\E_NOTICE & ~\E_STRICT & ~\E_USER_DEPRECATED & ~\E_USER_NOTICE);
