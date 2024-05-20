@@ -84,7 +84,7 @@ function current_url() : string
 /**
  * Get the current Route.
  *
- * @return Framework\Routing\Route
+ * @return Route
  */
 function current_route() : Route
 {
@@ -133,7 +133,7 @@ function lang(string $line, array $args = [], string $locale = null) : ?string
 /**
  * Get the Session instance.
  *
- * @return Framework\Session\Session
+ * @return Session
  */
 function session() : Session
 {
@@ -200,7 +200,7 @@ function csrf_input(string $instance = 'default') : string
  *
  * @param array<string,mixed> $variables
  *
- * @return Framework\HTTP\Response
+ * @return Response
  */
 function respond_not_found(array $variables = []) : Response
 {
@@ -241,7 +241,7 @@ function respond_not_found(array $variables = []) : Response
  *
  * @throws InvalidArgumentException for invalid Redirection code
  *
- * @return Framework\HTTP\Response
+ * @return Response
  */
 function redirect(string $location, array $data = [], int $code = null) : Response
 {
@@ -268,7 +268,7 @@ function redirect(string $location, array $data = [], int $code = null) : Respon
  *
  * @throws InvalidArgumentException for invalid Redirection code
  *
- * @return Framework\HTTP\Response
+ * @return Response
  */
 function redirect_to(
     array | string $route,

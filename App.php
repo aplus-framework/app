@@ -12,6 +12,6 @@
  *
  * @see https://docs.aplus-framework.com/guides/projects/app/#the-global-class-app
  */
-class App extends \Framework\MVC\App
+class App extends Framework\MVC\App
 {
 }
