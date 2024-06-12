@@ -27,6 +27,6 @@ class Index extends \Framework\CLI\Commands\Index
                     |_|                         |_|   |_|
 
             EOL;
-        CLI::write($banner, CLI::FG_GREEN);
+        CLI::write($banner, 'green');
     }
 }
