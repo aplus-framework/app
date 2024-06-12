@@ -8,11 +8,10 @@
 namespace Tests\bin;
 
 use Framework\CLI\Streams\Stdout;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class ConsoleTest extends TestCase
 {
     public function testConsole() : void

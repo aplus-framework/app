@@ -8,11 +8,10 @@
 namespace Tests\boot;
 
 use Framework\MVC\App;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class AppTest extends TestCase
 {
     public function testApp() : void

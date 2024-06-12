@@ -7,11 +7,10 @@
  */
 namespace Tests\boot;
 
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use Tests\TestCase;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class ConstantsTest extends TestCase
 {
     public function testConstants() : void

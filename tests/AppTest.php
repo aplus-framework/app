@@ -9,10 +9,9 @@ namespace Tests;
 
 use App;
 use Framework\Config\Config;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class AppTest extends TestCase
 {
     protected function setUp() : void

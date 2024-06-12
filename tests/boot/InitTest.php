@@ -7,11 +7,10 @@
  */
 namespace Tests\boot;
 
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class InitTest extends TestCase
 {
     protected function loadInitFile() : static

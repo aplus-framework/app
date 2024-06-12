@@ -7,11 +7,10 @@
  */
 namespace Tests\app\Commands;
 
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use Tests\TestCase;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class IndexTest extends TestCase
 {
     public function testRun() : void

@@ -8,11 +8,10 @@
 namespace Tests\boot;
 
 use Framework\HTTP\Status;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use Tests\TestCase;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class RoutesTest extends TestCase
 {
     public function testNotFound() : void

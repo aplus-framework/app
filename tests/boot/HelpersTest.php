@@ -11,12 +11,11 @@ use App;
 use Framework\HTTP\Response;
 use Framework\HTTP\Status;
 use Framework\Session\Session;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use Tests\support\Models\UsersModel;
 use Tests\TestCase;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class HelpersTest extends TestCase
 {
     public function testHelpers() : void

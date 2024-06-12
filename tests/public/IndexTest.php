@@ -8,11 +8,10 @@
 namespace Tests\public;
 
 use Framework\HTTP\Status;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @runTestsInSeparateProcesses
- */
+#[RunTestsInSeparateProcesses]
 final class IndexTest extends TestCase
 {
     public function testIndex() : void
