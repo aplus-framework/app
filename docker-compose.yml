@@ -12,9 +12,9 @@ services:
     #environment:
     #  - PRELOAD=/var/www/aplus/preload.php
     tty: true
-  lempa-last:
-    image: registry.gitlab.com/aplus-framework/images/lempa:3
-    container_name: lempa-app-last
+  lempa-latest:
+    image: registry.gitlab.com/aplus-framework/images/lempa:latest
+    container_name: lempa-app-latest
     working_dir: /var/www/aplus
     volumes:
       - .:/var/www/aplus

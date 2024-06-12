@@ -29,8 +29,8 @@ test:php:
       - build/docs/
   coverage: '/^\s*Lines:\s*\d+.\d+\%/'
 
-test:php-last:
-  image: registry.gitlab.com/aplus-framework/images/lempa:3
+test:php-latest:
+  image: registry.gitlab.com/aplus-framework/images/lempa:latest
   stage: test
   timeout: 30 minutes
   cache:
