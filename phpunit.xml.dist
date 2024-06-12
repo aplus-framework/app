@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false"
-         bootstrap="vendor/autoload.php" colors="true" convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true" convertWarningsToExceptions="true" stopOnError="false"
-         stopOnFailure="false" stopOnIncomplete="false" stopOnSkipped="false"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+         bootstrap="vendor/autoload.php" colors="true" stopOnError="false" stopOnFailure="false"
+         stopOnIncomplete="false" stopOnSkipped="false"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.2/phpunit.xsd"
+         cacheDirectory=".phpunit.cache">
     <coverage>
-        <include>
-            <directory suffix=".php">app</directory>
-            <directory suffix=".php">config</directory>
-            <file>App.php</file>
-            <file>bin/console</file>
-            <file>boot/helpers.php</file>
-            <file>boot/routes.php</file>
-            <file>public/index.php</file>
-        </include>
         <report>
             <clover outputFile="build/coverage/clover.xml"/>
             <html outputDirectory="build/coverage"/>
@@ -24,4 +15,15 @@
         <directory suffix="Test.php">tests</directory>
     </testsuite>
     <logging/>
+    <source>
+        <include>
+            <directory suffix=".php">app</directory>
+            <directory suffix=".php">config</directory>
+            <file>App.php</file>
+            <file>bin/console</file>
+            <file>boot/helpers.php</file>
+            <file>boot/routes.php</file>
+            <file>public/index.php</file>
+        </include>
+    </source>
 </phpunit>
