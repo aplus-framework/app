@@ -125,7 +125,7 @@ function route_url(string $name, array $pathArgs = [], array $originArgs = []) :
  *
  * @return string|null The rendered text or null if not found
  */
-function lang(string $line, array $args = [], string $locale = null) : ?string
+function lang(string $line, array $args = [], ?string $locale = null) : ?string
 {
     return App::language()->lang($line, $args, $locale);
 }
@@ -175,7 +175,7 @@ function old(?string $key, bool $escape = true) : mixed
  *
  * @return bool
  */
-function has_old(string $key = null) : bool
+function has_old(?string $key = null) : bool
 {
     App::session()->activate();
     return App::request()->getRedirectData($key) !== null;
@@ -243,7 +243,7 @@ function respond_not_found(array $variables = []) : Response
  *
  * @return Response
  */
-function redirect(string $location, array $data = [], int $code = null) : Response
+function redirect(string $location, array $data = [], ?int $code = null) : Response
 {
     if ($data) {
         App::session()->activate();
@@ -273,7 +273,7 @@ function redirect(string $location, array $data = [], int $code = null) : Respon
 function redirect_to(
     array | string $route,
     array $data = [],
-    int $code = null
+    ?int $code = null
 ) : Response {
     $route = (array) $route;
     $route = route_url(...$route);
