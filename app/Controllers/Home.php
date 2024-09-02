@@ -20,7 +20,7 @@ final class Home extends Controller
     /**
      * Renders the application homepage.
      */
-    #[Route('GET', '/', name: 'home')]
+    #[Route('GET', '/', name: 'home.index')]
     public function index() : string
     {
         return view('home/index');

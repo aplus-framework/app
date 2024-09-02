@@ -19,6 +19,6 @@ final class HomeTest extends TestCase
         $this->app->runHttp('http://localhost:8080');
         self::assertResponseStatusCode(Status::OK);
         self::assertResponseBodyContains('Aplus Framework');
-        self::assertMatchedRouteName('home');
+        self::assertMatchedRouteName('home.index');
     }
 }

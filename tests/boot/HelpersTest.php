@@ -66,7 +66,7 @@ final class HelpersTest extends TestCase
         $this->app->runHttp('https://foo.com/users/25');
         self::assertSame(
             'http://localhost:8080/',
-            route_url('home')
+            route_url('home.index')
         );
         self::assertSame(
             'https://foo.com/',
@@ -155,7 +155,7 @@ final class HelpersTest extends TestCase
         $configs['files'][] = __DIR__ . '/../support/routes.php';
         App::config()->set('router', $configs);
         $this->app->runHttp('https://foo.com/users/25');
-        $response = redirect_to('home');
+        $response = redirect_to('home.index');
         self::assertSame(
             'http://localhost:8080/',
             $response->getHeader('Location')
@@ -175,7 +175,7 @@ final class HelpersTest extends TestCase
             'http://foo.com/users/13',
             $response->getHeader('Location')
         );
-        $response = redirect_to('home', ['foo' => 'bar'], Status::SEE_OTHER);
+        $response = redirect_to('home.index', ['foo' => 'bar'], Status::SEE_OTHER);
         self::assertSame(
             Status::SEE_OTHER,
             $response->getStatusCode()

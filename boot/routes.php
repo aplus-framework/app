@@ -9,7 +9,7 @@ use Framework\Routing\RouteCollection;
 
 App::router()->serve('http://localhost:8080', static function (RouteCollection $routes) : void {
     $routes->namespace('App\Controllers', [
-        $routes->get('/', 'Home::index', 'home'),
+        $routes->get('/', 'Home::index', 'home.index'),
     ]);
     $routes->notFound(static fn () => respond_not_found());
 });
