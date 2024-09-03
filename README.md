@@ -26,7 +26,7 @@ composer create-project aplus/app
 Or, to install the latest [LTS](https://aplus-framework.com/lts) version:
 
 ```
-composer create-project aplus/app:^22
+composer create-project aplus/app:^24
 ```
 
 Enter the project directory.
@@ -192,9 +192,7 @@ Visit the Aplus Framework website: [aplus-framework.com](https://aplus-framework
 Follow Aplus on:
 
 - [GitHub](https://github.com/aplus-framework)
-- [Twitter](https://twitter.com/AplusFramework)
-- [GitLab](https://gitlab.com/aplus-framework)
-- [Gab](https://gab.com/AplusFramework)
+- [X](https://x.com/AplusFramework)
 - [Facebook](https://www.facebook.com/AplusFramework)
 - [YouTube](https://www.youtube.com/@AplusFramework)
 
