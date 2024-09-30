@@ -20,11 +20,11 @@ use Framework\Cache\Serializer;
 
 return [
     'default' => [
-        'class' => FilesCache::class,
-        'configs' => [
+        'class' => env('cache.default.class', FilesCache::class),
+        'configs' => env('cache.default.configs', [
             'directory' => STORAGE_DIR . 'cache',
-        ],
-        'prefix' => null,
+        ]),
+        'prefix' => env('cache.default.prefix'),
         'serializer' => Serializer::PHP,
         'logger_instance' => 'default',
     ],

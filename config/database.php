@@ -15,10 +15,11 @@
 return [
     'default' => [
         'config' => [
-            'username' => 'root',
-            'password' => 'password',
-            'schema' => 'framework-tests',
-            'host' => 'localhost',
+            'username' => env('database.default.config.username', 'root'),
+            'password' => env('database.default.config.password', 'password'),
+            'schema' => env('database.default.config.schema', 'framework-tests'),
+            'host' => env('database.default.config.host', 'localhost'),
+            'port' => env('database.default.config.port', 3306),
         ],
         'logger_instance' => 'default',
     ],

@@ -13,8 +13,8 @@
  */
 return [
     'default' => [
-        'allowed_hosts' => [],
-        'force_https' => false,
+        'allowed_hosts' => env('request.default.allowed_hosts', []),
+        'force_https' => env('request.default.force_https', false),
         'server_vars' => [],
         'json_flags' => null,
     ],

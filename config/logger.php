@@ -17,8 +17,8 @@ use Framework\Log\LogLevel;
 
 return [
     'default' => [
-        'class' => MultiFileLogger::class,
-        'destination' => STORAGE_DIR . 'logs',
-        'level' => LogLevel::DEBUG,
+        'class' => env('logger.default.class', MultiFileLogger::class),
+        'destination' => env('logger.default.destination', STORAGE_DIR . 'logs'),
+        'level' => env('logger.default.level', LogLevel::DEBUG),
     ],
 ];
