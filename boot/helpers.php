@@ -319,3 +319,16 @@ function model(string $class) : Model
 {
     return Model::get($class);
 }
+
+/**
+ * Get an environment variable.
+ *
+ * @param string $key
+ * @param mixed $default
+ *
+ * @return mixed
+ */
+function env(string $key, mixed $default = null) : mixed
+{
+    return $_ENV[$key] ?? $_SERVER[$key] ?? $default;
+}

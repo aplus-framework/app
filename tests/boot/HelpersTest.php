@@ -257,4 +257,14 @@ final class HelpersTest extends TestCase
         self::assertInstanceOf(UsersModel::class, model(UsersModel::class));
         self::assertSame('foo', model(UsersModel::class)->foo());
     }
+
+    public function testEnv() : void
+    {
+        $_ENV['foo'] = 'foo';
+        $_SERVER['foo'] = 'bar';
+        $_SERVER['bar'] = 'baz';
+        self::assertSame('foo', env('foo'));
+        self::assertSame('baz', env('bar'));
+        self::assertNull(env('unknown'));
+    }
 }
