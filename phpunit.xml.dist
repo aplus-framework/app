@@ -19,8 +19,10 @@
         <include>
             <directory suffix=".php">app</directory>
             <directory suffix=".php">config</directory>
+            <file>.env.php</file>
             <file>App.php</file>
             <file>bin/console</file>
+            <file>boot/set-env.php</file>
             <file>boot/helpers.php</file>
             <file>boot/routes.php</file>
             <file>public/index.php</file>
