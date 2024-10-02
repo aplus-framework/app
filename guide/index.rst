@@ -31,12 +31,13 @@ Or, to install the latest `LTS <https://aplus-framework.com/lts>`_ version:
 
 .. code-block::
 
-    composer create-project aplus/app:^22
+    composer create-project aplus/app:^24
 
 Structure
 ---------
 
-The App has a standard structure to organize business logic. 
+The App has a standard structure to organize business logic.
+
 And remember, it's highly customizable. You can adapt it as you like.
 
 This is the basic directory tree:
@@ -60,9 +61,11 @@ This is the basic directory tree:
     │   ├── constants.php
     │   ├── helpers.php
     │   ├── init.php
-    │   └── routes.php
+    │   ├── routes.php
+    │   └── set-env.php
     ├── composer.json
     ├── config/
+    ├── .env.php
     ├── preload.php
     ├── public/
     │   └── index.php
@@ -79,11 +82,17 @@ startup.
 The **app.php** file returns the instance of the **App** class, which is called
 to run the application in HTTP or CLI.
 
+Set Env
+#######
+
+The **set-env.php** file is responsible for setting the environment variables
+that are defined in the **.env.php** file.
+
 Init
 ####
 
 In the **init.php** file, initial settings are performed, such as setting the
-timezone.
+`error_reporting <https://www.php.net/manual/en/function.error-reporting.php>`_.
 
 Constants
 #########
@@ -248,15 +257,30 @@ And the server is Apache, which allows configurations through files called
 In the following example the settings can be made locally and then sent to the
 hosting server.
 
-URL Origin
-""""""""""
+Environment Variables
+"""""""""""""""""""""
 
-Make sure that the URL Origin has the correct domain in the ``boot/routes.php``
-file:
+Environment variables are defined in the ``.env.php`` file.
+
+Edit them according to the examples below:
+
+ENVIRONMENT
+^^^^^^^^^^^
+
+Make sure ENVIRONMENT is set to ``production``:
 
 .. code-block:: php
 
-    App::router()->serve('http://domain.tld', ...);
+    $_ENV['ENVIRONMENT'] = 'production';
+
+URL Origin
+^^^^^^^^^^
+
+Make sure that the URL Origin has the correct domain:
+
+.. code-block:: php
+
+    $_ENV['app.default.origin'] = 'http://domain.tld';
 
 Install Dependencies
 """"""""""""""""""""
@@ -288,8 +312,8 @@ It should open the home page of your project.
 Private Server
 ##############
 
-We will be using Ubuntu 22.04 LTS which is supported until 2027 and already
-comes with PHP 8.1.
+We will be using Ubuntu 24.04 LTS which is supported until 2029 and already
+comes with PHP 8.3.
 
 Replace ``domain.tld`` with your domain.
 
@@ -301,25 +325,23 @@ Installing PHP and required packages:
     composer \
     curl \
     git \
-    php8.1-apcu \
-    php8.1-cli \
-    php8.1-curl \
-    php8.1-fpm \
-    php8.1-gd \
-    php8.1-igbinary \
-    php8.1-imap \
-    php8.1-intl \
-    php8.1-mbstring \
-    php8.1-memcached \
-    php8.1-msgpack \
-    php8.1-mysql \
-    php8.1-opcache \
-    php8.1-readline \
-    php8.1-redis \
-    php8.1-xdebug \
-    php8.1-xml \
-    php8.1-yaml \
-    php8.1-zip \
+    php8.3-cli \
+    php8.3-curl \
+    php8.3-fpm \
+    php8.3-gd \
+    php8.3-igbinary \
+    php8.3-intl \
+    php8.3-mbstring \
+    php8.3-memcached \
+    php8.3-msgpack \
+    php8.3-mysql \
+    php8.3-opcache \
+    php8.3-readline \
+    php8.3-redis \
+    php8.3-xdebug \
+    php8.3-xml \
+    php8.3-yaml \
+    php8.3-zip \
     unzip
 
 Make the application directory:
@@ -354,11 +376,13 @@ Set storage directory permissions:
 
     chmod -R 777 storage/*
 
-Edit the URL Origin of your project in the routes file, ``boot/routes.php``:
+Edit the Environment and the URL Origin of your project in the ``.env.php``
+file:
 
 .. code-block:: php
 
-    App::router()->serve('http://domain.tld', ...);
+    $_ENV['ENVIRONMENT'] = 'production';
+    $_ENV['app.default.origin'] = 'http://domain.tld';
 
 Install the necessary PHP packages through Composer:
 
@@ -433,7 +457,7 @@ Restart PHP-FPM:
 
 .. code-block::
 
-    sudo systemctl restart php8.1-fpm
+    sudo systemctl restart php8.3-fpm
 
 Install required packages:
 
@@ -461,7 +485,7 @@ Create the file ``/etc/nginx/sites-available/domain.tld.conf``:
         location ~ \.php$ {
             include snippets/fastcgi-php.conf;
             fastcgi_param ENVIRONMENT production;
-            fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+            fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
         }
 
         location ~ /\. {
