@@ -32,17 +32,17 @@
     ],
     "require": {
         "php": ">=8.3",
-        "aplus/framework": "^25"
+        "aplus/framework": "^25.1"
     },
     "require-dev": {
         "ext-xdebug": "*",
         "aplus/coding-standard": "^2.8",
         "aplus/testing": "^3.0",
-        "ergebnis/composer-normalize": "^2.28",
-        "jetbrains/phpstorm-attributes": "^1.0",
+        "ergebnis/composer-normalize": "^2.44",
+        "jetbrains/phpstorm-attributes": "^1.1",
         "natanfelles/php-server": "^2.11",
-        "phpmd/phpmd": "^2.13",
-        "phpstan/phpstan": "^1.8"
+        "phpmd/phpmd": "^2.15",
+        "phpstan/phpstan": "^1.12"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
