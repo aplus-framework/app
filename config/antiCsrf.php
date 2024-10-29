@@ -15,6 +15,8 @@ return [
     'default' => [
         'enabled' => true,
         'token_name' => 'csrf_token',
+        'token_bytes_length' => 8,
+        'generate_token_function' => 'base64_encode',
         'request_instance' => 'default',
         'session_instance' => 'default',
     ],

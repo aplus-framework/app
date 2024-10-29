@@ -22,6 +22,7 @@ return [
             : ExceptionHandler::PRODUCTION,
         'development_view' => null,
         'production_view' => null,
+        'search_engine' => 'google',
         'logger_instance' => 'default',
         'language_instance' => 'default',
     ],
