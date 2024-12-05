@@ -17,5 +17,6 @@ return [
         'extension' => '.php',
         'layout_prefix' => '_layouts',
         'include_prefix' => '_includes',
+        'show_debug_comments' => true,
     ],
 ];
