@@ -32,7 +32,7 @@ final class InitTest extends TestCase
         $_SERVER['ENVIRONMENT'] = 'production';
         $this->loadInitFile();
         self::assertSame(
-            \E_ALL & ~\E_DEPRECATED & ~\E_NOTICE & ~\E_STRICT & ~\E_USER_DEPRECATED & ~\E_USER_NOTICE,
+            \E_ALL & ~\E_DEPRECATED & ~\E_NOTICE & ~\E_USER_DEPRECATED & ~\E_USER_NOTICE,
             \error_reporting()
         );
         self::assertSame('Off', \ini_get('display_errors'));
