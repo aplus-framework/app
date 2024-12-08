@@ -5,6 +5,7 @@
 - [Home](https://aplus-framework.com/packages/app)
 - [User Guide](https://docs.aplus-framework.com/guides/projects/app/index.html)
 - [API Documentation](https://docs.aplus-framework.com/packages/app.html)
+- [Online Demo](https://demo.aplus-framework.com)
 
 [![tests](https://github.com/aplus-framework/app/actions/workflows/tests.yml/badge.svg)](https://github.com/aplus-framework/app/actions/workflows/tests.yml)
 [![coverage](https://coveralls.io/repos/github/aplus-framework/app/badge.svg?branch=master)](https://coveralls.io/github/aplus-framework/app?branch=master)
