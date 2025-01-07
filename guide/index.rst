@@ -61,8 +61,7 @@ This is the basic directory tree:
     │   ├── constants.php
     │   ├── helpers.php
     │   ├── init.php
-    │   ├── routes.php
-    │   └── set-env.php
+    │   └── routes.php
     ├── composer.json
     ├── config/
     ├── .env.php
@@ -82,17 +81,15 @@ startup.
 The **app.php** file returns the instance of the **App** class, which is called
 to run the application in HTTP or CLI.
 
-Set Env
-#######
-
-The **set-env.php** file is responsible for setting the environment variables
-that are defined in the **.env.php** file.
-
 Init
 ####
 
-In the **init.php** file, initial settings are performed, such as setting the
-`error_reporting <https://www.php.net/manual/en/function.error-reporting.php>`_.
+The **init.php** file is responsible for setting the environment variables
+that are defined in the **.env.php** file.
+
+Also, initial settings are performed, such as setting
+`error_reporting <https://www.php.net/manual/en/function.error-reporting.php>`_
+and `display_errors <https://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors>`_.
 
 Constants
 #########
@@ -338,7 +335,6 @@ Installing PHP and required packages:
     php8.3-opcache \
     php8.3-readline \
     php8.3-redis \
-    php8.3-xdebug \
     php8.3-xml \
     php8.3-yaml \
     php8.3-zip \
@@ -370,11 +366,11 @@ As an example, we'll install a new app:
 
     git clone https://github.com/aplus-framework/app.git .
 
-Set storage directory permissions:
+Set the owner of the storage directory:
 
 .. code-block::
 
-    chmod -R 777 storage/*
+    sudo chown -R www-data:www-data storage
 
 Edit the Environment and the URL Origin of your project in the ``.env.php``
 file:
@@ -388,7 +384,11 @@ Install the necessary PHP packages through Composer:
 
 .. code-block::
 
-    composer install --no-dev
+    composer install --no-dev --ignore-platform-req=ext-xdebug
+
+* We use ``install`` instead of ``update`` to respect the ``composer.lock`` file if it exists in your repository.
+
+* We use ``--ignore-platform-req=ext-xdebug`` because we don't need the xdebug extension in production.
 
 Web Servers
 """""""""""
@@ -451,7 +451,7 @@ Edit the ``php.ini`` file:
 
 .. code-block::
 
-    sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/8.1/fpm/php.ini
+    sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/8.3/fpm/php.ini
 
 Restart PHP-FPM:
 
