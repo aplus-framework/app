@@ -54,7 +54,6 @@
             "App.php"
         ],
         "files": [
-            "boot/set-env.php",
             "boot/init.php",
             "boot/constants.php",
             "boot/helpers.php"

@@ -5,6 +5,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+if (is_file(__DIR__ . '/../.env.php')) {
+    require __DIR__ . '/../.env.php';
+    foreach ($_ENV as $key => $value) {
+        $_SERVER[$key] = $value;
+    }
+}
+
 if (isset($_SERVER['ENVIRONMENT']) && $_SERVER['ENVIRONMENT'] === 'development') {
     error_reporting(-1);
     ini_set('display_errors', 'On');

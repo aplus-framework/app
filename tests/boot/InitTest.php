@@ -13,34 +13,36 @@ use PHPUnit\Framework\TestCase;
 #[RunTestsInSeparateProcesses]
 final class InitTest extends TestCase
 {
-    protected function loadInitFile() : static
+    protected function setUp() : void
     {
+        \ob_start();
         require __DIR__ . '/../../boot/init.php';
-        return $this;
+        \ob_end_clean();
     }
 
-    public function testDevelopmentEnvironment() : void
+    public function testErrorReporting() : void
     {
-        $_SERVER['ENVIRONMENT'] = 'development';
-        $this->loadInitFile();
-        self::assertSame(-1, \error_reporting());
-        self::assertSame('On', \ini_get('display_errors'));
-    }
-
-    public function testProductionEnvironment() : void
-    {
-        $_SERVER['ENVIRONMENT'] = 'production';
-        $this->loadInitFile();
+        if ($_SERVER['ENVIRONMENT'] === 'development') {
+            self::assertSame(-1, \error_reporting());
+            return;
+        }
         self::assertSame(
             \E_ALL & ~\E_DEPRECATED & ~\E_NOTICE & ~\E_USER_DEPRECATED & ~\E_USER_NOTICE,
             \error_reporting()
         );
+    }
+
+    public function testDisplayErrors() : void
+    {
+        if ($_SERVER['ENVIRONMENT'] === 'development') {
+            self::assertSame('On', \ini_get('display_errors'));
+            return;
+        }
         self::assertSame('Off', \ini_get('display_errors'));
     }
 
     public function testDefaultTimezone() : void
     {
-        $this->loadInitFile();
         self::assertSame('UTC', \date_default_timezone_get());
     }
 }

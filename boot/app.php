@@ -8,7 +8,6 @@
 if (is_file(__DIR__ . '/../vendor/autoload.php')) {
     require_once __DIR__ . '/../vendor/autoload.php';
 } else {
-    require_once __DIR__ . '/set-env.php';
     require_once __DIR__ . '/init.php';
     require_once __DIR__ . '/constants.php';
     require_once BOOT_DIR . 'helpers.php';
