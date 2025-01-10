@@ -78,8 +78,14 @@ Bootstrap
 Inside the **boot** directory are located files that are part of the application
 startup.
 
-The **app.php** file returns the instance of the **App** class, which is called
-to run the application in HTTP or CLI.
+App
+###
+
+The **app.php** file is responsible for loading the files needed for the app to work.
+Such as the Composer autoloader or the initialization files.
+
+It returns an instance of the ``App`` class, which is called to run the application
+in HTTP or CLI.
 
 Init
 ####
@@ -155,7 +161,7 @@ Upload files are stored in the **uploads** directory.
 The global class App
 --------------------
 
-The global class **App**, whose file is located in the root directory, extends
+The global class ``App``, whose file is located in the root directory, extends
 the ``Framework\MVC\App`` class.
 
 Through it, it is possible to customize features and
@@ -237,7 +243,7 @@ Deployment
 
 We will see how to deploy to a `Shared Hosting`_ and a `Private Server`_:
 
-In the following examples, configurations will be made for the domain ``domain.tld``.
+In the following examples, configurations will be made for the domain **domain.tld**.
 Replace it with the domain of your application.
 
 Shared Hosting
@@ -246,10 +252,10 @@ Shared Hosting
 In shared hosting, it is common that you can upload the project files only by FTP.
 
 Also, typically the document root is a publicly accessible directory called
-``www``, ``web`` or ``public_html``.
+**www**, **web** or **public_html**.
 
 And the server is Apache, which allows configurations through files called
-``.htaccess``.
+**.htaccess**.
 
 In the following example the settings can be made locally and then sent to the
 hosting server.
@@ -257,7 +263,7 @@ hosting server.
 Environment Variables
 """""""""""""""""""""
 
-Environment variables are defined in the ``.env.php`` file.
+Environment variables are defined in the **.env.php** file.
 
 Edit them according to the examples below:
 
@@ -291,8 +297,8 @@ Install dependencies with Composer:
 .htaccess files
 """""""""""""""
 
-In the document root and in the ``public`` directory of the application has
-``.htaccess`` files that can be configured as needed.
+In the document root and in the **public** directory of the application has
+**.htaccess** files that can be configured as needed.
 
 For example, redirecting insecure requests to **HTTPS** or redirecting to the
 **www** subdomain.
@@ -372,7 +378,7 @@ Set the owner of the storage directory:
 
     sudo chown -R www-data:www-data storage
 
-Edit the Environment and the URL Origin of your project in the ``.env.php``
+Edit the Environment and the URL Origin of your project in the **.env.php**
 file:
 
 .. code-block:: php
@@ -386,7 +392,7 @@ Install the necessary PHP packages through Composer:
 
     composer install --no-dev --ignore-platform-req=ext-xdebug
 
-* We use ``install`` instead of ``update`` to respect the ``composer.lock`` file if it exists in your repository.
+* We use ``install`` instead of ``update`` to respect the **composer.lock** file if it exists in your repository.
 
 * We use ``--ignore-platform-req=ext-xdebug`` because we don't need the xdebug extension in production.
 
@@ -413,7 +419,7 @@ Enable modules:
 
     sudo a2enmod rewrite
 
-Create the file ``/etc/apache2/sites-available/domain.tld.conf``:
+Create the file **/etc/apache2/sites-available/domain.tld.conf**:
 
 .. code-block:: apacheconf
 
@@ -447,7 +453,7 @@ It should open the home page of your project.
 Nginx (recommended)
 ^^^^^^^^^^^^^^^^^^^
 
-Edit the ``php.ini`` file:
+Edit the **php.ini** file:
 
 .. code-block::
 
@@ -465,7 +471,7 @@ Install required packages:
 
     sudo apt install nginx
 
-Create the file ``/etc/nginx/sites-available/domain.tld.conf``:
+Create the file **/etc/nginx/sites-available/domain.tld.conf**:
 
 .. code-block:: nginx
 
