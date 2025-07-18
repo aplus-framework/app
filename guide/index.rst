@@ -328,6 +328,7 @@ Installing PHP and required packages:
     composer \
     curl \
     git \
+    php8.3-apcu \
     php8.3-cli \
     php8.3-curl \
     php8.3-fpm \
