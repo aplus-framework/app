@@ -16,6 +16,8 @@ return [
         'debugbar_view' => null,
         'options' => [
             'color' => 'magenta',
+            'icon_path' => null,
+            'info_contents' => null,
         ],
     ],
 ];

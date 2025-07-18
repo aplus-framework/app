@@ -20,6 +20,7 @@ return [
         'csp' => [],
         'csp_report_only' => [],
         'json_flags' => null,
+        'replace_headers' => null,
         'language_instance' => 'default',
         'request_instance' => 'default',
     ],
