@@ -29,5 +29,7 @@ return [
         ],
         'find_in_namespaces' => false,
         'negotiate' => false,
+        'autoloader_instance' => 'default',
+        'request_instance' => 'default',
     ],
 ];

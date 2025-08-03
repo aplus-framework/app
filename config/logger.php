@@ -20,5 +20,6 @@ return [
         'class' => env('logger.default.class', MultiFileLogger::class),
         'destination' => env('logger.default.destination', STORAGE_DIR . 'logs'),
         'level' => env('logger.default.level', LogLevel::DEBUG),
+        'config' => [],
     ],
 ];
