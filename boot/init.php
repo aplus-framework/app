@@ -7,8 +7,8 @@
  */
 if (is_file(__DIR__ . '/../.env.php')) {
     require __DIR__ . '/../.env.php';
-    foreach ($_ENV as $key => $value) {
-        $_SERVER[$key] = $value;
+    if (isset($_ENV['ENVIRONMENT'])) {
+        $_SERVER['ENVIRONMENT'] = $_ENV['ENVIRONMENT'];
     }
 }
 

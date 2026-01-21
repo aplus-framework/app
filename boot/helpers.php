@@ -330,5 +330,5 @@ function model(string $class) : Model
  */
 function env(string $key, mixed $default = null) : mixed
 {
-    return $_ENV[$key] ?? $_SERVER[$key] ?? $default;
+    return $_ENV[$key] ?? $default;
 }

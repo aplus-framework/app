@@ -264,7 +264,7 @@ final class HelpersTest extends TestCase
         $_SERVER['foo'] = 'bar';
         $_SERVER['bar'] = 'baz';
         self::assertSame('foo', env('foo'));
-        self::assertSame('baz', env('bar'));
+        self::assertNull(env('bar'));
         self::assertNull(env('unknown'));
     }
 }
