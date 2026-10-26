@@ -17,5 +17,7 @@ return [
         'force_https' => env('request.default.force_https', false),
         'server_vars' => [],
         'json_flags' => null,
+        'ip_key' => env('request.default.ip_key', 'REMOTE_ADDR'),
+        'parse_body_options' => [],
     ],
 ];

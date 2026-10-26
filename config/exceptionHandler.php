@@ -23,7 +23,6 @@ return [
             : ExceptionHandler::PRODUCTION,
         'development_view' => null,
         'production_view' => null,
-        'search_engine' => null,
         'show_log_id' => null,
         'json_flags' => null,
         'hidden_inputs' => null,

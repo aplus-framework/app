@@ -19,9 +19,9 @@ $_ENV['cache.default.configs'] = [
 $_ENV['cache.default.prefix'] = null;
 
 // Database --------------------------------------------------------------------
-$_ENV['database.default.config.username'] = 'root';
+$_ENV['database.default.config.username'] = 'developer';
 $_ENV['database.default.config.password'] = 'password';
-$_ENV['database.default.config.schema'] = 'framework-tests';
+$_ENV['database.default.config.schema'] = 'aplus';
 $_ENV['database.default.config.host'] = 'localhost';
 
 // Logger ----------------------------------------------------------------------
