@@ -32,7 +32,7 @@
     ],
     "require": {
         "php": ">=8.5",
-        "aplus/framework": "^25.1"
+        "aplus/framework": "^26.0"
     },
     "require-dev": {
         "ext-xdebug": "*",
