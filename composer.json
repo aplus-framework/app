@@ -36,7 +36,7 @@
     },
     "require-dev": {
         "ext-xdebug": "*",
-        "aplus/coding-standard": "^2.8",
+        "aplus/coding-standard": "^4.0",
         "aplus/testing": "^3.0",
         "ergebnis/composer-normalize": "^2.44",
         "jetbrains/phpstorm-attributes": "^1.1",
