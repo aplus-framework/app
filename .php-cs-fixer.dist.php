@@ -8,7 +8,7 @@
 use Aplus\CodingStandard\Config;
 use Aplus\CodingStandard\Finder;
 
-return (new Config())->setDefaultHeaderComment(
+return new Config()->setDefaultHeaderComment(
     'App Project',
     '' // [fullname] [<email>]
 )->setFinder(
