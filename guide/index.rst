@@ -31,7 +31,7 @@ Or, to install the latest `LTS <https://aplus-framework.com/lts>`_ version:
 
 .. code-block::
 
-    composer create-project aplus/app:^24
+    composer create-project aplus/app:^26
 
 Structure
 ---------
@@ -64,7 +64,7 @@ This is the basic directory tree:
     │   └── routes.php
     ├── composer.json
     ├── config/
-    ├── .env.php
+    ├── env.php
     ├── preload.php
     ├── public/
     │   └── index.php
@@ -91,7 +91,7 @@ Init
 ####
 
 The **init.php** file is responsible for setting the environment variables
-that are defined in the **.env.php** file.
+that are defined in the **env.php** file.
 
 Also, initial settings are performed, such as setting
 `error_reporting <https://www.php.net/manual/en/function.error-reporting.php>`_
@@ -162,7 +162,7 @@ The global class App
 --------------------
 
 The global class ``App``, whose file is located in the root directory, extends
-the ``Framework\MVC\App`` class.
+the ``Aplus\Mvc\App`` class.
 
 Through it, it is possible to customize features and
 `services <https://docs.aplus-framework.com/guides/libraries/mvc/index.html#services>`_.
@@ -263,7 +263,7 @@ hosting server.
 Environment Variables
 """""""""""""""""""""
 
-Environment variables are defined in the **.env.php** file.
+Environment variables are defined in the **env.php** file.
 
 Edit them according to the examples below:
 
@@ -315,8 +315,8 @@ It should open the home page of your project.
 Private Server
 ##############
 
-We will be using Ubuntu 24.04 LTS which is supported until 2029 and already
-comes with PHP 8.3.
+We will be using Ubuntu 26.04 LTS which is supported until 2031 and already
+comes with PHP 8.5.
 
 Replace ``domain.tld`` with your domain.
 
@@ -324,27 +324,26 @@ Installing PHP and required packages:
 
 .. code-block::
 
-    sudo apt-get -y install \
+    sudo apt -y install \
     composer \
     curl \
     git \
-    php8.3-apcu \
-    php8.3-cli \
-    php8.3-curl \
-    php8.3-fpm \
-    php8.3-gd \
-    php8.3-igbinary \
-    php8.3-intl \
-    php8.3-mbstring \
-    php8.3-memcached \
-    php8.3-msgpack \
-    php8.3-mysql \
-    php8.3-opcache \
-    php8.3-readline \
-    php8.3-redis \
-    php8.3-xml \
-    php8.3-yaml \
-    php8.3-zip \
+    php8.5-apcu \
+    php8.5-cli \
+    php8.5-curl \
+    php8.5-fpm \
+    php8.5-gd \
+    php8.5-igbinary \
+    php8.5-intl \
+    php8.5-mbstring \
+    php8.5-memcached \
+    php8.5-msgpack \
+    php8.5-mysql \
+    php8.5-readline \
+    php8.5-redis \
+    php8.5-xml \
+    php8.5-yaml \
+    php8.5-zip \
     unzip
 
 Make the application directory:
@@ -379,7 +378,7 @@ Set the owner of the storage directory:
 
     sudo chown -R www-data:www-data storage
 
-Edit the Environment and the URL Origin of your project in the **.env.php**
+Edit the Environment and the URL Origin of your project in the **env.php**
 file:
 
 .. code-block:: php
@@ -454,18 +453,6 @@ It should open the home page of your project.
 Nginx (recommended)
 ^^^^^^^^^^^^^^^^^^^
 
-Edit the **php.ini** file:
-
-.. code-block::
-
-    sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/8.3/fpm/php.ini
-
-Restart PHP-FPM:
-
-.. code-block::
-
-    sudo systemctl restart php8.3-fpm
-
 Install required packages:
 
 .. code-block::
@@ -492,7 +479,7 @@ Create the file **/etc/nginx/sites-available/domain.tld.conf**:
         location ~ \.php$ {
             include snippets/fastcgi-php.conf;
             fastcgi_param ENVIRONMENT production;
-            fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+            fastcgi_pass unix:/var/run/php/php8.5-fpm.sock;
         }
 
         location ~ /\. {
