@@ -42,7 +42,7 @@
         "jetbrains/phpstorm-attributes": "^1.1",
         "natanfelles/php-server": "^2.11",
         "phpmd/phpmd": "^2.15",
-        "phpstan/phpstan": "^1.12"
+        "phpstan/phpstan": "^2.2"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
