@@ -38,7 +38,7 @@ jobs:
 
       - name: PHPMD
         run:
-          vendor/bin/phpmd app xml phpmd.xml
+          vendor/bin/phpmd analyze app --format xml
 
       - name: PHPStan
         run:
