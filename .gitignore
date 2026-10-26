@@ -1,6 +1,5 @@
 .config.php
 .env
-.env.php
 .idea
 .php-cs-fixer.cache
 .phpunit.cache
@@ -9,6 +8,7 @@
 build
 composer.lock
 composer.phar
+env.php
 phpstan.neon
 phpunit.xml
 raw-tests

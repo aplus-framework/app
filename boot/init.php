@@ -5,8 +5,8 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-if (is_file(__DIR__ . '/../.env.php')) {
-    require __DIR__ . '/../.env.php';
+if (is_file(__DIR__ . '/../env.php')) {
+    require __DIR__ . '/../env.php';
     if (isset($_ENV['ENVIRONMENT'])) {
         $_SERVER['ENVIRONMENT'] = $_ENV['ENVIRONMENT'];
     }
