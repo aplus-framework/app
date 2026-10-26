@@ -7,14 +7,14 @@
  */
 namespace App\Commands;
 
-use Framework\CLI\CLI;
+use Aplus\Cli\Cli;
 
 /**
  * Class Index.
  *
  * @package app
  */
-class Index extends \Framework\CLI\Commands\Index
+class Index extends \Aplus\Cli\Commands\Index
 {
     protected function showHeader() : void
     {
@@ -27,6 +27,6 @@ class Index extends \Framework\CLI\Commands\Index
                     |_|                         |_|   |_|
 
             EOL;
-        CLI::write($banner, 'green');
+        Cli::write($banner, 'green');
     }
 }

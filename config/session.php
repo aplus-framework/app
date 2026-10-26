@@ -9,15 +9,15 @@
  * Session config.
  *
  * @see App::session()
- * @see Framework\Session\Session::setOptions()
- * @see Framework\Session\SaveHandlers\DatabaseHandler::prepareConfig()
- * @see Framework\Session\SaveHandlers\FilesHandler::prepareConfig()
- * @see Framework\Session\SaveHandlers\MemcachedHandler::prepareConfig()
- * @see Framework\Session\SaveHandlers\RedisHandler::prepareConfig()
+ * @see Aplus\Session\Session::setOptions()
+ * @see Aplus\Session\SaveHandlers\DatabaseHandler::prepareConfig()
+ * @see Aplus\Session\SaveHandlers\FilesHandler::prepareConfig()
+ * @see Aplus\Session\SaveHandlers\MemcachedHandler::prepareConfig()
+ * @see Aplus\Session\SaveHandlers\RedisHandler::prepareConfig()
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#session-service
  */
 
-use Framework\Session\SaveHandlers\FilesHandler;
+use Aplus\Session\SaveHandlers\FilesHandler;
 
 return [
     'default' => [

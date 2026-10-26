@@ -12,7 +12,7 @@
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#language-service
  */
 
-use Framework\Language\FallbackLevel;
+use Aplus\Language\FallbackLevel;
 
 return [
     'default' => [

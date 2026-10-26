@@ -7,8 +7,8 @@
  */
 namespace Tests;
 
+use Aplus\Config\Config;
 use App;
-use Framework\Config\Config;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 #[RunTestsInSeparateProcesses]
@@ -22,7 +22,7 @@ final class AppTest extends TestCase
     public function testInstance() : void
     {
         self::assertInstanceOf(
-            \Framework\MVC\App::class,
+            \Aplus\Mvc\App::class,
             new App(new Config(CONFIG_DIR))
         );
     }

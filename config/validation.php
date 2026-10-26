@@ -12,8 +12,8 @@
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#validation-service
  */
 
-use Framework\MVC\Validator;
-use Framework\Validation\FilesValidator;
+use Aplus\Mvc\Validator;
+use Aplus\Validation\FilesValidator;
 
 return [
     'default' => [

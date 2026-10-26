@@ -7,7 +7,7 @@
  */
 namespace Tests\public;
 
-use Framework\HTTP\Status;
+use Aplus\Http\Status;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\TestCase;
 

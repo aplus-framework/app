@@ -7,7 +7,7 @@
  */
 namespace Tests\boot;
 
-use Framework\MVC\App;
+use Aplus\Mvc\App;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use PHPUnit\Framework\TestCase;
 

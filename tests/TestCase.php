@@ -7,7 +7,7 @@
  */
 namespace Tests;
 
-abstract class TestCase extends \Framework\Testing\TestCase
+abstract class TestCase extends \Aplus\Testing\TestCase
 {
     protected array | string | null $configs = CONFIG_DIR;
 }

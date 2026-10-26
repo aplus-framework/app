@@ -12,8 +12,8 @@
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#logger-service
  */
 
-use Framework\Log\Loggers\MultiFileLogger;
-use Framework\Log\LogLevel;
+use Aplus\Log\Loggers\MultiFileLogger;
+use Aplus\Log\LogLevel;
 
 return [
     'default' => [

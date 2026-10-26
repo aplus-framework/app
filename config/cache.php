@@ -9,14 +9,14 @@
  * Cache config.
  *
  * @see App::cache()
- * @see Framework\Cache\FilesCache::$configs
- * @see Framework\Cache\MemcachedCache::$configs
- * @see Framework\Cache\RedisCache::$configs
+ * @see Aplus\Cache\FilesCache::$configs
+ * @see Aplus\Cache\MemcachedCache::$configs
+ * @see Aplus\Cache\RedisCache::$configs
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#cache-service
  */
 
-use Framework\Cache\FilesCache;
-use Framework\Cache\Serializer;
+use Aplus\Cache\FilesCache;
+use Aplus\Cache\Serializer;
 
 return [
     'default' => [

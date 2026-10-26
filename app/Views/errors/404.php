@@ -2,7 +2,7 @@
 /**
  * @var string $message
  * @var string $title
- * @var Framework\MVC\View $view
+ * @var Aplus\Mvc\View $view
  */
 $view->extends('default');
 $view->block('contents');

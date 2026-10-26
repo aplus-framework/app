@@ -7,10 +7,10 @@
  */
 namespace Tests\boot;
 
+use Aplus\Http\Response;
+use Aplus\Http\Status;
+use Aplus\Session\Session;
 use App;
-use Framework\HTTP\Response;
-use Framework\HTTP\Status;
-use Framework\Session\Session;
 use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use Tests\support\Models\UsersModel;
 use Tests\TestCase;

@@ -7,7 +7,7 @@
  */
 require __DIR__ . '/vendor/aplus/autoload/src/Preloader.php';
 
-use Framework\Autoload\Preloader;
+use Aplus\Autoload\Preloader;
 
 $files = (new Preloader())->load();
 echo 'Preloading: ' . \PHP_EOL;

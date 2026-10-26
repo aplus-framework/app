@@ -12,7 +12,7 @@ $_ENV['ENVIRONMENT'] = 'development';
 $_ENV['app.default.origin'] = 'http://localhost:8080';
 
 // Cache -----------------------------------------------------------------------
-$_ENV['cache.default.class'] = Framework\Cache\FilesCache::class;
+$_ENV['cache.default.class'] = Aplus\Cache\FilesCache::class;
 $_ENV['cache.default.configs'] = [
     'directory' => __DIR__ . '/storage/cache',
 ];
@@ -25,9 +25,9 @@ $_ENV['database.default.config.schema'] = 'framework-tests';
 $_ENV['database.default.config.host'] = 'localhost';
 
 // Logger ----------------------------------------------------------------------
-$_ENV['logger.default.class'] = Framework\Log\Loggers\MultiFileLogger::class;
+$_ENV['logger.default.class'] = Aplus\Log\Loggers\MultiFileLogger::class;
 $_ENV['logger.default.destination'] = __DIR__ . '/storage/logs';
-$_ENV['logger.default.level'] = Framework\Log\LogLevel::DEBUG;
+$_ENV['logger.default.level'] = Aplus\Log\LogLevel::DEBUG;
 
 // Mailer ----------------------------------------------------------------------
 $_ENV['mailer.default.host'] = 'localhost';

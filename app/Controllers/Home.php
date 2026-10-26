@@ -7,8 +7,8 @@
  */
 namespace App\Controllers;
 
-use Framework\MVC\Controller;
-use Framework\Routing\Attributes\Route;
+use Aplus\Mvc\Controller;
+use Aplus\Routing\Attributes\Route;
 
 /**
  * Class Home.

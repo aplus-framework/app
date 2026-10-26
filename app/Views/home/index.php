@@ -1,6 +1,6 @@
 <?php
 /**
- * @var Framework\MVC\View $view
+ * @var Aplus\Mvc\View $view
  */
 $view->extends('default', 'contents');
 ?>

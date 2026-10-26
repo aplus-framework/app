@@ -9,11 +9,11 @@
  * @package app
  */
 
-use Framework\Helpers\ArraySimple;
-use Framework\HTTP\Response;
-use Framework\MVC\Model;
-use Framework\Routing\Route;
-use Framework\Session\Session;
+use Aplus\Helpers\ArraySimple;
+use Aplus\Http\Response;
+use Aplus\Mvc\Model;
+use Aplus\Routing\Route;
+use Aplus\Session\Session;
 use JetBrains\PhpStorm\Pure;
 
 /**

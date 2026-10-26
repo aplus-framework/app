@@ -7,7 +7,7 @@
  */
 namespace Tests\support\Models;
 
-use Framework\MVC\Model;
+use Aplus\Mvc\Model;
 
 class UsersModel extends Model
 {

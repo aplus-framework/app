@@ -2,7 +2,7 @@
 /**
  * @var string|null $description
  * @var string|null $title
- * @var Framework\MVC\View $view
+ * @var Aplus\Mvc\View $view
  */
 ?>
 <!doctype html>
