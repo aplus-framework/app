@@ -20,6 +20,7 @@ return [
             'schema' => env('database.default.config.schema'),
             'host' => env('database.default.config.host', 'localhost'),
             'port' => env('database.default.config.port', 3306),
+            'init_queries' => env('database.default.config.init_queries', true),
         ],
         'logger_instance' => 'default',
     ],
