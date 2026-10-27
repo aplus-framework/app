@@ -21,5 +21,6 @@ return [
         'destination' => env('logger.default.destination', STORAGE_DIR . 'logs'),
         'level' => env('logger.default.level', LogLevel::DEBUG),
         'config' => [],
+        'enabled' => env('logger.default.enabled', true),
     ],
 ];

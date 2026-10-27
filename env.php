@@ -28,6 +28,7 @@ $_ENV['database.default.config.host'] = 'localhost';
 $_ENV['logger.default.class'] = Aplus\Log\Loggers\MultiFileLogger::class;
 $_ENV['logger.default.destination'] = __DIR__ . '/storage/logs';
 $_ENV['logger.default.level'] = Aplus\Log\LogLevel::DEBUG;
+$_ENV['logger.default.enabled'] = true;
 
 // Mailer ----------------------------------------------------------------------
 $_ENV['mailer.default.host'] = 'localhost';
