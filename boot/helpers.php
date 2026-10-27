@@ -14,7 +14,6 @@ use Aplus\Http\Response;
 use Aplus\Mvc\Model;
 use Aplus\Routing\Route;
 use Aplus\Session\Session;
-use JetBrains\PhpStorm\Pure;
 
 /**
  * Load helper files.
@@ -48,7 +47,6 @@ function helpers(array | string $helper) : array
  *
  * @return string The escaped text
  */
-#[Pure]
 function esc(?string $text, string $encoding = 'UTF-8') : string
 {
     $text = (string) $text;
