@@ -10,10 +10,10 @@
  *
  * @see App::session()
  * @see Aplus\Session\Session::setOptions()
- * @see Aplus\Session\SaveHandlers\DatabaseHandler::prepareConfig()
- * @see Aplus\Session\SaveHandlers\FilesHandler::prepareConfig()
- * @see Aplus\Session\SaveHandlers\MemcachedHandler::prepareConfig()
- * @see Aplus\Session\SaveHandlers\RedisHandler::prepareConfig()
+ * @see Aplus\Session\SaveHandlers\DatabaseHandler::prepareConfigs()
+ * @see Aplus\Session\SaveHandlers\FilesHandler::prepareConfigs()
+ * @see Aplus\Session\SaveHandlers\MemcachedHandler::prepareConfigs()
+ * @see Aplus\Session\SaveHandlers\RedisHandler::prepareConfigs()
  * @see https://docs.aplus-framework.com/guides/libraries/mvc/index.html#session-service
  */
 

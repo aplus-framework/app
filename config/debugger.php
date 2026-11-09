@@ -18,6 +18,7 @@ return [
             'color' => 'magenta',
             'icon_path' => null,
             'info_contents' => null,
+            'theme' => 'dark',
         ],
     ],
 ];
