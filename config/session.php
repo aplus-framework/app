@@ -21,7 +21,9 @@ use Aplus\Session\SaveHandlers\FilesHandler;
 
 return [
     'default' => [
-        'options' => [],
+        'options' => [
+            'cookie_secure' => App::request()->isSecure(),
+        ],
         'save_handler' => [
             'class' => FilesHandler::class,
             'config' => [
@@ -29,6 +31,9 @@ return [
                 'directory' => STORAGE_DIR . 'sessions',
                 'match_ip' => false,
                 'match_ua' => false,
+                'ip_key' => static function () : string {
+                    return App::request()->getIp();
+                },
             ],
         ],
         'logger_instance' => 'default',
